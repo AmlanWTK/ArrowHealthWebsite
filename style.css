@@ -2079,24 +2079,37 @@ a {
 .meal-hero-bg {
     width: 100%;
     position: relative;
-    padding: 60px 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 90px 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
     overflow: hidden;
     display: flex;
     align-items: center;
 }
 
-.meal-hero-bg::before {
-    content: '';
+.meal-hero-bg-blur {
     position: absolute;
     inset: 0;
     background-image: url('./assets/meal_image.png');
     background-size: cover;
     background-position: center;
-    filter: blur(40px);
-    opacity: 0.08; /* a little blurry background image */
+    filter: blur(12px); /* Beautiful premium soft blur */
+    transform: scale(1.04); /* Eliminates white border artifacts from blur filter */
+    opacity: 0.58; /* Highly visible, vibrant and gorgeous! */
     z-index: 0;
+}
+
+.meal-hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(248, 245, 239, 0.15), var(--bg-main) 94%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.meal-hero-bg > .why-section {
+    position: relative;
+    z-index: 2; /* Ensures text and phone mockup sit perfectly on top of background layers */
 }
 
 .feature-points {
