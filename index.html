@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arrow Health | Premium Health Intelligence</title>
+  <meta name="description" content="Arrow Health brings your health data, habits, reports, and daily progress into one simple dashboard - helping you understand your body and make smarter health decisions.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="page">
+  <nav class="nav">
+    <a class="logo" href="#">
+      <span class="logo-mark">↗</span>
+      Arrow Health
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#insights">Insights</a>
+      <a href="#palette">Palette</a>
+    </div>
+    <a class="nav-button" href="#">Join Waitlist</a>
+  </nav>
+
+  <section class="hero" id="hero-section">
+    <div class="hero-copy">
+      <div class="eyebrow">Premium health intelligence</div>
+      <h1>Your health,<br><span id="heroBrandHighlight">beautifully understood.</span></h1>
+      <p>
+        Arrow Health brings your health data, habits, reports, reminders, and daily progress into one calm dashboard — designed with a premium, mature color system.
+      </p>
+      
+      <!-- Dynamic Toggles -->
+      <div class="service-toggles" id="serviceToggles">
+        <button class="service-toggle active" data-service="glucose">Glucose</button>
+        <button class="service-toggle" data-service="meal">Nutrition</button>
+        <button class="service-toggle" data-service="heart">Heart</button>
+        <button class="service-toggle" data-service="activity">Activity</button>
+      </div>
+
+      <div class="hero-actions">
+        <a class="button-primary" href="#services">View Services</a>
+        <a class="button-secondary" href="#palette">See Color System</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Animated Background Circles -->
+      <div class="hero-bg-container">
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-1"></div>
+      </div>
+      <div class="glow"></div>
+      
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-top">
+            <span>Today</span>
+            <span>Arrow Health</span>
+          </div>
+          
+          <div class="score-card primary-dynamic-card">
+            <div class="score-label" id="dynamicCardTitle">Latest Glucose</div>
+            <div class="score-number dynamic-text" id="dynamicCardScore">95</div>
+            <div class="score-text" id="dynamicCardUnit">mg/dL • Normal</div>
+          </div>
+          
+          <div class="mini-grid">
+            <div class="mini-card">
+              <div class="mini-icon sleep">☾</div>
+              <strong>7h 42m</strong>
+              <small>Sleep</small>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon heart">♥</div>
+              <strong>72 bpm</strong>
+              <small>Heart</small>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon activity">↟</div>
+              <strong>8.4k</strong>
+              <small>Steps</small>
+            </div>
+            <div class="mini-card">
+              <div class="mini-icon medicine">✓</div>
+              <strong>95%</strong>
+              <small>Medicine</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="floating-insight">
+        <b>Insight</b>
+        <p id="dynamicInsightText">Your sleep was better on days your activity stayed above 7,000 steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="section-heading center">
+      <h2>Different services, soft premium accents.</h2>
+      <p>
+        Each health category has its own color, but the colors stay muted and controlled so the website feels mature, not childish.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon heart">♥</div>
+        <h3>Heart & Vitals</h3>
+        <p>Muted rose tones for pulse, heart rate, blood pressure, and important body signals.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon sleep">☾</div>
+        <h3>Sleep Tracking</h3>
+        <p>Deep indigo and midnight tones for rest, recovery, and sleep quality.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon activity">↟</div>
+        <h3>Activity</h3>
+        <p>Warm amber and muted copper for steps, movement, energy, and goals.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon nutrition">●</div>
+        <h3>Nutrition</h3>
+        <p>Sage and natural green accents for food, balance, and wellness habits.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon hydration">≈</div>
+        <h3>Hydration</h3>
+        <p>Misty aqua and soft blue tones for water tracking and hydration goals.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon mood">◐</div>
+        <h3>Mood & Wellness</h3>
+        <p>Dusty lavender and mauve accents for mood, stress, and mental wellness.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="insights">
+    <div class="premium-panel">
+      <div>
+        <h2>Data storytelling without loud colors.</h2>
+        <p>
+          The premium feeling comes from white space, neutral backgrounds, strong typography, deep brand colors, and soft accents used only where needed.
+        </p>
+      </div>
+      <div class="insight-list">
+        <div class="insight-item">✓ Keep hero background neutral and elegant</div>
+        <div class="insight-item">✓ Use deep teal for primary actions</div>
+        <div class="insight-item">✓ Use service colors only in small UI moments</div>
+        <div class="insight-item">✓ Use cream, charcoal, and muted accents for luxury feel</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="palette">
+    <div class="section-heading">
+      <h2>Suggested color mood.</h2>
+      <p>
+        This is not a final exact palette. It shows the type of colors Arrow Health can use: warm neutrals, deep teal, soft gold, and muted category accents.
+      </p>
+    </div>
+
+    <div class="palette-preview">
+      <div class="swatch light" style="background:#F8F5EF;">Warm Off-White</div>
+      <div class="swatch" style="background:#0F1816;">Deep Charcoal</div>
+      <div class="swatch" style="background:#164E45;">Deep Teal</div>
+      <div class="swatch" style="background:#A9855A;">Muted Sand Gold</div>
+      <div class="swatch" style="background:#6697A7;">Soft Aqua</div>
+    </div>
+
+    <div class="footer-cta">
+      <h2>Premium, calm, and health-focused.</h2>
+      <p>
+        This direction keeps Arrow Health unique while still feeling inspired by Apple Health, Oura, Levels, and Eight Sleep.
+      </p>
+      <a class="button-primary" href="#">Join Waitlist</a>
+    </div>
+  </section>
+
+  <button class="floating-why-btn">Why Arrow Health?</button>
+
+  <!-- Why Arrow Health Modal -->
+  <div class="why-modal" id="whyModal">
+    <div class="why-modal-header">
+      <h2>Why Arrow Health</h2>
+      <button class="close-modal-btn" id="closeModalBtn">×</button>
+    </div>
+    <div class="why-modal-content">
+      <div class="why-hero-bg">
+        <div class="why-hero">
+          <h1>A unified, <span>AI-powered</span> view of your everyday wellness.</h1>
+          <p>Arrow Health is the first mobile dashboard designed to paint a truly holistic picture of your health — right from your pocket, even completely offline.</p>
+        </div>
+        
+        <!-- New Floating Privacy Card (Local-First Security) -->
+        <div class="hero-privacy-card">
+          <div class="privacy-icon animated-shield">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shield-svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span class="pulse-ring"></span>
+          </div>
+          <div class="privacy-content">
+            <strong>Local-First Security</strong>
+            <p>Your health data is processed entirely on-device. Safe, secure, and fully accessible offline.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-section">
+        <div class="why-text">
+          <div class="why-eyebrow">Glucose tracking made simple</div>
+          <h3>Log glucose readings with <span>clarity.</span></h3>
+          <p>A clean product-style section for Arrow Health. The app screen is recreated inside a light premium mockup, without the heavy black phone frame.</p>
+        </div>
+        <div class="app-mockup-wrapper">
+          <div class="app-mockup" aria-label="Arrow Health glucose logging app mockup">
+            <div class="screen">
+              <div class="status-bar">
+                <span>2:23 AM</span>
+                <div class="status-icons">
+                  <span>◔</span><span>▰▰</span><span>⌁</span><span>43%</span>
+                </div>
+              </div>
+              <header class="app-header">
+                <div class="back-btn">‹</div>
+                <div class="header-title">
+                  <small>HEALTH TOOLS</small>
+                  <strong>Log Glucose Reading</strong>
+                </div>
+                <div></div>
+              </header>
+              <main class="app-body">
+                <div class="app-body-inner">
+                  <div class="section-title">
+                    <div>
+                      <h2>Glucose Value</h2>
+                      <p>Enter your current reading</p>
+                    </div>
+                  </div>
+                  <div class="input-card">
+                    <div class="input-icon">♢</div>
+                    <div class="input-value" style="color:#078F92;font-size:30px;">5.6</div>
+                    <div class="unit-pill">mmol/L</div>
+                  </div>
+                  <div class="unit-switch">
+                    <div class="unit-option active">mmol/L</div>
+                    <div class="unit-option">mg/dL.</div>
+                  </div>
+                  <div class="quick-row">
+                    <div class="quick-label">↯ Quick pick:</div>
+                    <div class="chip"><span class="dot"></span>3.9</div>
+                    <div class="chip"><span class="dot"></span>5.6</div>
+                    <div class="chip"><span class="dot"></span>7.8</div>
+                    <div class="chip"><span class="dot warn"></span>10.0</div>
+                  </div>
+                  <div class="section-title">
+                    <div>
+                      <h2>Meal Relation</h2>
+                      <p>When did you take this reading?</p>
+                    </div>
+                  </div>
+                  <div class="meal-grid">
+                    <div class="meal-card"><div class="meal-icon">▣</div><span>Before Breakfast</span></div>
+                    <div class="meal-card"><div class="meal-icon">☕</div><span>After Breakfast</span></div>
+                    <div class="meal-card"><div class="meal-icon">≋</div><span>Before Lunch</span></div>
+                    <div class="meal-card"><div class="meal-icon">◐</div><span>After Lunch</span></div>
+                    <div class="meal-card"><div class="meal-icon">╥</div><span>Before Dinner</span></div>
+                    <div class="meal-card"><div class="meal-icon">☰</div><span>After Dinner</span></div>
+                    <div class="meal-card selected"><div class="meal-icon">☾</div><span>Bedtime</span></div>
+                    <div class="meal-card"><div class="meal-icon">◷</div><span>Random Meal</span></div>
+                  </div>
+                  <div class="bottom-button">✓ Log Reading</div>
+                </div>
+              </main>
+            </div>
+          </div>
+          
+          <!-- New Floating Chat Card -->
+          <div class="floating-card chat-card">
+            <div class="chat-icon">✨</div>
+            <small>AI Insights</small>
+            <strong>Chat about your Glucose</strong>
+            <p>We securely save your readings so you can instantly chat with our AI to understand trends and get personalized nutrition advice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-section reverse">
+        <div class="why-text">
+          <h3>Intelligence, right on your device.</h3>
+          <p>Your health data is deeply personal. That's why Arrow Health runs entirely on your device. Advanced AI object detection and offline capabilities mean your data stays yours, securely accessible anywhere.</p>
+        </div>
+        <div class="app-mockup-wrapper">
+          <div class="app-mockup">
+            <div class="screen">
+              <img src="../carehub/appimages/Screenshot_2026-05-18-02-24-15-254_com.amlan.carehub.jpg" alt="Arrow Health Scan" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-stat">
+          <strong>100%</strong>
+          <span>Offline Capable</span>
+        </div>
+        <div class="why-stat">
+          <strong>AI-Powered</strong>
+          <span>Meal & Object Detection</span>
+        </div>
+        <div class="why-stat">
+          <strong>Unified</strong>
+          <span>All Vitals in One Place</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
