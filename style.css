@@ -357,6 +357,34 @@ a {
     top: -45px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
+    z-index: 0;
+}
+
+.score-graph {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.score-graph svg {
+    width: 100%;
+    height: 100%;
+}
+
+.graph-line-path {
+    stroke-dasharray: 220;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.5s ease, d 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.graph-fill-path {
+    opacity: 0.15;
+    transition: opacity 0.8s ease, fill 0.5s ease, d 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .score-label {
@@ -364,6 +392,8 @@ a {
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
 }
 
 .score-number {
@@ -372,12 +402,16 @@ a {
     letter-spacing: -0.06em;
     font-weight: 850;
     transition: color 0.5s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .score-text {
     margin-top: 10px;
     color: rgba(255, 255, 255, 0.76);
     font-size: 13px;
+    position: relative;
+    z-index: 2;
 }
 
 .mini-grid {
@@ -985,7 +1019,11 @@ a {
 }
 
 .why-text h3 span {
-    color: var(--brand-primary);
+    background: linear-gradient(135deg, var(--brand-primary) 0%, #078F92 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
 }
 
 .why-text p {
@@ -1500,4 +1538,539 @@ a {
 .scroll-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Coded Glucose App Mockup Premium Styling */
+.glucose-app-screen {
+    height: 610px;
+    width: 100%;
+    background: #F4F9FA;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #18201E;
+    text-align: left;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    position: relative;
+}
+
+.app-scroll-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 16px 12px 64px 12px;
+    position: relative;
+    /* Custom thin scrollbar styling for screen mockup */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(7, 143, 146, 0.2) transparent;
+}
+
+.app-scroll-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.app-scroll-body::-webkit-scrollbar-thumb {
+    background-color: rgba(7, 143, 146, 0.2);
+    border-radius: 4px;
+}
+
+.app-header-main {
+    background: #078F92;
+    color: white;
+    padding: 16px 16px 14px 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 12px rgba(7, 143, 146, 0.12);
+    flex-shrink: 0;
+}
+
+.app-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.app-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.app-title-group small {
+    font-size: 9px;
+    opacity: 0.72;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+}
+
+.app-title-group strong {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.menu-btn {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.scan-icon {
+    font-size: 14px;
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.profile-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-image: url('./assets/Screenshot_2026-05-18-02-24-15-254_com.amlan.carehub.jpg');
+    background-size: cover;
+    background-position: top center;
+    border: 1.5px solid white;
+}
+
+.header-subtitle {
+    font-size: 10px;
+    opacity: 0.85;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Vitals Cards Row */
+.vitals-row {
+    display: flex;
+    gap: 8px;
+    margin: 4px 0 14px 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+}
+
+.vitals-row::-webkit-scrollbar {
+    display: none;
+}
+
+.vital-card {
+    background: white;
+    border-radius: 14px;
+    padding: 10px;
+    min-width: 105px;
+    flex: 1 0 auto;
+    border: 1.5px solid transparent;
+    box-shadow: 0 4px 12px rgba(15, 24, 22, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vital-card.active {
+    border-color: rgba(7, 143, 146, 0.28);
+    background: linear-gradient(180deg, #FFFFFF 60%, #F1FAF9 100%);
+}
+
+.vital-icon {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.vital-label {
+    font-size: 9px;
+    color: #63777C;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.vital-value {
+    font-size: 14px;
+    font-weight: 850;
+    color: #18201E;
+    letter-spacing: -0.02em;
+}
+
+.vital-unit {
+    font-size: 8px;
+    font-weight: 700;
+    color: #63777C;
+    margin-left: 1px;
+}
+
+.vital-time {
+    font-size: 8px;
+    color: #8FA0A4;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge {
+    font-size: 7.5px;
+    font-weight: 850;
+    padding: 2px 6px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+.badge.normal {
+    background: #E6F6F7;
+    color: #078F92;
+}
+
+.badge.logged {
+    background: #F0F2F2;
+    color: #5F747A;
+}
+
+.badge.warn {
+    background: #FFF3E0;
+    color: #E9A63F;
+}
+
+/* Glucose Main Card */
+.glucose-main-card {
+    background: white;
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 0 4px 16px rgba(15, 24, 22, 0.03);
+    border: 1px solid rgba(24, 32, 30, 0.04);
+    margin-bottom: 12px;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header-row h3 {
+    font-size: 13px;
+    font-weight: 850;
+    color: #18201E;
+    letter-spacing: -0.025em;
+}
+
+.add-btn {
+    background: white;
+    border: 1px solid rgba(7, 143, 146, 0.35);
+    color: #078F92;
+    font-weight: 850;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover {
+    background: #F4F9FA;
+}
+
+.reading-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reading-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.reading-info small {
+    font-size: 8px;
+    color: #8FA0A4;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+}
+
+.reading-time {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pulse-dot {
+    width: 5px;
+    height: 5px;
+    background: #078F92;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseDot 1.6s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.35; }
+}
+
+.reading-time strong {
+    font-size: 12px;
+    font-weight: 800;
+    color: #18201E;
+}
+
+.reading-info .live-period {
+    font-size: 10px;
+    color: #63777C;
+    font-weight: 700;
+}
+
+.reading-value-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reading-big-val {
+    font-size: 26px;
+    font-weight: 900;
+    color: #078F92;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.reading-big-val small {
+    font-size: 11px;
+    font-weight: 800;
+    color: #63777C;
+}
+
+.status-pill {
+    font-size: 9px;
+    font-weight: 850;
+    padding: 3px 8px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    text-transform: uppercase;
+}
+
+.status-pill::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-pill.green {
+    background: #E6F6F7;
+    color: #078F92;
+}
+
+.status-pill.green::before {
+    background: #078F92;
+}
+
+.status-pill.yellow {
+    background: #FFF8E1;
+    color: #FFB300;
+}
+
+.status-pill.yellow::before {
+    background: #FFB300;
+}
+
+.status-pill.red {
+    background: #FFEBEE;
+    color: #E53935;
+}
+
+.status-pill.red::before {
+    background: #E53935;
+}
+
+/* Time Range & Unit Segmented Controls */
+.time-tabs, .unit-toggle-segmented {
+    display: flex;
+    background: #F0F4F5;
+    border-radius: 10px;
+    padding: 2px;
+    margin-bottom: 8px;
+}
+
+.time-tab, .segment {
+    flex: 1;
+    text-align: center;
+    font-size: 9.5px;
+    font-weight: 800;
+    padding: 4.5px 0;
+    border-radius: 8px;
+    color: #5F747A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.time-tab.active, .segment.active {
+    background: white;
+    color: #078F92;
+    box-shadow: 0 1.5px 4px rgba(15, 24, 22, 0.05);
+}
+
+.unit-toggle-segmented {
+    margin-bottom: 12px;
+}
+
+/* Interactive Chart Container */
+.interactive-chart-container {
+    height: 120px;
+    display: flex;
+    position: relative;
+    margin-bottom: 6px;
+    padding-top: 5px;
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    width: 22px;
+    font-size: 8px;
+    color: #8FA0A4;
+    font-weight: 800;
+    padding: 5px 0;
+}
+
+.chart-svg-wrapper {
+    flex: 1;
+    height: 100px;
+    position: relative;
+}
+
+.chart-svg-wrapper svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.chart-tooltip {
+    position: absolute;
+    background: rgba(15, 24, 22, 0.92);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 8px;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -125%);
+    box-shadow: 0 4px 10px rgba(15, 24, 22, 0.2);
+    z-index: 10;
+    transition: left 0.08s ease-out, top 0.08s ease-out;
+    white-space: nowrap;
+}
+
+.chart-tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: rgba(15, 24, 22, 0.92) transparent transparent;
+}
+
+.tooltip-time {
+    font-size: 7px;
+    opacity: 0.72;
+    margin-bottom: 1px;
+}
+
+.tooltip-val {
+    font-weight: 850;
+}
+
+/* Custom Scanner Pulsing ring animation */
+.scanning-pulse-ring {
+    animation: scanningPulse 1.6s infinite ease-out;
+    transform-origin: center;
+}
+
+@keyframes scanningPulse {
+    0% { r: 3px; opacity: 1; }
+    100% { r: 9px; opacity: 0; }
+}
+
+.chart-x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4px 0 22px;
+    font-size: 8px;
+    color: #8FA0A4;
+    font-weight: 750;
+    margin-bottom: 10px;
+}
+
+/* Card Footer Row */
+.card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    font-weight: 800;
+    color: #5F747A;
+    border-top: 1px solid rgba(24, 32, 30, 0.06);
+    padding-top: 8px;
+    margin-top: 4px;
+}
+
+.footer-dot-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.blue-dot {
+    width: 4.5px;
+    height: 4.5px;
+    background: #078F92;
+    border-radius: 50%;
+}
+
+.footer-history {
+    color: #078F92;
+    cursor: pointer;
+}
+
+/* Floating Ask Care AI action button */
+.ask-care-ai-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #078F92;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 6px 16px rgba(7, 143, 146, 0.25);
+    z-index: 15;
+    cursor: pointer;
+    font-size: 10px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ask-care-ai-btn:hover {
+    transform: translateY(-1.5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(7, 143, 146, 0.32);
 }

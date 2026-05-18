@@ -66,6 +66,20 @@
             <div class="score-label" id="dynamicCardTitle">Latest Glucose</div>
             <div class="score-number dynamic-text" id="dynamicCardScore">95</div>
             <div class="score-text" id="dynamicCardUnit">mg/dL • Normal</div>
+            
+            <!-- Dynamic SVG Sparkline Graph with Premium Animations -->
+            <div class="score-graph">
+              <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="graphGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="var(--hero-active-color)" stop-opacity="0.45"/>
+                    <stop offset="100%" stop-color="var(--hero-active-color)" stop-opacity="0.0"/>
+                  </linearGradient>
+                </defs>
+                <path class="graph-fill-path" d="" fill="url(#graphGradient)"></path>
+                <path class="graph-line-path" d="" fill="none" stroke="var(--hero-active-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
           </div>
           
           <div class="mini-grid">
@@ -293,13 +307,176 @@
 
       <div class="why-section reverse">
         <div class="why-text">
-          <h3>Intelligence, right on your device.</h3>
+          <h3><span>Intelligence,</span> right on your device.</h3>
           <p>Your health data is deeply personal. That's why Arrow Health runs entirely on your device. Advanced AI object detection and offline capabilities mean your data stays yours, securely accessible anywhere.</p>
         </div>
         <div class="app-mockup-wrapper">
           <div class="app-mockup">
             <div class="screen">
-              <img src="../carehub/appimages/Screenshot_2026-05-18-02-24-15-254_com.amlan.carehub.jpg" alt="Arrow Health Scan" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+              <div class="glucose-app-screen">
+                <!-- Status Bar -->
+                <div class="status-bar">
+                  <span>2:24 AM</span>
+                  <div class="status-icons">
+                    <span>◔</span><span>▰▰</span><span>⌁</span><span>43%</span>
+                  </div>
+                </div>
+                
+                <!-- App Header -->
+                <header class="app-header-main">
+                  <div class="app-header-top">
+                    <div class="menu-btn">☰</div>
+                    <div class="app-title-group">
+                      <small>Good Morning</small>
+                      <strong>ArrowHealth</strong>
+                    </div>
+                    <div class="header-right">
+                      <span class="scan-icon">🔍</span>
+                      <span class="profile-avatar"></span>
+                    </div>
+                  </div>
+                  <div class="header-subtitle">Monday, 18 May 2026</div>
+                </header>
+                
+                <div class="app-scroll-body">
+                  <!-- Top Horizontal Cards -->
+                  <div class="vitals-row">
+                    <div class="vital-card active">
+                      <span class="vital-icon">💧</span>
+                      <div class="vital-label">Glucose now</div>
+                      <div class="vital-value">5.6<span class="vital-unit">mmol/L</span></div>
+                      <small class="vital-time">Bedtime • 2:23 AM</small>
+                      <span class="badge normal">Normal</span>
+                    </div>
+                    <div class="vital-card">
+                      <span class="vital-icon">💊</span>
+                      <div class="vital-label">Last medicine</div>
+                      <div class="vital-value">Indever</div>
+                      <small class="vital-time">10 mg • 2:49 AM</small>
+                      <span class="badge logged">Today</span>
+                    </div>
+                    <div class="vital-card">
+                      <span class="vital-icon">🍴</span>
+                      <div class="vital-label">Meal impact</div>
+                      <div class="vital-value">+3.3<span class="vital-unit">mmol/L</span></div>
+                      <small class="vital-time">Snack / হালকা নাস্তা</small>
+                      <span class="badge warn">Medium</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Main Glucose Today Card -->
+                  <div class="glucose-main-card">
+                    <div class="card-header-row">
+                      <h3>Glucose Today</h3>
+                      <button class="add-btn">+ Add</button>
+                    </div>
+                    
+                    <div class="reading-display">
+                      <div class="reading-info">
+                        <small>GLUCOSE</small>
+                        <div class="reading-time">
+                          <span class="pulse-dot"></span>
+                          <strong class="live-time" id="liveGlucoseTime">2:23 AM</strong>
+                        </div>
+                        <span class="live-period" id="liveGlucosePeriod">Bedtime</span>
+                      </div>
+                      <div class="reading-value-row">
+                        <div class="reading-big-val"><span id="liveGlucoseVal">5.6</span> <small>mmol/L</small></div>
+                        <span class="status-pill green" id="liveGlucoseStatus">Normal</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Time Range Selectors -->
+                    <div class="time-tabs">
+                      <div class="time-tab active">15</div>
+                      <div class="time-tab">12 H</div>
+                      <div class="time-tab">18 H</div>
+                    </div>
+                    
+                    <!-- Unit Toggle Segmented Control -->
+                    <div class="unit-toggle-segmented">
+                      <div class="segment active">mmol/L</div>
+                      <div class="segment">mg/dL.</div>
+                    </div>
+                    
+                    <!-- Dynamic Interactive SVG Chart -->
+                    <div class="interactive-chart-container">
+                      <!-- Y Axis grid labels -->
+                      <div class="chart-y-axis">
+                        <span class="grid-label">10.0</span>
+                        <span class="grid-label">6.5</span>
+                        <span class="grid-label">3.0</span>
+                      </div>
+                      <div class="chart-svg-wrapper">
+                        <svg viewBox="0 0 300 120" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id="interactiveGradient" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stop-color="#078F92" stop-opacity="0.25"/>
+                              <stop offset="100%" stop-color="#078F92" stop-opacity="0.0"/>
+                            </linearGradient>
+                          </defs>
+                          
+                          <!-- Gridlines -->
+                          <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(24, 32, 30, 0.05)" stroke-dasharray="3,3" />
+                          <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(24, 32, 30, 0.05)" stroke-dasharray="3,3" />
+                          <line x1="0" y1="100" x2="300" y2="100" stroke="rgba(24, 32, 30, 0.05)" stroke-dasharray="3,3" />
+                          
+                          <!-- Ideal normal glucose target band (3.9 to 7.8 mmol/L -> maps vertically) -->
+                          <rect x="0" y="45" width="300" height="45" fill="rgba(7, 143, 146, 0.04)" />
+                          
+                          <!-- Chart Paths -->
+                          <path class="interactive-fill-path" d="" fill="url(#interactiveGradient)"></path>
+                          <path class="interactive-line-path" d="M 0,90 C 25,100 45,20 70,25 C 90,30 100,75 110,65 C 130,50 140,105 150,98 C 170,90 180,68 190,72 C 210,80 220,85 230,80 C 250,75 260,110 270,100 C 285,90 295,78 300,72" fill="none" stroke="#078F92" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                          
+                          <!-- Static Data Points -->
+                          <g class="chart-data-points">
+                            <circle cx="30" cy="98" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                            <circle cx="70" cy="25" r="3" fill="#FFFFFF" stroke="#E9A63F" stroke-width="1.5" />
+                            <circle cx="110" cy="65" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                            <circle cx="150" cy="98" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                            <circle cx="190" cy="72" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                            <circle cx="230" cy="80" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                            <circle cx="270" cy="100" r="3" fill="#FFFFFF" stroke="#078F92" stroke-width="1.5" />
+                          </g>
+                          
+                          <!-- Scanning pulse tracker dot -->
+                          <g class="scanning-group">
+                            <circle class="scanning-pulse-ring" cx="0" cy="0" r="8" fill="rgba(7, 143, 146, 0.4)" />
+                            <circle class="scanning-dot" cx="0" cy="0" r="4.5" fill="#078F92" stroke="#FFFFFF" stroke-width="1.5" />
+                          </g>
+                        </svg>
+                        
+                        <!-- Tooltip block -->
+                        <div class="chart-tooltip" id="liveChartTooltip">
+                          <span class="tooltip-time">2:23 AM</span>
+                          <span class="tooltip-val">5.6 mmol/L</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- X Axis Labels -->
+                    <div class="chart-x-axis">
+                      <span>10:45 AM</span>
+                      <span>10:59 AM</span>
+                      <span>9:11 AM</span>
+                      <span>9:12 AM</span>
+                      <span>9:23 AM</span>
+                    </div>
+                    
+                    <!-- Footer -->
+                    <div class="card-footer-row">
+                      <span class="footer-dot-label"><span class="blue-dot"></span>Last 10 readings</span>
+                      <span class="footer-history">History</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Floating Ask Care AI button -->
+                  <div class="ask-care-ai-btn">
+                    <span class="ai-icon">✨</span>
+                    <strong>Ask Care AI</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
