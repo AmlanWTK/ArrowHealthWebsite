@@ -2074,3 +2074,515 @@ a {
     transform: translateY(-1.5px) scale(1.02);
     box-shadow: 0 8px 20px rgba(7, 143, 146, 0.32);
 }
+
+/* AI Meal Analysis Section Styling */
+.meal-hero-bg {
+    width: 100%;
+    position: relative;
+    padding: 60px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.meal-hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('./assets/meal_image.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(40px);
+    opacity: 0.08; /* a little blurry background image */
+    z-index: 0;
+}
+
+.feature-points {
+    display: grid;
+    gap: 12px;
+    max-width: 525px;
+    margin-top: 24px;
+}
+
+.point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid var(--border-soft);
+    color: var(--text-main);
+    font-weight: 750;
+    box-shadow: 0 6px 20px rgba(15, 24, 22, 0.03);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease;
+}
+
+.point:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.point-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 11px;
+    background: rgba(22, 78, 69, 0.08);
+    color: var(--brand-teal);
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    flex: 0 0 auto;
+}
+
+/* Visual Mockup Container Glows & Floaters */
+.visual-glow-meal {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(24, 190, 199, 0.16), transparent 35%),
+                radial-gradient(circle at 65% 65%, rgba(169, 133, 90, 0.12), transparent 32%),
+                radial-gradient(circle, var(--brand-glow), transparent 70%);
+    filter: blur(4px);
+    pointer-events: none;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nutrition-float {
+    left: -42px;
+    top: 110px;
+    z-index: 12;
+}
+
+.prediction-float {
+    right: -42px;
+    bottom: 110px;
+    z-index: 12;
+}
+
+/* Syncing Timeline Control below phone */
+.timeline {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: -28px;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    padding: 8px 14px;
+    box-shadow: 0 12px 30px rgba(15, 24, 22, 0.06);
+    backdrop-filter: blur(18px);
+}
+
+.timeline span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(7, 143, 146, 0.26);
+    animation: dotActive 20s infinite;
+}
+
+.timeline span:nth-child(1) { animation-delay: 0s; }
+.timeline span:nth-child(2) { animation-delay: 4s; }
+.timeline span:nth-child(3) { animation-delay: 8s; }
+.timeline span:nth-child(4) { animation-delay: 12s; }
+.timeline span:nth-child(5) { animation-delay: 16s; }
+
+@keyframes dotActive {
+    0%, 20% { background: var(--brand-teal); transform: scale(1.4); }
+    21%, 100% { background: rgba(7, 143, 146, 0.26); transform: scale(1); }
+}
+
+/* 5-Step Rotational CSS Mockup Animation */
+.animation-stage {
+    position: relative;
+    height: calc(100% - 108px);
+    overflow: hidden;
+}
+
+.step {
+    position: absolute;
+    inset: 0;
+    padding: 16px 14px;
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+    animation: showStep 20s infinite;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-1 { animation-delay: 0s; }
+.step-2 { animation-delay: 4s; }
+.step-3 { animation-delay: 8s; }
+.step-4 { animation-delay: 12s; }
+.step-5 { animation-delay: 16s; }
+
+@keyframes showStep {
+    0% { opacity: 0; transform: translateY(15px) scale(0.98); }
+    4% { opacity: 1; transform: translateY(0) scale(1); }
+    18% { opacity: 1; transform: translateY(0) scale(1); }
+    22% { opacity: 0; transform: translateY(-15px) scale(0.98); }
+    100% { opacity: 0; transform: translateY(-15px) scale(0.98); }
+}
+
+.analysis-center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.analysis-center h2 {
+    font-size: 16px;
+    font-weight: 850;
+    color: #18201E;
+    letter-spacing: -0.03em;
+}
+
+.analysis-center p {
+    color: #63777C;
+    font-size: 11px;
+    font-weight: 650;
+    max-width: 220px;
+}
+
+/* Loading Spinner elements */
+.spinner-wrap {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 8px;
+}
+
+.spinner-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(24, 190, 199, 0.12);
+    filter: blur(14px);
+    animation: glowPulse 1.8s ease-in-out infinite alternate;
+}
+
+.spinner {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: 8px solid rgba(24, 190, 199, 0.14);
+    border-top-color: var(--brand-teal);
+    border-right-color: var(--brand-cyan);
+    animation: rotateSpinner 1.1s linear infinite;
+}
+
+@keyframes rotateSpinner {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+    from { transform: scale(0.95); opacity: 0.6; }
+    to { transform: scale(1.15); opacity: 1; }
+}
+
+/* Photo Scan Card step styling */
+.scan-card {
+    background: white;
+    border: 1px solid rgba(24, 190, 199, 0.18);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 10px 24px rgba(15, 24, 22, 0.04);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.food-photo {
+    height: 160px;
+    border-radius: 12px;
+    background-image: url('./assets/meal_image.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.food-photo::before,
+.food-photo::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 16px rgba(24, 190, 199, 0.35);
+    animation: scanDot 2.4s ease-in-out infinite alternate;
+}
+
+.food-photo::before { left: 16px; top: 16px; }
+.food-photo::after { right: 16px; bottom: 16px; animation-delay: 0.7s; }
+
+@keyframes scanDot {
+    from { transform: scale(0.7); opacity: 0.5; }
+    to { transform: scale(1.05); opacity: 0.95; }
+}
+
+.corner {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: var(--brand-teal);
+    opacity: 0.85;
+}
+
+.corner.tl { left: 20px; top: 20px; border-left: 3px solid; border-top: 3px solid; }
+.corner.tr { right: 20px; top: 20px; border-right: 3px solid; border-top: 3px solid; }
+.corner.bl { left: 20px; bottom: 20px; border-left: 3px solid; border-bottom: 3px solid; }
+.corner.br { right: 20px; bottom: 20px; border-right: 3px solid; border-bottom: 3px solid; }
+
+/* Detected list styling */
+.detected-list {
+    display: grid;
+    gap: 8px;
+    max-height: 340px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.detected-list::-webkit-scrollbar {
+    display: none;
+}
+
+.detected-row {
+    background: white;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+    align-items: center;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: -0.02em;
+    color: #18201E;
+}
+
+.detected-row .name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detected-row .name::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-cyan);
+}
+
+.pill {
+    padding: 3px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border-soft);
+    color: #536A70;
+    font-size: 9px;
+    font-weight: 800;
+    background: white;
+}
+
+.pill.teal {
+    color: #078F92;
+    background: #E6F6F7;
+    border-color: rgba(7, 143, 146, 0.18);
+}
+
+/* Macro Nutrition grid */
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.macro-card {
+    background: white;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.macro-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.macro-icon.carbs { background: rgba(102, 151, 167, 0.16); color: #078F92; }
+.macro-icon.protein { background: rgba(91, 154, 134, 0.16); color: #5B9A86; }
+.macro-icon.fat { background: rgba(217, 162, 78, 0.16); color: #D9A24E; }
+.macro-icon.calories { background: rgba(217, 107, 107, 0.13); color: #D96B6B; }
+
+.macro-card small {
+    display: block;
+    color: #63777C;
+    font-weight: 850;
+    font-size: 9px;
+}
+
+.macro-card strong {
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #18201E;
+}
+
+.macro-card span {
+    font-size: 10px;
+    color: #63777C;
+    font-weight: 850;
+    margin-left: 1px;
+}
+
+/* Glucose predicted expected rise card */
+.glucose-rise-card {
+    background: linear-gradient(135deg, #18BEC7, #078F92);
+    color: white;
+    border-radius: 20px;
+    padding: 14px;
+    box-shadow: 0 14px 30px rgba(7, 143, 146, 0.18);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.glucose-rise-card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    right: -40px;
+    top: -40px;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.tag-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.12em;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.risk {
+    background: white;
+    color: #D96B6B;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: 950;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+}
+
+.rise-number {
+    font-size: 34px;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    font-weight: 950;
+    position: relative;
+    z-index: 1;
+}
+
+.rise-number span {
+    font-size: 11px;
+    letter-spacing: -0.02em;
+    margin-left: 4px;
+    opacity: 0.88;
+}
+
+.peak {
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: 850;
+    position: relative;
+    z-index: 1;
+    font-size: 10px;
+}
+
+/* AI alert suggestion card */
+.suggestion-card {
+    background: #FFF8E9;
+    border: 1px solid rgba(231, 168, 62, 0.28);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: 0 10px 24px rgba(15, 24, 22, 0.04);
+    text-align: left;
+}
+
+.suggestion-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.suggestion-top h3 {
+    color: #E19916;
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    font-weight: 850;
+}
+
+.confidence {
+    background: #DDF2EE;
+    color: #078F92;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 950;
+}
+
+.suggestion-card p {
+    color: #2D3432;
+    font-size: 10.5px;
+    font-weight: 700;
+    line-height: 1.45;
+}
