@@ -1815,8 +1815,17 @@ a {
 }
 
 @keyframes pulseDot {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.35; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.5);
+        opacity: 0.35;
+    }
 }
 
 .reading-time strong {
@@ -1898,7 +1907,8 @@ a {
 }
 
 /* Time Range & Unit Segmented Controls */
-.time-tabs, .unit-toggle-segmented {
+.time-tabs,
+.unit-toggle-segmented {
     display: flex;
     background: #F0F4F5;
     border-radius: 10px;
@@ -1906,7 +1916,8 @@ a {
     margin-bottom: 8px;
 }
 
-.time-tab, .segment {
+.time-tab,
+.segment {
     flex: 1;
     text-align: center;
     font-size: 9.5px;
@@ -1918,7 +1929,8 @@ a {
     transition: all 0.2s ease;
 }
 
-.time-tab.active, .segment.active {
+.time-tab.active,
+.segment.active {
     background: white;
     color: #078F92;
     box-shadow: 0 1.5px 4px rgba(15, 24, 22, 0.05);
@@ -2007,8 +2019,15 @@ a {
 }
 
 @keyframes scanningPulse {
-    0% { r: 3px; opacity: 1; }
-    100% { r: 9px; opacity: 0; }
+    0% {
+        r: 3px;
+        opacity: 1;
+    }
+
+    100% {
+        r: 9px;
+        opacity: 0;
+    }
 }
 
 .chart-x-axis {
@@ -2090,24 +2109,30 @@ a {
 .meal-hero-bg-img {
     position: absolute;
     inset: 0;
-    background-image: url('./assets/meal_image.png');
+    background-image: url('./assets/meal_image.png?v=2');
     background-size: cover;
     background-position: center;
-    opacity: 0.88; /* Highly visible, crisp and gorgeous, matching the top hero image! */
+    filter: blur(2px);
+    transform: scale(1.05);
+    opacity: 1;
     z-index: 0;
 }
 
 .meal-hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(248, 245, 239, 0.52), var(--bg-main) 96%);
+    background: linear-gradient(to bottom,
+            rgba(248, 245, 239, 0.10) 0%,
+            rgba(248, 245, 239, 0.22) 55%,
+            rgba(248, 245, 239, 0.50) 100%);
     z-index: 1;
     pointer-events: none;
 }
 
-.meal-hero-bg > .why-section {
+.meal-hero-bg>.why-section {
     position: relative;
-    z-index: 2; /* Ensures text and phone mockup sit perfectly on top of background layers */
+    z-index: 2;
+    /* Ensures text and phone mockup sit perfectly on top of background layers */
 }
 
 .feature-points {
@@ -2157,8 +2182,8 @@ a {
     height: 480px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, rgba(24, 190, 199, 0.16), transparent 35%),
-                radial-gradient(circle at 65% 65%, rgba(169, 133, 90, 0.12), transparent 32%),
-                radial-gradient(circle, var(--brand-glow), transparent 70%);
+        radial-gradient(circle at 65% 65%, rgba(169, 133, 90, 0.12), transparent 32%),
+        radial-gradient(circle, var(--brand-glow), transparent 70%);
     filter: blur(4px);
     pointer-events: none;
     z-index: 1;
@@ -2205,15 +2230,39 @@ a {
     animation: dotActive 20s infinite;
 }
 
-.timeline span:nth-child(1) { animation-delay: 0s; }
-.timeline span:nth-child(2) { animation-delay: 4s; }
-.timeline span:nth-child(3) { animation-delay: 8s; }
-.timeline span:nth-child(4) { animation-delay: 12s; }
-.timeline span:nth-child(5) { animation-delay: 16s; }
+.timeline span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.timeline span:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.timeline span:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.timeline span:nth-child(4) {
+    animation-delay: 12s;
+}
+
+.timeline span:nth-child(5) {
+    animation-delay: 16s;
+}
 
 @keyframes dotActive {
-    0%, 20% { background: var(--brand-teal); transform: scale(1.4); }
-    21%, 100% { background: rgba(7, 143, 146, 0.26); transform: scale(1); }
+
+    0%,
+    20% {
+        background: var(--brand-teal);
+        transform: scale(1.4);
+    }
+
+    21%,
+    100% {
+        background: rgba(7, 143, 146, 0.26);
+        transform: scale(1);
+    }
 }
 
 /* 5-Step Rotational CSS Mockup Animation */
@@ -2234,18 +2283,51 @@ a {
     flex-direction: column;
 }
 
-.step-1 { animation-delay: 0s; }
-.step-2 { animation-delay: 4s; }
-.step-3 { animation-delay: 8s; }
-.step-4 { animation-delay: 12s; }
-.step-5 { animation-delay: 16s; }
+.step-1 {
+    animation-delay: 0s;
+}
+
+.step-2 {
+    animation-delay: 4s;
+}
+
+.step-3 {
+    animation-delay: 8s;
+}
+
+.step-4 {
+    animation-delay: 12s;
+}
+
+.step-5 {
+    animation-delay: 16s;
+}
 
 @keyframes showStep {
-    0% { opacity: 0; transform: translateY(15px) scale(0.98); }
-    4% { opacity: 1; transform: translateY(0) scale(1); }
-    18% { opacity: 1; transform: translateY(0) scale(1); }
-    22% { opacity: 0; transform: translateY(-15px) scale(0.98); }
-    100% { opacity: 0; transform: translateY(-15px) scale(0.98); }
+    0% {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    4% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    18% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    22% {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.98);
+    }
 }
 
 .analysis-center {
@@ -2303,12 +2385,21 @@ a {
 }
 
 @keyframes rotateSpinner {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes glowPulse {
-    from { transform: scale(0.95); opacity: 0.6; }
-    to { transform: scale(1.15); opacity: 1; }
+    from {
+        transform: scale(0.95);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(1.15);
+        opacity: 1;
+    }
 }
 
 /* Photo Scan Card step styling */
@@ -2345,12 +2436,27 @@ a {
     animation: scanDot 2.4s ease-in-out infinite alternate;
 }
 
-.food-photo::before { left: 16px; top: 16px; }
-.food-photo::after { right: 16px; bottom: 16px; animation-delay: 0.7s; }
+.food-photo::before {
+    left: 16px;
+    top: 16px;
+}
+
+.food-photo::after {
+    right: 16px;
+    bottom: 16px;
+    animation-delay: 0.7s;
+}
 
 @keyframes scanDot {
-    from { transform: scale(0.7); opacity: 0.5; }
-    to { transform: scale(1.05); opacity: 0.95; }
+    from {
+        transform: scale(0.7);
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1.05);
+        opacity: 0.95;
+    }
 }
 
 .corner {
@@ -2361,10 +2467,33 @@ a {
     opacity: 0.85;
 }
 
-.corner.tl { left: 20px; top: 20px; border-left: 3px solid; border-top: 3px solid; }
-.corner.tr { right: 20px; top: 20px; border-right: 3px solid; border-top: 3px solid; }
-.corner.bl { left: 20px; bottom: 20px; border-left: 3px solid; border-bottom: 3px solid; }
-.corner.br { right: 20px; bottom: 20px; border-right: 3px solid; border-bottom: 3px solid; }
+.corner.tl {
+    left: 20px;
+    top: 20px;
+    border-left: 3px solid;
+    border-top: 3px solid;
+}
+
+.corner.tr {
+    right: 20px;
+    top: 20px;
+    border-right: 3px solid;
+    border-top: 3px solid;
+}
+
+.corner.bl {
+    left: 20px;
+    bottom: 20px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+}
+
+.corner.br {
+    right: 20px;
+    bottom: 20px;
+    border-right: 3px solid;
+    border-bottom: 3px solid;
+}
 
 /* Detected list styling */
 .detected-list {
@@ -2453,10 +2582,25 @@ a {
     font-weight: 900;
 }
 
-.macro-icon.carbs { background: rgba(102, 151, 167, 0.16); color: #078F92; }
-.macro-icon.protein { background: rgba(91, 154, 134, 0.16); color: #5B9A86; }
-.macro-icon.fat { background: rgba(217, 162, 78, 0.16); color: #D9A24E; }
-.macro-icon.calories { background: rgba(217, 107, 107, 0.13); color: #D96B6B; }
+.macro-icon.carbs {
+    background: rgba(102, 151, 167, 0.16);
+    color: #078F92;
+}
+
+.macro-icon.protein {
+    background: rgba(91, 154, 134, 0.16);
+    color: #5B9A86;
+}
+
+.macro-icon.fat {
+    background: rgba(217, 162, 78, 0.16);
+    color: #D9A24E;
+}
+
+.macro-icon.calories {
+    background: rgba(217, 107, 107, 0.13);
+    color: #D96B6B;
+}
 
 .macro-card small {
     display: block;
