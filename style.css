@@ -2087,22 +2087,20 @@ a {
     align-items: center;
 }
 
-.meal-hero-bg-blur {
+.meal-hero-bg-img {
     position: absolute;
     inset: 0;
     background-image: url('./assets/meal_image.png');
     background-size: cover;
     background-position: center;
-    filter: blur(12px); /* Beautiful premium soft blur */
-    transform: scale(1.04); /* Eliminates white border artifacts from blur filter */
-    opacity: 0.58; /* Highly visible, vibrant and gorgeous! */
+    opacity: 0.88; /* Highly visible, crisp and gorgeous, matching the top hero image! */
     z-index: 0;
 }
 
 .meal-hero-bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(248, 245, 239, 0.15), var(--bg-main) 94%);
+    background: linear-gradient(to bottom, rgba(248, 245, 239, 0.52), var(--bg-main) 96%);
     z-index: 1;
     pointer-events: none;
 }
