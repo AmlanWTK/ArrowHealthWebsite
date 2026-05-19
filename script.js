@@ -354,4 +354,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(interactiveScreen);
     }
+
+    // ================================================================
+    // Company Modals Logic (About, Contact, Support)
+    // ================================================================
+    const aboutModal = document.getElementById('aboutModal');
+    const contactModal = document.getElementById('contactModal');
+    const supportModal = document.getElementById('supportModal');
+
+    const closeAboutBtn = document.getElementById('closeAboutBtn');
+    const closeContactBtn = document.getElementById('closeContactBtn');
+    const closeSupportBtn = document.getElementById('closeSupportBtn');
+
+    // Open/Close Helpers
+    function openModal(modal) {
+        if (!modal) return;
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('open');
+        // Only restore body scrolling if no other modals are open
+        const anyOpen = document.querySelectorAll('.experts-modal.open, .why-modal.open, .company-modal.open').length > 0;
+        if (!anyOpen) {
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (closeAboutBtn) closeAboutBtn.addEventListener('click', () => closeModal(aboutModal));
+    if (closeContactBtn) closeContactBtn.addEventListener('click', () => closeModal(contactModal));
+    if (closeSupportBtn) closeSupportBtn.addEventListener('click', () => closeModal(supportModal));
+
+    // Dynamic Footer Links Binding
+    document.querySelectorAll('.footer-col a, .footer-bottom-links a').forEach(link => {
+        const text = link.textContent.trim().toLowerCase();
+        if (text === 'about') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(aboutModal);
+            });
+        } else if (text === 'contact') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(contactModal);
+            });
+        } else if (text === 'support') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(supportModal);
+            });
+        } else if (text === 'why arrow health') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const whyModal = document.getElementById('whyModal');
+                openModal(whyModal);
+            });
+        }
+    });
+
+    // Support to Contact link helper
+    window.openContactModalFromSupport = function() {
+        closeModal(supportModal);
+        setTimeout(() => {
+            openModal(contactModal);
+        }, 300);
+    };
+
+    // Contact Form Submission Handler
+    window.handleContactSubmit = function() {
+        const submitBtn = document.getElementById('contactSubmitBtn');
+        const form = document.getElementById('contactForm');
+        if (!submitBtn || !form) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Message...';
+        submitBtn.style.opacity = '0.7';
+
+        setTimeout(() => {
+            submitBtn.textContent = 'Message Sent Successfully! ✓';
+            submitBtn.style.background = '#078F92';
+            submitBtn.style.opacity = '1';
+
+            setTimeout(() => {
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                submitBtn.style.background = '';
+                closeModal(contactModal);
+            }, 1800);
+        }, 1200);
+    };
+
+    // FAQ Search Filtering
+    window.filterFAQs = function() {
+        const searchInput = document.getElementById('supportSearch');
+        if (!searchInput) return;
+        const query = searchInput.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('.faq-card');
+
+        cards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const text = card.querySelector('p').textContent.toLowerCase();
+            const keywords = card.getAttribute('data-keywords') || '';
+
+            if (title.includes(query) || text.includes(query) || keywords.toLowerCase().includes(query)) {
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.4s ease forwards';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
 });

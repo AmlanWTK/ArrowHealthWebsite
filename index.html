@@ -1312,6 +1312,246 @@
     </div>
   </div>
 
+  <!-- About Modal -->
+  <div class="company-modal" id="aboutModal">
+    <div class="company-modal-header">
+      <h2>About Arrow Health</h2>
+      <button class="close-company-btn" id="closeAboutBtn">×</button>
+    </div>
+    <div class="company-modal-content">
+      <div class="company-hero-bg about-hero-bg">
+        <div class="company-hero">
+          <h1>Clarity and intelligence for <span>metabolic health.</span></h1>
+          <p>Arrow Health (built on CareHub architecture) is a modern health companion designed to replace complicated logs with beautiful, actionable insights.</p>
+        </div>
+      </div>
+
+      <div class="about-grid-section">
+        <div class="about-core-grid">
+          <div class="about-core-card">
+            <h3>Glucose Integration</h3>
+            <p>Our Hive-powered storage tracking records blood sugar readings across mmol/L and mg/dL. Connected with Dio local cache layers, users get real-time trends without complex menus.</p>
+            <span class="tech-badge">Hive DB</span>
+            <span class="tech-badge">GlucoseProvider</span>
+          </div>
+          <div class="about-core-card">
+            <h3>Calorie & Food Camera</h3>
+            <p>Snap meals to calculate carbohydrates, proteins, fats, and general calorie breakdown. Features built-in estimation algorithms to analyze meal impact on glucose spikes.</p>
+            <span class="tech-badge">ML Image Recognition</span>
+            <span class="tech-badge">FoodProvider</span>
+          </div>
+          <div class="about-core-card">
+            <h3>Metabolic Statistics</h3>
+            <p>Calculates daily energy budgets using customized calculators (BMI, BMR, TDEE, Macros, and Water Intake targets), building a comprehensive health profile.</p>
+            <span class="tech-badge">Growth IQ</span>
+            <span class="tech-badge">TDEE History</span>
+          </div>
+          <div class="about-core-card">
+            <h3>Medication Management</h3>
+            <p>OCR barcode scanning to recognize drug names and package details. Syncs directly to reminders to help users never miss a dose.</p>
+            <span class="tech-badge">OCR Scan</span>
+            <span class="tech-badge">MedicineProvider</span>
+          </div>
+        </div>
+
+        <div class="about-tech-stack">
+          <h2>Clinical Foundation meets Modern Engineering</h2>
+          <p>Arrow Health runs on a robust Cross-Platform Flutter framework utilizing Provider-based state management, Hive for offline-first local security, and pre-warmed Google Cloud Run servers to deliver near-instant responses.</p>
+          <div class="tech-logos-row">
+            <span class="tech-logo-pill">Flutter</span>
+            <span class="tech-logo-pill">Provider State</span>
+            <span class="tech-logo-pill">Hive Offline DB</span>
+            <span class="tech-logo-pill">Dio Network Client</span>
+            <span class="tech-logo-pill">Google Cloud Run</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer inside Modal -->
+      <footer class="arrow-footer modal-footer">
+        <div class="footer-container">
+          <div class="footer-bottom-bar">
+            <div>© 2026 Arrow Health. All rights reserved.</div>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="company-modal" id="contactModal">
+    <div class="company-modal-header">
+      <h2>Contact Us</h2>
+      <button class="close-company-btn" id="closeContactBtn">×</button>
+    </div>
+    <div class="company-modal-content">
+      <div class="company-hero-bg contact-hero-bg">
+        <div class="company-hero">
+          <h1>Get in touch with <span>Arrow Health.</span></h1>
+          <p>Have questions about clinical partnership, general feedback, or technical support? Send us a message.</p>
+        </div>
+      </div>
+
+      <div class="contact-section-grid">
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <form id="contactForm" onsubmit="event.preventDefault(); handleContactSubmit();">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Full Name</label>
+                <input type="text" id="contactName" required placeholder="Dr. John Doe">
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" required placeholder="john@example.com">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Inquiry Category</label>
+              <select id="contactSubject" required>
+                <option value="" disabled selected>Select a topic</option>
+                <option value="partnership">Clinical Partnerships</option>
+                <option value="support">Technical Support</option>
+                <option value="general">General Feedback</option>
+                <option value="careers">Careers</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Your Message</label>
+              <textarea id="contactMessage" rows="5" required placeholder="Write your message here..."></textarea>
+            </div>
+            <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="info-block">
+            <h3>Support & Partnerships</h3>
+            <p>Our dedicated care operations team is here to assist with integration queries, clinician dashboards, and user issues.</p>
+          </div>
+          <div class="info-details">
+            <div class="info-detail-item">
+              <span class="info-icon">✉</span>
+              <div>
+                <strong>Support Email</strong>
+                <span>support@arrowhealth.com</span>
+              </div>
+            </div>
+            <div class="info-detail-item">
+              <span class="info-icon">🏢</span>
+              <div>
+                <strong>Arrow Health HQ</strong>
+                <span>100 Pine Street, San Francisco, CA 94111</span>
+              </div>
+            </div>
+            <div class="info-detail-item">
+              <span class="info-icon">🕒</span>
+              <div>
+                <strong>Response Window</strong>
+                <span>Monday – Friday, 9:00 AM – 6:00 PM PST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer inside Modal -->
+      <footer class="arrow-footer modal-footer">
+        <div class="footer-container">
+          <div class="footer-bottom-bar">
+            <div>© 2026 Arrow Health. All rights reserved.</div>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Support Modal -->
+  <div class="company-modal" id="supportModal">
+    <div class="company-modal-header">
+      <h2>Support Center</h2>
+      <button class="close-company-btn" id="closeSupportBtn">×</button>
+    </div>
+    <div class="company-modal-content">
+      <div class="company-hero-bg support-hero-bg">
+        <div class="company-hero">
+          <h1>How can we help <span>you?</span></h1>
+          <p>Browse FAQs or search for details regarding Arrow Health's clinical calculators, local storage, and AI camera features.</p>
+          <div class="support-search-wrap">
+            <span class="search-icon">⌕</span>
+            <input type="text" id="supportSearch" placeholder="Search support articles (e.g. glucose, scanner)..." onkeyup="filterFAQs()">
+          </div>
+        </div>
+      </div>
+
+      <div class="support-faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <!-- FAQ 1 -->
+          <div class="faq-card" data-keywords="glucose mmol/l mg/dl unit conversion log">
+            <h3>How do I switch between glucose units (mmol/L and mg/dL)?</h3>
+            <p>Arrow Health fully supports cross-unit display. Navigate to Profile settings in the app to switch your preferred measurement unit. The app converts all historical glucose values automatically from Hive storage.</p>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-card" data-keywords="food camera calorie nutrition scanner scan meal">
+            <h3>How does the AI Meal Scanner estimate my lunch calories?</h3>
+            <p>When you take a photo of your plate, the app uploads the image to our Cloud Run engine. It identifies individual food items (like vegetables, protein, grains) and queries nutritional databases to return calorie and macro breakdown estimates.</p>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="faq-card" data-keywords="privacy hive database cloud security storage encryption">
+            <h3>Is my medical data kept private and stored locally?</h3>
+            <p>Yes. Arrow Health values privacy. All your readings (glucose readings, medicine tracking, water, growth logs) are stored locally in Hive DB boxes. If you decide to sync with the backend, your data is transferred using end-to-end SSL encryption.</p>
+          </div>
+          <!-- FAQ 4 -->
+          <div class="faq-card" data-keywords="medicine scan schedule alarm pill reminder ocr">
+            <h3>How does the Medicine scanner identify my packaging?</h3>
+            <p>The app uses OCR camera sweeps to extract medication name, dosage strength, and package dimensions. Once identified, you can set custom push notifications to alert you when your dose is due.</p>
+          </div>
+          <!-- FAQ 5 -->
+          <div class="faq-card" data-keywords="language bangla locale settings local translation">
+            <h3>Does Arrow Health support local languages?</h3>
+            <p>Yes, Arrow Health features complete localization support. You can switch between English and Bengali (বাংলা) from the settings screen, translating all dashboard cards and instructions dynamically.</p>
+          </div>
+          <!-- FAQ 6 -->
+          <div class="faq-card" data-keywords="growth calculator bmi bmr tdee stats">
+            <h3>How do the Growth calculators (BMR/TDEE) help me?</h3>
+            <p>By entering your weight, height, age, and activity factor, Arrow Health estimates your metabolic stats. This allows you to track weight changes alongside active glucose trends to see how lifestyle changes affect your body.</p>
+          </div>
+        </div>
+
+        <div class="support-ticket-box">
+          <h3>Need further assistance?</h3>
+          <p>If you couldn't find an answer, submit a troubleshooting ticket and our clinical support team will follow up within 24 hours.</p>
+          <button class="support-ticket-btn" onclick="openContactModalFromSupport()">Submit Ticket</button>
+        </div>
+      </div>
+
+      <!-- Footer inside Modal -->
+      <footer class="arrow-footer modal-footer">
+        <div class="footer-container">
+          <div class="footer-bottom-bar">
+            <div>© 2026 Arrow Health. All rights reserved.</div>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
