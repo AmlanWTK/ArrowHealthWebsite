@@ -120,46 +120,79 @@
     </div>
   </section>
 
-  <section class="section" id="services">
-    <div class="section-heading center">
-      <h2>Different services, soft premium accents.</h2>
-      <p>
-        Each health category has its own color, but the colors stay muted and controlled so the website feels mature,
-        not childish.
-      </p>
-    </div>
+  <!-- Bento UI Showcase Section -->
+  <section class="bento-section" id="bento">
+    <div class="bento-container">
+      <div class="bento-header">
+        <h2>A calmer way to understand your health.</h2>
+        <p>Beautiful health insights, AI tools, glucose trends, and expert support — designed to feel simple every day.</p>
+      </div>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <div class="service-icon heart">♥</div>
-        <h3>Heart & Vitals</h3>
-        <p>Muted rose tones for pulse, heart rate, blood pressure, and important body signals.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon sleep">☾</div>
-        <h3>Sleep Tracking</h3>
-        <p>Deep indigo and midnight tones for rest, recovery, and sleep quality.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon activity">↟</div>
-        <h3>Activity</h3>
-        <p>Warm amber and muted copper for steps, movement, energy, and goals.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon nutrition">●</div>
-        <h3>Nutrition</h3>
-        <p>Sage and natural green accents for food, balance, and wellness habits.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon hydration">≈</div>
-        <h3>Hydration</h3>
-        <p>Misty aqua and soft blue tones for water tracking and hydration goals.</p>
-      </article>
-      <article class="service-card">
-        <div class="service-icon mood">◐</div>
-        <h3>Mood & Wellness</h3>
-        <p>Dusty lavender and mauve accents for mood, stress, and mental wellness.</p>
-      </article>
+      <div class="bento-grid">
+        <!-- 1. Glucose / Health Score (Large 2x2) -->
+        <div class="bento-card bento-glucose">
+          <div class="bento-card-header">
+            <h3>Glucose Trend</h3>
+            <span>Today</span>
+          </div>
+          <div class="bento-glucose-val">98 <span>mg/dL</span></div>
+          <div class="bento-glucose-chart">
+            <div class="chart-line"></div>
+            <div class="chart-point"></div>
+          </div>
+          <div class="bento-status">In Range</div>
+        </div>
+
+        <!-- 2. AI Chat (1x1) -->
+        <div class="bento-card bento-chat">
+          <div class="chat-bubble user">Is this meal safe?</div>
+          <div class="chat-bubble ai">Yes, it contains complex carbs. <span>✓</span></div>
+        </div>
+
+        <!-- 3. Medicine Scan (1x1) -->
+        <div class="bento-card bento-meds">
+          <div class="scan-reticle">
+            <div class="scan-line"></div>
+            <div class="service-icon nutrition" style="margin:0; background:none; color:var(--brand-primary)">💊</div>
+          </div>
+          <div class="bento-card-title">Auto Scan</div>
+        </div>
+
+        <!-- 4. Macros (2x1) -->
+        <div class="bento-card bento-macros">
+          <div class="bento-card-title">Meal Breakdown</div>
+          <div class="macro-bars">
+            <div class="macro-item"><span class="label">Protein</span><div class="bar-wrap"><div class="bar protein" style="width: 75%"></div></div><span class="val">42g</span></div>
+            <div class="macro-item"><span class="label">Carbs</span><div class="bar-wrap"><div class="bar carbs" style="width: 45%"></div></div><span class="val">12g</span></div>
+            <div class="macro-item"><span class="label">Fat</span><div class="bar-wrap"><div class="bar fat" style="width: 30%"></div></div><span class="val">8g</span></div>
+          </div>
+        </div>
+
+        <!-- 5. Expert Consult (2x1) -->
+        <div class="bento-card bento-expert">
+          <div class="expert-avatar">
+            <div class="status-dot"></div>
+          </div>
+          <div class="expert-info">
+            <strong>Dr. Nahid Hasan</strong>
+            <span>Clinical Expert • Available</span>
+          </div>
+          <button class="bento-btn">Message</button>
+        </div>
+
+        <!-- 6. Privacy Chip (1x1) -->
+        <div class="bento-card bento-privacy">
+          <div class="privacy-icon">🔒</div>
+          <strong>100% Local</strong>
+          <span>On-device privacy</span>
+        </div>
+
+        <!-- 7. Daily Insight (1x1) -->
+        <div class="bento-card bento-insight">
+          <div class="insight-icon">✨</div>
+          <p>Good sleep stabilized your glucose.</p>
+        </div>
+      </div>
     </div>
   </section>
 
