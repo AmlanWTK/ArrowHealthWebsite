@@ -5117,3 +5117,14 @@ a {
         gap: 0;
     }
 }
+
+/* Hardcoded Modal Footer Fix */
+.modal-footer {
+    background: var(--brand-dark) !important;
+    background-color: var(--brand-dark) !important;
+    padding: 80px 24px 32px !important;
+    margin-top: clamp(80px, 10vw, 120px) !important;
+}
+.modal-footer .footer-container {
+    padding: 0 !important;
+}
