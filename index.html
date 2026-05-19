@@ -1390,75 +1390,126 @@
       <button class="close-company-btn" id="closeContactBtn">×</button>
     </div>
     <div class="company-modal-content">
-      <div class="company-hero-bg contact-hero-bg">
-        <div class="company-hero">
-          <h1>Get in touch with <span>Arrow Health.</span></h1>
-          <p>Have questions about clinical partnership, general feedback, or technical support? Send us a message.</p>
-        </div>
-      </div>
+      <section class="contact-section">
+        <div class="contact-info-panel">
+          <div class="contact-copy">
+            <div class="eyebrow">Contact Arrow Health</div>
+            <h1>Have questions? Let’s talk about <span>health clarity.</span></h1>
+            <p>
+              Reach out for app support, partnership questions, expert consultation details, or help understanding how Arrow Health can support your health journey.
+            </p>
 
-      <div class="contact-section-grid">
-        <div class="contact-form-card">
-          <h2>Send a Message</h2>
-          <form id="contactForm" onsubmit="event.preventDefault(); handleContactSubmit();">
+            <div class="quick-contact-grid">
+              <div class="quick-contact-card">
+                <div class="contact-icon">✉</div>
+                <div>
+                  <strong>Email support</strong>
+                  <span>support@arrowhealth.com</span>
+                </div>
+              </div>
+
+              <div class="quick-contact-card">
+                <div class="contact-icon">⌁</div>
+                <div>
+                  <strong>App support</strong>
+                  <span>For account, glucose tracking, scan tools, and consultation help.</span>
+                </div>
+              </div>
+
+              <div class="quick-contact-card">
+                <div class="contact-icon">↗</div>
+                <div>
+                  <strong>Partnerships</strong>
+                  <span>For clinics, doctors, wellness experts, and healthcare partners.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-trust-strip">
+            <div class="contact-trust-chip"><span>✓</span> Secure messages</div>
+            <div class="contact-trust-chip"><span>✓</span> Fast support</div>
+            <div class="contact-trust-chip"><span>✓</span> Health-focused team</div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <div class="form-header">
+            <div>
+              <h2>Send us a message</h2>
+              <p>
+                Tell us what you need help with and the Arrow Health team will guide you to the right support.
+              </p>
+            </div>
+            <div class="response-badge">Usually replies within 24h</div>
+          </div>
+
+          <form class="contact-form" id="contactForm" onsubmit="event.preventDefault(); handleContactSubmit();">
             <div class="form-row">
-              <div class="form-group">
-                <label for="contactName">Full Name</label>
-                <input type="text" id="contactName" required placeholder="Dr. John Doe">
+              <div class="field-group">
+                <label for="name">Full name</label>
+                <input id="name" type="text" required placeholder="Your name" />
               </div>
-              <div class="form-group">
-                <label for="contactEmail">Email Address</label>
-                <input type="email" id="contactEmail" required placeholder="john@example.com">
+              <div class="field-group">
+                <label for="email">Email address</label>
+                <input id="email" type="email" required placeholder="you@example.com" />
               </div>
             </div>
-            <div class="form-group">
-              <label for="contactSubject">Inquiry Category</label>
-              <select id="contactSubject" required>
-                <option value="" disabled selected>Select a topic</option>
-                <option value="partnership">Clinical Partnerships</option>
-                <option value="support">Technical Support</option>
-                <option value="general">General Feedback</option>
-                <option value="careers">Careers</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="contactMessage">Your Message</label>
-              <textarea id="contactMessage" rows="5" required placeholder="Write your message here..."></textarea>
-            </div>
-            <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">Send Message</button>
-          </form>
-        </div>
 
-        <div class="contact-info-card">
-          <div class="info-block">
-            <h3>Support & Partnerships</h3>
-            <p>Our dedicated care operations team is here to assist with integration queries, clinician dashboards, and user issues.</p>
-          </div>
-          <div class="info-details">
-            <div class="info-detail-item">
-              <span class="info-icon">✉</span>
-              <div>
-                <strong>Support Email</strong>
-                <span>support@arrowhealth.com</span>
+            <div class="form-row">
+              <div class="field-group">
+                <label for="topic">What is this about?</label>
+                <select id="topic" required>
+                  <option value="" disabled selected>Select a topic</option>
+                  <option>App support</option>
+                  <option>Expert consultation</option>
+                  <option>Food scan / glucose features</option>
+                  <option>Medicine scan</option>
+                  <option>Partnership</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label for="priority">Priority</label>
+                <select id="priority">
+                  <option>General question</option>
+                  <option>Need help soon</option>
+                  <option>Business inquiry</option>
+                </select>
               </div>
             </div>
-            <div class="info-detail-item">
-              <span class="info-icon">🏢</span>
-              <div>
-                <strong>Arrow Health HQ</strong>
-                <span>100 Pine Street, San Francisco, CA 94111</span>
-              </div>
+
+            <div class="field-group">
+              <label for="message">Message</label>
+              <textarea id="message" required placeholder="Write your message here..."></textarea>
             </div>
-            <div class="info-detail-item">
-              <span class="info-icon">🕒</span>
-              <div>
-                <strong>Response Window</strong>
-                <span>Monday – Friday, 9:00 AM – 6:00 PM PST</span>
-              </div>
+
+            <div class="submit-row">
+              <p class="submit-note">
+                Please do not include emergency medical information. For urgent medical needs, contact local emergency services.
+              </p>
+              <button class="submit-btn" type="submit" id="contactSubmitBtn">Send Message</button>
+            </div>
+          </form>
+
+          <div class="support-options">
+            <div class="support-card">
+              <span>01</span>
+              <strong>App help</strong>
+              <p>Questions about tracking, scans, reports, and account settings.</p>
+            </div>
+            <div class="support-card">
+              <span>02</span>
+              <strong>Expert care</strong>
+              <p>Ask about doctor booking and consultation availability.</p>
+            </div>
+            <div class="support-card">
+              <span>03</span>
+              <strong>Business</strong>
+              <p>For healthcare partnerships and collaboration requests.</p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Footer inside Modal -->
       <footer class="arrow-footer modal-footer">
