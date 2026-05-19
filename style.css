@@ -5074,17 +5074,6 @@ a {
     color: white;
 }
 
-/* Modals Footers */
-.modal-footer {
-    border-top: 1px solid var(--border-soft);
-    padding: 40px 0 20px !important;
-    background: transparent !important;
-}
-
-.modal-footer .footer-container {
-    padding: 0 40px !important;
-}
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .about-core-grid,
