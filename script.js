@@ -162,6 +162,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Meet Experts Modal Logic
+    const meetExpertsBtn = document.getElementById('meetExpertsBtn');
+    const expertsModal = document.getElementById('expertsModal');
+    const closeExpertsBtn = document.getElementById('closeExpertsBtn');
+
+    if (meetExpertsBtn && expertsModal && closeExpertsBtn) {
+        meetExpertsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            expertsModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeExpertsBtn.addEventListener('click', () => {
+            expertsModal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    }
+
     // Bi-directional Scroll Animations
     const scrollSections = document.querySelectorAll('.why-section, .why-grid');
     
