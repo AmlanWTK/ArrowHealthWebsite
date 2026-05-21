@@ -4325,6 +4325,14 @@ a {
     50% { transform: translateX(14px) translateY(-5px); }
 }
 
+.real-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+    object-fit: cover;
+    border: 1px solid rgba(24, 32, 30, 0.06);
+}
+
 .avatar {
     width: 54px;
     height: 54px;
