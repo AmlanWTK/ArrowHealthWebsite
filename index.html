@@ -129,81 +129,328 @@
         </p>
       </div>
 
-      <div class="bento-grid">
-        <!-- 1. Glucose / Health Score (Large 2x2) -->
-        <div class="bento-card bento-glucose">
-          <div class="bento-card-header">
-            <h3>Glucose Trend</h3>
-            <span>Today</span>
-          </div>
-          <div class="bento-glucose-val">98 <span>mg/dL</span></div>
-          <div class="bento-glucose-chart">
-            <div class="chart-line"></div>
-            <div class="chart-point"></div>
-          </div>
-          <div class="bento-status">In Range</div>
-        </div>
-
-        <!-- 2. AI Chat (1x1) -->
-        <div class="bento-card bento-chat">
-          <div class="chat-bubble user">Is this meal safe?</div>
-          <div class="chat-bubble ai">Yes, it contains complex carbs. <span>✓</span></div>
-        </div>
-
-        <!-- 3. Medicine Scan (1x1) -->
-        <div class="bento-card bento-meds">
-          <div class="scan-reticle">
-            <div class="scan-line"></div>
-            <div class="service-icon nutrition" style="margin:0; background:none; color:var(--brand-primary)">💊</div>
-          </div>
-          <div class="bento-card-title">Auto Scan</div>
-        </div>
-
-        <!-- 4. Macros (2x1) -->
-        <div class="bento-card bento-macros">
-          <div class="bento-card-title">Meal Breakdown</div>
-          <div class="macro-bars">
-            <div class="macro-item"><span class="label">Protein</span>
-              <div class="bar-wrap">
-                <div class="bar protein" style="width: 75%"></div>
-              </div><span class="val">42g</span>
+      <div class="feature-carousel-container">
+        <div class="carousel-track" id="featureCarousel">
+          
+          <!-- Card 1 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('appimages/glucose.png');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">🩸 Glucose Trend</span>
+              <button class="expand-btn">+</button>
             </div>
-            <div class="macro-item"><span class="label">Carbs</span>
-              <div class="bar-wrap">
-                <div class="bar carbs" style="width: 45%"></div>
-              </div><span class="val">12g</span>
+            <div class="card-content-left">
+              <h3>Understand your <i>glucose trends</i></h3>
+              <p class="feature-desc">Get insights into your daily glucose levels, see how meals affect your body in real-time, and stay in range effortlessly.</p>
+              <a href="glucose.html" class="feature-learn-more">Learn More</a>
             </div>
-            <div class="macro-item"><span class="label">Fat</span>
-              <div class="bar-wrap">
-                <div class="bar fat" style="width: 30%"></div>
-              </div><span class="val">8g</span>
+            <div class="card-content-right">
+              <!-- Graph Card -->
+              <div class="mini-widget" style="width: 280px; min-width: 280px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                   <small style="margin:0;"><span style="color:var(--brand-primary)">●</span> Last 10 readings</small>
+                   <small style="margin:0;">Healthy: 3.9-7.8</small>
+                </div>
+                <div style="height: 100px; background: rgba(255,255,255,0.05); border-radius: 8px; position: relative; overflow: hidden; margin-bottom: 8px;">
+                  <svg viewBox="0 0 100 40" preserveAspectRatio="none" style="width:100%; height:100%;">
+                    <path d="M0 30 Q 15 5 25 20 T 50 15 T 75 25 T 100 10 L 100 40 L 0 40 Z" fill="rgba(255,255,255,0.2)"/>
+                    <path d="M0 30 Q 15 5 25 20 T 50 15 T 75 25 T 100 10" fill="none" stroke="#fff" stroke-width="2"/>
+                    <circle cx="25" cy="20" r="2" fill="#fff" />
+                    <circle cx="50" cy="15" r="2" fill="#fff" />
+                    <circle cx="75" cy="25" r="2" fill="#fff" />
+                    <circle cx="100" cy="10" r="2" fill="#fff" />
+                    <line x1="0" y1="10" x2="100" y2="10" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" stroke-dasharray="2 2" />
+                    <line x1="0" y1="30" x2="100" y2="30" stroke="rgba(255,255,255,0.3)" stroke-width="0.5" stroke-dasharray="2 2" />
+                  </svg>
+                  <div style="position: absolute; right: 10px; top: 10px; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; color: #fff;">5.6 mmol/L</div>
+                </div>
+              </div>
+
+              <!-- Time In Range Card -->
+              <div class="mini-widget" style="width: 280px; min-width: 280px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                  <small style="margin:0;">TIME IN RANGE</small>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px;">
+                  <strong style="font-size: 2.5rem; line-height: 1;">90<span style="font-size: 1.2rem;">%</span></strong>
+                  <div style="text-align: right; line-height: 1.2;">
+                    <strong style="font-size: 1.1rem; color: #fff;">9 / 10</strong><br>
+                    <small style="font-size: 0.7rem; text-transform: lowercase; color: rgba(255,255,255,0.8); margin: 0;">readings in range</small>
+                  </div>
+                </div>
+                <div class="progress-bar" style="background: rgba(255,255,255,0.2); height: 8px; margin-bottom: 8px;">
+                  <div class="fill" style="width: 90%; background: #fff; border-radius: 999px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: rgba(255,255,255,0.9);">
+                  <span><span style="color: #ff5252;">●</span> Low 0</span>
+                  <span><span style="color: #fff;">●</span> Normal 9</span>
+                  <span><span style="color: #ffa726;">●</span> High 1</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- 5. Expert Consult (2x1) -->
-        <div class="bento-card bento-expert">
-          <div class="expert-avatar">
-            <div class="status-dot"></div>
+          <!-- Card 2 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('appimages/meal_estimation.png');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">🥗 Meal Estimation</span>
+              <button class="expand-btn">+</button>
+            </div>
+            <div class="card-content-left">
+              <h3>Discover if your meal is <i>truly safe</i></h3>
+              <p class="feature-desc">Use our AI to scan your food, breakdown macros, and estimate safety based on your personal health profile.</p>
+              <a href="meal_estimation.html" class="feature-learn-more">Learn More</a>
+            </div>
+            <div class="card-content-right">
+              <!-- Snack Impact Widget -->
+              <div class="mini-widget" style="width: 320px; min-width: 320px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                   <div style="display: flex; align-items: center; gap: 6px;">
+                     <span style="font-size: 1.2rem;">🍪</span>
+                     <small style="margin:0; letter-spacing: 1px;">SNACK</small>
+                   </div>
+                   <span style="background: rgba(255,255,255,0.9); color: #ff5252; padding: 4px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: bold; display: flex; align-items: center; gap: 4px;"><span style="color: #ff5252; font-size: 10px;">●</span> HIGH</span>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                  <strong style="font-size: 3rem; line-height: 1;">+246</strong>
+                  <div style="line-height: 1.1;">
+                    <strong style="font-size: 1rem;">mg/dL</strong><br>
+                    <small style="font-size: 0.8rem; text-transform: lowercase; color: rgba(255,255,255,0.8);">expected rise</small>
+                  </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+                  Peak Glucose: 346.0 mg/dL.
+                </div>
+              </div>
+
+              <!-- Macros Widget -->
+              <div class="mini-widget" style="width: 320px; min-width: 320px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                  <!-- Carbs -->
+                  <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; background: rgba(0, 188, 212, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🫧</div>
+                    <div>
+                      <small style="color: rgba(255,255,255,0.8); margin: 0; display: block; font-size: 0.75rem; text-transform: capitalize;">Carbs</small>
+                      <strong style="font-size: 1.2rem;">488<span style="font-size: 0.8rem; font-weight: normal;">g</span></strong>
+                    </div>
+                  </div>
+                  <!-- Protein -->
+                  <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; background: rgba(76, 175, 80, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🥩</div>
+                    <div>
+                      <small style="color: rgba(255,255,255,0.8); margin: 0; display: block; font-size: 0.75rem; text-transform: capitalize;">Protein</small>
+                      <strong style="font-size: 1.2rem;">122<span style="font-size: 0.8rem; font-weight: normal;">g</span></strong>
+                    </div>
+                  </div>
+                  <!-- Fat -->
+                  <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; background: rgba(255, 152, 0, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">💧</div>
+                    <div>
+                      <small style="color: rgba(255,255,255,0.8); margin: 0; display: block; font-size: 0.75rem; text-transform: capitalize;">Fat</small>
+                      <strong style="font-size: 1.2rem;">90<span style="font-size: 0.8rem; font-weight: normal;">g</span></strong>
+                    </div>
+                  </div>
+                  <!-- Calories -->
+                  <div style="background: rgba(255,255,255,0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 36px; height: 36px; background: rgba(255, 82, 82, 0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🔥</div>
+                    <div>
+                      <small style="color: rgba(255,255,255,0.8); margin: 0; display: block; font-size: 0.75rem; text-transform: capitalize;">Calories</small>
+                      <strong style="font-size: 1.2rem;">3251<span style="font-size: 0.7rem; font-weight: normal;">kcal</span></strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="expert-info">
-            <strong>Dr. Nahid Hasan</strong>
-            <span>Clinical Expert • Available</span>
+
+          <!-- Card 3 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('appimages/med.png');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">💊 Auto Scan</span>
+              <button class="expand-btn">+</button>
+            </div>
+            <div class="card-content-left">
+              <h3>Instantly scan your <i>medications</i></h3>
+              <p class="feature-desc">Point your camera at any medicine to instantly get dosage instructions, side effects, and clash warnings.</p>
+              <a href="#" class="feature-learn-more">Learn More</a>
+            </div>
+            <div class="card-content-right">
+              <!-- Medicine Detected Card -->
+              <div class="mini-widget" style="width: 320px; min-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                  <span style="font-size: 1.3rem;">💊</span>
+                  <small style="margin: 0; letter-spacing: 1.5px; color: #ff8a80; font-weight: 700;">MEDICINE DETECTED</small>
+                </div>
+                <strong style="font-size: 1.8rem; display: block; margin-bottom: 12px; line-height: 1.1;">Metformin 500mg</strong>
+                <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(76, 175, 80, 0.2); color: #81C784; padding: 6px 14px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; margin-bottom: 16px; border: 1px solid rgba(76, 175, 80, 0.3);">
+                  <span style="font-size: 1rem;">✅</span> Verified Match
+                </div>
+                <div style="display: flex; gap: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                  <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.85);">
+                    <span style="font-size: 1rem;">💊</span>
+                    <span>Tablet</span>
+                  </div>
+                  <span style="color: rgba(255,255,255,0.3);">•</span>
+                  <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.85);">
+                    <span>Oral Use</span>
+                  </div>
+                  <span style="color: rgba(255,255,255,0.3);">•</span>
+                  <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: rgba(255,255,255,0.85);">
+                    <span style="font-size: 1rem;">🛡️</span>
+                    <span>99% Confidence</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Safety Guidance Card -->
+              <div class="mini-widget" style="width: 320px; min-width: 320px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                  <span style="font-size: 1.2rem;">✅</span>
+                  <small style="margin: 0; letter-spacing: 1.5px; font-weight: 700;">SAFETY GUIDANCE</small>
+                </div>
+                <p style="font-size: 1.25rem; font-weight: 600; margin: 0 0 16px 0; line-height: 1.3;">Take with meals to avoid stomach upset.</p>
+                <div style="display: flex; gap: 10px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                  <div style="flex: 1; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 8px; text-align: center; border: 1px solid rgba(255,255,255,0.08);">
+                    <div style="font-size: 1rem; margin-bottom: 4px;">🕐</div>
+                    <small style="font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0; display: block;">Best Time</small>
+                    <strong style="font-size: 0.8rem; display: block; margin-top: 2px;">With meals</strong>
+                  </div>
+                  <div style="flex: 1; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 8px; text-align: center; border: 1px solid rgba(255,255,255,0.08);">
+                    <div style="font-size: 1rem; margin-bottom: 4px;">🍴</div>
+                    <small style="font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0; display: block;">With Food</small>
+                    <strong style="font-size: 0.8rem; display: block; margin-top: 2px;">Yes</strong>
+                  </div>
+                  <div style="flex: 1; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 8px; text-align: center; border: 1px solid rgba(255,255,255,0.08);">
+                    <div style="font-size: 1rem; margin-bottom: 4px;">⚠️</div>
+                    <small style="font-size: 0.65rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.5px; margin: 0; display: block;">Caution</small>
+                    <strong style="font-size: 0.8rem; display: block; margin-top: 2px; color: #ff8a80;">Alcohol</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <button class="bento-btn">Message</button>
-        </div>
 
-        <!-- 6. Privacy Chip (1x1) -->
-        <div class="bento-card bento-privacy">
-          <div class="privacy-icon">🔒</div>
-          <strong>100% Local</strong>
-          <span>On-device privacy</span>
-        </div>
+          <!-- Card 4 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('appimages/chatwithai.png');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">🤖 AI Health Expert</span>
+              <button class="expand-btn">+</button>
+            </div>
+            <div class="card-content-left">
+              <h3>Discuss your health with <i>AI</i></h3>
+              <p class="feature-desc">Chat with our advanced AI health expert to understand your data, get tailored advice, and plan your wellness journey.</p>
+              <a href="ai_wellness.html" class="feature-learn-more">Learn More</a>
+            </div>
+            <div class="card-content-right">
+              <div class="mini-widget chat-bubble user">
+                <p style="margin:0; font-size:0.9rem;">How was my sleep?</p>
+              </div>
+              <div class="mini-widget chat-bubble ai" style="background: var(--brand-primary); color: #fff;">
+                <p style="margin:0; font-size:0.9rem;">Your deep sleep improved by 15% last night. Keep it up!</p>
+              </div>
+            </div>
+          </div>
 
-        <!-- 7. Daily Insight (1x1) -->
-        <div class="bento-card bento-insight">
-          <div class="insight-icon">✨</div>
-          <p>Good sleep stabilized your glucose.</p>
+          <!-- Card 5 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">🧮 Calculators</span>
+              <button class="expand-btn">+</button>
+            </div>
+            <div class="card-content-left">
+              <h3>Insights from <i>health calculators</i></h3>
+              <p class="feature-desc">Utilize our diverse range of clinical calculators to stay on top of your BMI, BMR, and other vital metrics.</p>
+              <a href="calculators.html" class="feature-learn-more">Learn More</a>
+            </div>
+            <div class="card-content-right">
+              <div class="mini-widget">
+                <small>BMI Score</small>
+                <strong>22.4</strong>
+                <span style="color: var(--medicine); font-size: 0.85rem; display:block;">Normal</span>
+              </div>
+              <div class="mini-widget">
+                <small>Daily Calories (BMR)</small>
+                <strong>1,850 kcal</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card" onclick="toggleCardExpansion(this)">
+            <div class="card-bg" style="background-image: url('appimages/activity.png');"></div>
+            <div class="card-gradient"></div>
+            <div class="card-header">
+              <span class="card-badge">🏃 Activity Tracking</span>
+              <button class="expand-btn">+</button>
+            </div>
+            <div class="card-content-left">
+              <h3>Track your daily <i>activity & burn</i></h3>
+              <p class="feature-desc">Measure your daily steps, distance, and calories burned to hit your fitness goals and stay active.</p>
+              <a href="#" class="feature-learn-more">Learn More</a>
+            </div>
+            <div class="card-content-right">
+              <!-- Live Activity Widget -->
+              <div class="mini-widget" style="width: 320px; min-width: 320px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                  <small style="margin: 0; text-transform: none; color: #fff;">Activity Type</small>
+                </div>
+                <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                  <div style="flex: 1; text-align: center; background: rgba(0, 188, 212, 0.3); border: 1px solid rgba(0, 188, 212, 0.6); padding: 6px 0; border-radius: 999px; font-size: 0.9rem; font-weight: bold;">Walking</div>
+                  <div style="flex: 1; text-align: center; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px 0; border-radius: 999px; font-size: 0.9rem;">Running</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                  <div>
+                    <small style="color: rgba(255,255,255,0.8); text-transform: none; margin: 0; display: block;">Duration</small>
+                    <strong style="font-size: 1.8rem; line-height: 1;">00:00:14</strong>
+                  </div>
+                  <div style="display: flex; gap: 8px;">
+                    <button style="background: #ff6b6b; color: white; border: none; border-radius: 999px; padding: 8px 16px; font-weight: bold; cursor: pointer;">II Stop</button>
+                    <button style="background: #00897b; color: white; border: none; border-radius: 999px; padding: 8px 16px; font-weight: bold; cursor: pointer;">Finish</button>
+                  </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+                  <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; text-align: left;">
+                    <div style="font-size: 1rem; color: #00BCD4; margin-bottom: 4px;">🚶</div>
+                    <small style="color: rgba(255,255,255,0.8); text-transform: none; margin: 0; font-size: 0.75rem;">Steps</small>
+                    <strong style="font-size: 1.1rem; display: block;">26</strong>
+                  </div>
+                  <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; text-align: left;">
+                    <div style="font-size: 1rem; color: #00897b; margin-bottom: 4px;">📍</div>
+                    <small style="color: rgba(255,255,255,0.8); text-transform: none; margin: 0; font-size: 0.75rem;">Distance</small>
+                    <strong style="font-size: 1.1rem; display: block;">0.01 <span style="font-size: 0.7rem; font-weight: normal;">km</span></strong>
+                  </div>
+                  <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; text-align: left;">
+                    <div style="font-size: 1rem; color: #ff5252; margin-bottom: 4px;">🔥</div>
+                    <small style="color: rgba(255,255,255,0.8); text-transform: none; margin: 0; font-size: 0.75rem;">Calories</small>
+                    <strong style="font-size: 1.1rem; display: block;">1 <span style="font-size: 0.7rem; font-weight: normal;">kcal</span></strong>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+        <!-- Carousel Navigation -->
+        <div class="carousel-nav">
+          <button class="carousel-nav-btn" id="carouselPrev" aria-label="Previous card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-nav-btn" id="carouselNext" aria-label="Next card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -2156,6 +2403,78 @@
       </footer>
     </div>
   </div>
+
+  <!-- Privacy Modal (Oura Inspired) -->
+  <div class="company-modal privacy-hub-modal" id="privacyModal">
+    <div class="company-modal-header privacy-header">
+      <h2 class="privacy-hub-logo">Arrow <span>Privacy</span></h2>
+      <button class="close-company-btn privacy-close-btn" id="closePrivacyBtn">×</button>
+    </div>
+    <div class="privacy-hub-content">
+      <div class="privacy-layout">
+        
+        <!-- Left Sticky Sidebar -->
+        <aside class="privacy-sidebar">
+          <div class="sidebar-visual">
+            <div class="glowing-ring"></div>
+            <div class="glowing-ring inner"></div>
+          </div>
+          <nav class="privacy-nav">
+            <a href="#privacy-intro" class="active">Introduction</a>
+            <a href="#privacy-storage">Local Storage</a>
+            <a href="#privacy-ai">AI Processing</a>
+            <a href="#privacy-sync">Data Syncing</a>
+            <a href="#privacy-contact">Contact Us</a>
+          </nav>
+        </aside>
+
+        <!-- Right Scrolling Content -->
+        <main class="privacy-scroll-area">
+          <section id="privacy-intro" class="privacy-section scroll-reveal" data-color="#4D5B8C">
+            <h1>Your data,<br><span>your control.</span></h1>
+            <p class="lead-text">Arrow Health is built with privacy-first architecture. We believe your health data belongs to you and should be protected with the highest standards.</p>
+          </section>
+
+          <section id="privacy-storage" class="privacy-section scroll-reveal" data-color="#B75D69">
+            <div class="privacy-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, rgba(183, 93, 105, 0.15), rgba(183, 93, 105, 0.05)); border: 1px solid rgba(183, 93, 105, 0.2); box-shadow: 0 4px 15px rgba(183, 93, 105, 0.1);">🔒</div>
+              <h3>Local-First Storage</h3>
+              <p>By default, all your readings, medicine logs, and growth statistics are stored exclusively on your device using encrypted Hive Database boxes. This means no one—not even Arrow Health—can access your personal data without your permission.</p>
+            </div>
+          </section>
+
+          <section id="privacy-ai" class="privacy-section scroll-reveal" data-color="#5B9A86">
+            <div class="privacy-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, rgba(91, 154, 134, 0.15), rgba(91, 154, 134, 0.05)); border: 1px solid rgba(91, 154, 134, 0.2); box-shadow: 0 4px 15px rgba(91, 154, 134, 0.1);">🧠</div>
+              <h3>AI Processing</h3>
+              <p>Features like the Food Scanner and Medicine OCR require processing on our secure Google Cloud Run servers. When an image is uploaded for analysis, it is processed in memory and immediately discarded. We do not store or train our models on your personal photos.</p>
+            </div>
+          </section>
+
+          <section id="privacy-sync" class="privacy-section scroll-reveal" data-color="#6697A7">
+            <div class="privacy-card">
+              <div class="card-icon" style="background: linear-gradient(135deg, rgba(102, 151, 167, 0.15), rgba(102, 151, 167, 0.05)); border: 1px solid rgba(102, 151, 167, 0.2); box-shadow: 0 4px 15px rgba(102, 151, 167, 0.1);">☁️</div>
+              <h3>Data Syncing</h3>
+              <p>If you choose to enable cross-device syncing, your data is transmitted over SSL-encrypted channels and stored securely. You have the right to request full deletion of your account and all associated cloud data at any time through the app settings.</p>
+            </div>
+          </section>
+
+          <section id="privacy-contact" class="privacy-section scroll-reveal" data-color="#9A7BA8">
+            <div class="privacy-card outline-card">
+              <h3>Have questions?</h3>
+              <p>Our dedicated privacy team is available to help you understand your data rights and our secure architecture.</p>
+              <a href="#" class="privacy-btn" onclick="openContactModalFromPrivacy(event)">Contact Privacy Team</a>
+            </div>
+          </section>
+          
+          <div class="privacy-hub-footer">
+            <p>© 2026 Arrow Health. All rights reserved.</p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
 
   <script src="script.js"></script>
 </body>

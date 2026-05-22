@@ -361,10 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutModal = document.getElementById('aboutModal');
     const contactModal = document.getElementById('contactModal');
     const supportModal = document.getElementById('supportModal');
+    const privacyModal = document.getElementById('privacyModal');
 
     const closeAboutBtn = document.getElementById('closeAboutBtn');
     const closeContactBtn = document.getElementById('closeContactBtn');
     const closeSupportBtn = document.getElementById('closeSupportBtn');
+    const closePrivacyBtn = document.getElementById('closePrivacyBtn');
 
     // Open/Close Helpers
     function openModal(modal) {
@@ -386,6 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeAboutBtn) closeAboutBtn.addEventListener('click', () => closeModal(aboutModal));
     if (closeContactBtn) closeContactBtn.addEventListener('click', () => closeModal(contactModal));
     if (closeSupportBtn) closeSupportBtn.addEventListener('click', () => closeModal(supportModal));
+    if (closePrivacyBtn) closePrivacyBtn.addEventListener('click', () => closeModal(privacyModal));
 
     // Dynamic Footer Links Binding
     document.querySelectorAll('.footer-col a, .footer-bottom-links a').forEach(link => {
@@ -411,12 +414,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 const whyModal = document.getElementById('whyModal');
                 openModal(whyModal);
             });
+        } else if (text === 'privacy' || text === 'privacy policy') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(privacyModal);
+            });
         }
     });
 
     // Support to Contact link helper
     window.openContactModalFromSupport = function() {
         closeModal(supportModal);
+        setTimeout(() => {
+            openModal(contactModal);
+        }, 300);
+    };
+
+    // Privacy to Contact link helper
+    window.openContactModalFromPrivacy = function(e) {
+        if(e) e.preventDefault();
+        closeModal(privacyModal);
         setTimeout(() => {
             openModal(contactModal);
         }, 300);
@@ -467,4 +484,112 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
+
+    // ================================================================
+    // Privacy Hub (Oura Inspired) - Scrollspy and Animations
+    // ================================================================
+    const privacyScrollArea = document.getElementById('privacyModal');
+    const privacySections = document.querySelectorAll('.privacy-section');
+    const privacyNavLinks = document.querySelectorAll('.privacy-nav a');
+
+    if (privacyScrollArea && privacySections.length > 0) {
+        // Observer for updating active nav link
+        const privacyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Update active nav link
+                    const id = entry.target.getAttribute('id');
+                    privacyNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                    
+                    // Add visibility class for animation
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            root: privacyScrollArea,
+            threshold: 0.3,
+            rootMargin: "0px 0px -20% 0px"
+        });
+
+        privacySections.forEach(section => {
+            privacyObserver.observe(section);
+        });
+
+        // Smooth scroll for privacy nav links
+        privacyNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    // Calculate position relative to the scrolling container
+                    const containerTop = privacyScrollArea.getBoundingClientRect().top;
+                    const targetTop = targetSection.getBoundingClientRect().top;
+                    const scrollPos = privacyScrollArea.scrollTop + (targetTop - containerTop) - 80; // 80px offset
+                    
+                    privacyScrollArea.scrollTo({
+                        top: scrollPos,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // ================================================================
+    // Feature Carousel Logic
+    // ================================================================
+    const featureCards = document.querySelectorAll('.feature-card');
+    const carouselTrack = document.getElementById('featureCarousel');
+
+    window.toggleCardExpansion = function(clickedCard) {
+        if (clickedCard.classList.contains('expanded')) {
+            clickedCard.classList.remove('expanded');
+            return;
+        }
+
+        featureCards.forEach(card => card.classList.remove('expanded'));
+        clickedCard.classList.add('expanded');
+
+        setTimeout(() => {
+            if (carouselTrack) {
+                const scrollLeft = clickedCard.offsetLeft - 24;
+                carouselTrack.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+            }
+        }, 100);
+    };
+
+    // Carousel Navigation
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+
+    if (carouselTrack && carouselPrev && carouselNext) {
+        const getScrollAmount = () => {
+            const card = carouselTrack.querySelector('.feature-card');
+            return card ? card.offsetWidth + 24 : 350;
+        };
+
+        const updateNavButtons = () => {
+            carouselPrev.disabled = carouselTrack.scrollLeft <= 10;
+            carouselNext.disabled = carouselTrack.scrollLeft >= (carouselTrack.scrollWidth - carouselTrack.clientWidth - 10);
+        };
+
+        carouselPrev.addEventListener('click', () => {
+            carouselTrack.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        carouselNext.addEventListener('click', () => {
+            carouselTrack.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+
+        carouselTrack.addEventListener('scroll', updateNavButtons);
+        window.addEventListener('resize', updateNavButtons);
+        
+        setTimeout(updateNavButtons, 100);
+    }
 });

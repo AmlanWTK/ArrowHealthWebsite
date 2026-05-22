@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArrowHealth — Glucose Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F2027;
+      --bg-2: #203A43;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-strong: rgba(255, 255, 255, 0.15);
+      --line: rgba(0, 229, 255, 0.15);
+      --text: #f5fbfb;
+      --muted: rgba(245, 251, 251, 0.72);
+      --soft: rgba(245, 251, 251, 0.52);
+      --teal: #00E5FF;
+      --teal-2: #00BCD4;
+      --green: #66e6a6;
+      --orange: #ffb44d;
+      --red: #ff7171;
+      --shadow: 0 30px 90px rgba(0, 26, 36, 0.6);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(0, 229, 255, 0.15), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(0, 188, 212, 0.12), transparent 24%),
+        linear-gradient(180deg, #0F2027 0%, #203A43 42%, #0F2027 100%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.045;
+      z-index: 30;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      padding: 18px 22px;
+      backdrop-filter: blur(22px);
+      background: rgba(15, 32, 39, 0.75);
+      border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+    }
+
+    .nav-inner {
+      width: min(1180px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #041113;
+      background: linear-gradient(135deg, var(--teal), var(--green));
+      box-shadow: 0 12px 35px rgba(23, 201, 195, 0.28);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      font-size: 14px;
+      color: var(--muted);
+      align-items: center;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 13px 18px;
+      font-weight: 700;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.32);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .btn-primary {
+      color: #031315;
+      background: linear-gradient(135deg, #34ded9, #70e8ad);
+      border: 0;
+      box-shadow: 0 16px 46px rgba(23,201,195,0.24);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 860px;
+      padding: 128px 22px 48px;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(15, 32, 39, 0.98) 0%, rgba(15, 32, 39, 0.82) 34%, rgba(32, 58, 67, 0.42) 62%, rgba(32, 58, 67, 0.2) 100%),
+        linear-gradient(180deg, rgba(15, 32, 39, 0.08) 0%, rgba(15, 32, 39, 0.95) 94%),
+        url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=2200&q=85") center right / cover;
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .hero-inner {
+      width: min(1180px, 100%);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      min-height: 640px;
+      gap: 50px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(23, 201, 195, 0.12);
+      border: 1px solid rgba(23, 201, 195, 0.18);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(48px, 7.2vw, 92px);
+      line-height: 0.97;
+      letter-spacing: -0.075em;
+      max-width: 720px;
+    }
+
+    .accent {
+      display: block;
+      color: transparent;
+      background: linear-gradient(135deg, #4fe7df, #6de6a5);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .italic {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 28px 0 32px;
+    }
+
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: 590px;
+      margin: 34px 0;
+    }
+
+    .mini-feature {
+      padding: 14px 12px;
+      border-left: 1px solid rgba(255,255,255,0.12);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .mini-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      margin-bottom: 9px;
+      background: rgba(255,255,255,0.08);
+      color: var(--teal-2);
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .visual-stage {
+      min-height: 560px;
+      position: relative;
+    }
+
+    .device-card {
+      position: absolute;
+      right: 9%;
+      top: 18%;
+      width: 250px;
+      height: 360px;
+      border-radius: 38px;
+      padding: 15px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.16), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: var(--shadow);
+      transform: rotate(-3deg);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .device-screen {
+      height: 100%;
+      border-radius: 29px;
+      background:
+        radial-gradient(circle at 80% 0%, rgba(102,230,166,0.24), transparent 28%),
+        linear-gradient(180deg, #071116, #0a2228);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .device-reading {
+      text-align: center;
+      padding-top: 62px;
+    }
+
+    .device-reading .num { font-size: 72px; font-weight: 800; letter-spacing: -0.07em; }
+    .device-reading .unit { color: var(--muted); margin-top: 4px; }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(35,224,176,0.13);
+      color: #8df2c3;
+      font-weight: 700;
+      font-size: 13px;
+      border: 1px solid rgba(35,224,176,0.22);
+    }
+
+    .floating-card {
+      position: absolute;
+      backdrop-filter: blur(24px);
+      background: linear-gradient(145deg, rgba(255,255,255,0.78), rgba(255,255,255,0.42));
+      color: #092026;
+      border: 1px solid rgba(255,255,255,0.52);
+      box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+      border-radius: 23px;
+      padding: 22px;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .floating-card.reading {
+      right: 0;
+      top: 5%;
+      width: 230px;
+      animation-delay: -2s;
+    }
+
+    .floating-card.chart-card {
+      left: 2%;
+      bottom: 14%;
+      width: 310px;
+      color: var(--text);
+      background: linear-gradient(145deg, rgba(8, 34, 40, 0.92), rgba(8, 22, 27, 0.72));
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .card-label { font-size: 13px; color: rgba(9,32,38,0.72); font-weight: 700; margin-bottom: 8px; }
+    .reading .big { font-size: 48px; font-weight: 800; letter-spacing: -0.06em; }
+    .reading .big span { font-size: 17px; letter-spacing: -0.02em; color: rgba(9,32,38,0.72); }
+
+    .chart-line {
+      height: 115px;
+      margin-top: 15px;
+      border-radius: 16px;
+      background:
+        linear-gradient(180deg, rgba(35,224,176,0.22), rgba(35,224,176,0.02)),
+        repeating-linear-gradient(to bottom, transparent, transparent 27px, rgba(255,255,255,0.08) 28px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chart-line svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .metric {
+      padding: 28px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .metric:last-child { border-right: 0; }
+    .metric-title { color: var(--muted); font-size: 14px; margin: 12px 0 16px; }
+    .metric-value { font-size: 34px; font-weight: 800; letter-spacing: -0.05em; }
+    .metric-value small { font-size: 16px; color: var(--muted); font-weight: 500; }
+
+    section {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      padding: 90px 22px;
+    }
+
+    .section-inner { width: min(1180px, 100%); }
+
+    .section-kicker {
+      color: var(--soft);
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 4.8vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.06em;
+      margin: 0;
+      max-width: 720px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+      max-width: 520px;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .steps {
+      display: grid;
+      gap: 28px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .step-icon {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(23,201,195,0.9), rgba(102,230,166,0.86));
+      box-shadow: 0 12px 38px rgba(23,201,195,0.22);
+      color: #031315;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .step:nth-child(2) .step-icon { background: linear-gradient(135deg, #66a6ff, #6fe7dd); }
+    .step:nth-child(3) .step-icon { background: linear-gradient(135deg, #9575ff, #69e6b4); }
+
+    .step h3 { margin: 0 0 7px; font-size: 20px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.65; }
+
+    .glass-panel {
+      background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.045));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px);
+    }
+
+    .insight-panel { padding: 30px; }
+
+    .insight-title { display: flex; align-items: center; gap: 12px; font-weight: 800; color: #aeeef0; }
+    .insight-text { color: var(--muted); line-height: 1.65; margin-top: 18px; }
+
+    .insights-section {
+      padding-top: 48px;
+    }
+
+    .insight-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr 1.1fr 1fr;
+      gap: 18px;
+      padding: 28px;
+    }
+
+    .data-card {
+      min-height: 240px;
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .data-card h3 { margin: 0 0 8px; }
+    .data-card p { color: var(--muted); margin: 0; line-height: 1.6; }
+    .huge { font-size: 52px; font-weight: 800; letter-spacing: -0.07em; margin: 24px 0 4px; }
+    .huge small { font-size: 16px; color: var(--muted); }
+
+    .donut {
+      width: 132px;
+      height: 132px;
+      margin: 28px auto 20px;
+      border-radius: 50%;
+      background: conic-gradient(var(--green) 0 90%, var(--orange) 90% 98%, var(--red) 98% 100%);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 46px rgba(35,224,176,0.16);
+    }
+
+    .donut::before {
+      content: "90%";
+      width: 88px;
+      height: 88px;
+      display: grid;
+      place-items: center;
+      background: #0b1d23;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 26px;
+    }
+
+    .pattern-list { display: grid; gap: 12px; margin-top: 18px; }
+    .pattern-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+    }
+    .pattern-row strong { color: var(--text); }
+
+    .lifestyle {
+      min-height: 620px;
+      align-items: stretch;
+      padding-bottom: 120px;
+    }
+
+    .lifestyle-inner {
+      width: min(1180px, 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,0.1);
+      background:
+        linear-gradient(90deg, rgba(15, 32, 39, 0.96), rgba(32, 58, 67, 0.6)),
+        url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1800&q=85") center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .lifestyle-copy { padding: 60px; }
+
+    .habit-grid {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .habit {
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+    }
+    .habit h3 { margin: 14px 0 8px; font-size: 17px; }
+    .habit p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
+
+    .testimonial {
+      align-self: end;
+      margin: 60px;
+      padding: 26px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.75);
+      color: #092026;
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255,255,255,0.56);
+      box-shadow: var(--shadow);
+    }
+    .testimonial p { font-size: 20px; line-height: 1.45; margin: 14px 0; }
+    .testimonial small { color: rgba(9,32,38,0.65); font-weight: 700; }
+
+    .cta {
+      padding-top: 0;
+    }
+
+    .cta-card {
+      width: min(1180px, 100%);
+      padding: 56px;
+      border-radius: var(--radius-xl);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(23,201,195,0.25), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045));
+      border: 1px solid rgba(255,255,255,0.13);
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h2 {
+      margin: 0 auto 18px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.06;
+      letter-spacing: -0.06em;
+      max-width: 760px;
+    }
+    .cta-card p { color: var(--muted); max-width: 620px; margin: 0 auto 28px; line-height: 1.7; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: reveal .9s ease forwards;
+    }
+    .delay-1 { animation-delay: .12s; }
+    .delay-2 { animation-delay: .24s; }
+    .delay-3 { animation-delay: .36s; }
+
+    @keyframes reveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-16px) rotate(-2deg); }
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      z-index: 100;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+    }
+    .close-btn:hover {
+      background: rgba(255,255,255,0.15);
+      transform: rotate(90deg) scale(1.1);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    @media (max-width: 940px) {
+      .nav-links { display: none; }
+      .hero { padding-top: 108px; min-height: auto; }
+      .hero-grid, .how-grid, .lifestyle-inner { grid-template-columns: 1fr; }
+      .visual-stage { min-height: 520px; }
+      .hero-metrics, .insight-grid { grid-template-columns: 1fr 1fr; }
+      .feature-strip { grid-template-columns: 1fr 1fr; }
+      .lifestyle-copy { padding: 34px; }
+      .testimonial { margin: 34px; }
+    }
+
+    @media (max-width: 620px) {
+      .nav-actions .btn:first-child { display: none; }
+      .hero-actions .btn { width: 100%; }
+      .feature-strip, .hero-metrics, .insight-grid, .habit-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .visual-stage { display: none; }
+      .hero-grid { min-height: auto; }
+      .cta-card { padding: 34px 22px; }
+      h1 { font-size: 54px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="noise"></div>
+
+    <a href="index.html" class="close-btn" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </a>
+
+    <header class="navbar">
+      <div class="nav-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">A</span>
+          <span>ArrowHealth</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#how">How it works</a>
+          <a href="#insights">Insights</a>
+          <a href="#lifestyle">Lifestyle</a>
+          <a href="#tips">Tips</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="btn" href="#">Login</a>
+          <a class="btn btn-primary" href="#overview">Start Tracking</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <div class="hero-content">
+              <div class="eyebrow reveal">● Glucose Health</div>
+              <h1 class="reveal delay-1">
+                Understand.<br />Track. Improve.
+                <span class="accent">Your Glucose Health</span>
+              </h1>
+              <p class="hero-copy reveal delay-2">
+                Track your glucose in real time, discover daily patterns, and make smarter choices around meals, activity, hydration, and sleep.
+              </p>
+              <div class="feature-strip reveal delay-3">
+                <div class="mini-feature"><div class="mini-icon">⏱</div>Real-time<br />tracking</div>
+                <div class="mini-feature"><div class="mini-icon">✦</div>AI powered<br />insights</div>
+                <div class="mini-feature"><div class="mini-icon">♡</div>Personalized<br />guidance</div>
+                <div class="mini-feature"><div class="mini-icon">▣</div>Private &<br />secure</div>
+              </div>
+              <div class="hero-actions reveal delay-3">
+                <a class="btn btn-primary" href="#how">Learn how it works</a>
+                <a class="btn" href="#insights">View insights →</a>
+              </div>
+            </div>
+
+            <div class="visual-stage" aria-hidden="true">
+              <div class="floating-card reading">
+                <div class="card-label">Today, 2:23 AM</div>
+                <div class="big">5.6 <span>mmol/L</span></div>
+                <div class="pill" style="margin-top: 12px;">● Normal Range</div>
+              </div>
+
+              <div class="device-card">
+                <div class="device-screen">
+                  <div class="pill">● Normal</div>
+                  <div class="device-reading">
+                    <div class="num">5.6</div>
+                    <div class="unit">mmol/L</div>
+                  </div>
+                  <div class="chart-line">
+                    <svg viewBox="0 0 300 115" preserveAspectRatio="none">
+                      <path d="M0 75 C35 62 45 40 78 54 S130 83 160 52 S210 28 245 58 S280 78 300 36" fill="none" stroke="#64e8a8" stroke-width="5" stroke-linecap="round"/>
+                      <circle cx="300" cy="36" r="8" fill="#0b1d23" stroke="#64e8a8" stroke-width="5"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="floating-card chart-card">
+                <div class="insight-title">✦ AI Insight</div>
+                <p class="insight-text">Your glucose is stable and in the normal range. Balanced meals and hydration look on track.</p>
+                <div class="chart-line">
+                  <svg viewBox="0 0 300 115" preserveAspectRatio="none">
+                    <path d="M0 70 C28 30 55 82 88 66 S130 26 168 52 S218 92 254 48 S282 28 300 34" fill="none" stroke="#28d9d2" stroke-width="5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-metrics reveal delay-3">
+            <div class="metric">
+              <div class="mini-icon">◎</div>
+              <div class="metric-title">In Range</div>
+              <div class="metric-value">90%</div>
+            </div>
+            <div class="metric">
+              <div class="mini-icon">↗</div>
+              <div class="metric-title">Average Glucose</div>
+              <div class="metric-value">5.5 <small>mmol/L</small></div>
+            </div>
+            <div class="metric">
+              <div class="mini-icon">↟</div>
+              <div class="metric-title">Highest Reading</div>
+              <div class="metric-value">8.6 <small>mmol/L</small></div>
+            </div>
+            <div class="metric">
+              <div class="mini-icon">↘</div>
+              <div class="metric-title">Lowest Reading</div>
+              <div class="metric-value">3.9 <small>mmol/L</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how">
+        <div class="section-inner how-grid">
+          <div>
+            <div class="section-kicker">How it works</div>
+            <h2 class="section-title">Simple steps to better glucose health</h2>
+            <p class="section-copy">ArrowHealth turns daily glucose readings into clear, useful patterns so users understand what affects their body.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-icon">1</div>
+              <div>
+                <h3>Track</h3>
+                <p>Log glucose readings anytime, connect them to meals, and view your normal, high, and low ranges.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-icon">2</div>
+              <div>
+                <h3>Analyze</h3>
+                <p>See daily, weekly, and monthly trends with beautiful charts and simple time-in-range summaries.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-icon">3</div>
+              <div>
+                <h3>Improve</h3>
+                <p>Get personalized guidance for food, hydration, movement, and sleep based on your own patterns.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-panel insight-panel">
+            <div class="chart-line" style="height: 180px; margin-top: 0;">
+              <svg viewBox="0 0 300 180" preserveAspectRatio="none">
+                <path d="M0 110 C25 75 50 95 72 60 S120 142 152 93 S198 48 232 74 S275 92 300 37" fill="none" stroke="#54e6c4" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0 110 C25 75 50 95 72 60 S120 142 152 93 S198 48 232 74 S275 92 300 37 L300 180 L0 180 Z" fill="rgba(84,230,196,0.14)"/>
+              </svg>
+            </div>
+            <div class="insight-title" style="margin-top: 22px;">✦ AI Insight</div>
+            <p class="insight-text">Your glucose levels are stable and mostly in the normal range. Keep meals balanced and stay hydrated.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="insights-section">
+        <div class="section-inner glass-panel insight-grid">
+          <div class="data-card" style="background: transparent; border: 0;">
+            <div class="section-kicker">Insights that matter</div>
+            <h2 style="margin: 0 0 18px; font-size: 34px; letter-spacing: -0.05em;">See the bigger picture</h2>
+            <p>Powerful summaries help you understand your glucose trends and take control of your health.</p>
+            <a class="btn" href="#" style="margin-top: 28px;">View all insights</a>
+          </div>
+
+          <div class="data-card">
+            <h3>Glucose Trend</h3>
+            <p>Last 7 days</p>
+            <div class="huge">5.5 <small>mmol/L</small></div>
+            <div class="chart-line">
+              <svg viewBox="0 0 300 115" preserveAspectRatio="none">
+                <path d="M0 38 C34 54 54 92 82 68 S123 37 155 50 S205 88 238 58 S272 44 300 22" fill="none" stroke="#43e3d7" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="data-card">
+            <h3>Time in Range</h3>
+            <p>Last 7 days</p>
+            <div class="donut"></div>
+            <div class="pattern-row"><span>Low</span><strong>2%</strong></div>
+            <div class="pattern-row"><span>Normal</span><strong>90%</strong></div>
+            <div class="pattern-row"><span>High</span><strong>8%</strong></div>
+          </div>
+
+          <div class="data-card">
+            <h3>Daily Patterns</h3>
+            <p>Average by time of day</p>
+            <div class="pattern-list">
+              <div class="pattern-row"><span>☀ Morning</span><strong>5.2</strong></div>
+              <div class="pattern-row"><span>◐ Afternoon</span><strong>5.7</strong></div>
+              <div class="pattern-row"><span>☾ Evening</span><strong>6.1</strong></div>
+              <div class="pattern-row"><span>● Night</span><strong>4.8</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="lifestyle" class="lifestyle">
+        <div class="lifestyle-inner">
+          <div class="lifestyle-copy">
+            <div class="section-kicker">Better choices, better health</div>
+            <h2 class="section-title">Small changes, big impact</h2>
+            <p class="section-copy">Daily habits play a big role in glucose health. ArrowHealth helps users understand what to improve without feeling overwhelmed.</p>
+            <div class="habit-grid">
+              <div class="habit"><div class="mini-icon">🥗</div><h3>Eat balanced meals</h3><p>Focus on whole foods, fiber, lean protein, and complex carbs.</p></div>
+              <div class="habit"><div class="mini-icon">🏃</div><h3>Stay active</h3><p>Light movement after meals can help support healthier glucose levels.</p></div>
+              <div class="habit"><div class="mini-icon">💧</div><h3>Stay hydrated</h3><p>Drink water throughout the day to support daily wellness.</p></div>
+              <div class="habit"><div class="mini-icon">📈</div><h3>Monitor regularly</h3><p>Regular tracking helps you notice patterns faster.</p></div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="pill">✓ Great Job</div>
+            <p>“Your glucose is mostly in range this week. Your evening walks and balanced meals are helping.”</p>
+            <small>AI health guidance example</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="tips" class="cta">
+        <div class="cta-card">
+          <h2>Ready to make glucose tracking feel effortless?</h2>
+          <p>Use this learn-more page to explain what your glucose feature does, why it matters, and how it helps users build healthier habits.</p>
+          <a class="btn btn-primary" href="index.html">Back to Home</a>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
