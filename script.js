@@ -593,3 +593,34 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(updateNavButtons, 100);
     }
 });
+
+
+    // ScrollSpy Logic for Navbar
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = Array.from(navLinks).map(link => {
+        const targetId = link.getAttribute('href').substring(1);
+        return document.getElementById(targetId);
+    }).filter(section => section !== null);
+
+    const spyObserver = new IntersectionObserver((entries) => {
+        let activeSectionId = null;
+
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                activeSectionId = entry.target.id;
+            }
+        });
+
+        if (activeSectionId) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === activeSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    }, {
+        rootMargin: '-50% 0px -50% 0px' // Trigger when section crosses the middle of the viewport
+    });
+
+    sections.forEach(section => spyObserver.observe(section));
