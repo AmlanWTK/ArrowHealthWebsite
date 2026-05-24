@@ -181,18 +181,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Bi-directional Scroll Animations
-    const scrollSections = document.querySelectorAll('.why-section, .why-grid');
+    const scrollSections = document.querySelectorAll('section, .why-grid');
     
+    function getAnimTargets(section) {
+        if (section.classList.contains('why-section')) {
+            return section.querySelectorAll('.why-text, .app-mockup-wrapper, .iphone-frame-wrapper');
+        } else if (section.classList.contains('why-grid')) {
+            return section.querySelectorAll('.why-stat');
+        } else {
+            // For main landing page and subpages, animate inner container or section
+            const inner = section.querySelector('.bento-container, .consult-container, .premium-container, .hero-inner, .container');
+            return [inner || section];
+        }
+    }
+
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // Find all targets inside this section that need animation
-            const animTargets = entry.target.classList.contains('why-section') 
-                ? entry.target.querySelectorAll('.why-text, .app-mockup-wrapper, .iphone-frame-wrapper')
-                : entry.target.querySelectorAll('.why-stat');
+            const animTargets = getAnimTargets(entry.target);
 
             if (entry.isIntersecting) {
                 animTargets.forEach((t, index) => {
-                    // Slight stagger for a premium feel
                     setTimeout(() => {
                         t.classList.add('is-visible');
                     }, index * 150);
@@ -201,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 animTargets.forEach(t => {
                     t.classList.remove('is-visible');
                     
-                    // Determine if it exited from top or bottom
                     if (entry.boundingClientRect.top > window.innerHeight / 2) {
                         t.classList.add('from-bottom');
                         t.classList.remove('from-top');
@@ -218,13 +225,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     scrollSections.forEach(section => {
-        const animTargets = section.classList.contains('why-section') 
-            ? section.querySelectorAll('.why-text, .app-mockup-wrapper, .iphone-frame-wrapper')
-            : section.querySelectorAll('.why-stat');
+        const animTargets = getAnimTargets(section);
             
         animTargets.forEach(t => {
             t.classList.add('scroll-reveal');
-            // Initial setup: assume everything below fold is from-bottom
             if (section.getBoundingClientRect().top > window.innerHeight) {
                 t.classList.add('from-bottom');
             } else {
@@ -591,36 +595,36 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', updateNavButtons);
         
         setTimeout(updateNavButtons, 100);
-    }
-});
+        // ScrollSpy Logic for Navbar
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = Array.from(navLinks).map(link => {
+            const href = link.getAttribute('href');
+            if (!href || !href.startsWith('#') || href === '#') return null;
+            return document.getElementById(href.substring(1));
+        }).filter(section => section !== null);
 
+        const spyObserver = new IntersectionObserver((entries) => {
+            let activeSectionId = null;
 
-    // ScrollSpy Logic for Navbar
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const sections = Array.from(navLinks).map(link => {
-        const targetId = link.getAttribute('href').substring(1);
-        return document.getElementById(targetId);
-    }).filter(section => section !== null);
-
-    const spyObserver = new IntersectionObserver((entries) => {
-        let activeSectionId = null;
-
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                activeSectionId = entry.target.id;
-            }
-        });
-
-        if (activeSectionId) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === activeSectionId) {
-                    link.classList.add('active');
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activeSectionId = entry.target.id;
                 }
             });
-        }
-    }, {
-        rootMargin: '-50% 0px -50% 0px' // Trigger when section crosses the middle of the viewport
-    });
 
-    sections.forEach(section => spyObserver.observe(section));
+            if (activeSectionId) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href && href === '#' + activeSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        }, {
+            rootMargin: '-30% 0px -70% 0px' // Trigger when section hits top 30% of viewport
+        });
+
+        sections.forEach(section => spyObserver.observe(section));
+    }
+});

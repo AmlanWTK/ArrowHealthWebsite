@@ -651,6 +651,40 @@
       50% { transform: translateY(-16px) rotate(-2deg); }
     }
 
+    /* Chart & Donut Animations */
+    .chart-line path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+    }
+    .chart-line.is-visible path {
+      animation: drawLine 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    /* removed */ {
+      animation: drawLine 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes drawLine {
+      to { stroke-dashoffset: 0; }
+    }
+
+            
+    .donut {
+      background: conic-gradient(var(--nutrition) 0 90%, var(--brand-secondary) 90% 98%, var(--heart) 98% 100%);
+      transform: scale(0) rotate(-45deg);
+      opacity: 0;
+    }
+    .donut.is-visible {
+      animation: popDonut 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    /* removed */ {
+      animation: popDonut 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes popDonut {
+      to {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
     @media (max-width: 940px) {
       .nav-links { display: none; }
       .hero { padding-top: 108px; min-height: auto; }
@@ -852,7 +886,27 @@
       font-weight: 800 !important;
     }
 
+    /* Scroll reveal (inline so file:// and local open always work) */
+    .scroll-reveal {
+      opacity: 0;
+      translate: 0 44px;
+      transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        translate 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scroll-reveal.from-top { translate: 0 -44px; }
+    .scroll-reveal.from-bottom { translate: 0 44px; }
+    .scroll-reveal.is-visible { opacity: 1; translate: 0 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-reveal {
+        opacity: 1 !important;
+        translate: none !important;
+        transition: none !important;
+      }
+    }
+
   </style>
+  <link rel="stylesheet" href="scroll-reveal.css">
 </head>
 <body>
   <div class="page">
@@ -868,7 +922,7 @@
 
     <header class="navbar">
       <div class="nav-inner">
-        <a class="brand" href="#">
+        <a class="brand" href="index.html">
           <span class="brand-mark">A</span>
           <span>ArrowHealth</span>
         </a>
@@ -928,7 +982,7 @@
                   </div>
                   <div class="chart-line">
                     <svg viewBox="0 0 300 115" preserveAspectRatio="none">
-                      <path d="M0 75 C35 62 45 40 78 54 S130 83 160 52 S210 28 245 58 S280 78 300 36" fill="none" stroke="#A9855A" stroke-width="5" stroke-linecap="round"/>
+                      <path pathLength="100" d="M0 75 C35 62 45 40 78 54 S130 83 160 52 S210 28 245 58 S280 78 300 36" fill="none" stroke="#A9855A" stroke-width="5" stroke-linecap="round"/>
                       <circle cx="300" cy="36" r="8" fill="#0F1816" stroke="#A9855A" stroke-width="5"/>
                     </svg>
                   </div>
@@ -940,7 +994,7 @@
                 <p class="insight-text">Your glucose is stable and in the normal range. Balanced meals and hydration look on track.</p>
                 <div class="chart-line">
                   <svg viewBox="0 0 300 115" preserveAspectRatio="none">
-                    <path d="M0 70 C28 30 55 82 88 66 S130 26 168 52 S218 92 254 48 S282 28 300 34" fill="none" stroke="#639898" stroke-width="5" stroke-linecap="round"/>
+                    <path pathLength="100" d="M0 70 C28 30 55 82 88 66 S130 26 168 52 S218 92 254 48 S282 28 300 34" fill="none" stroke="#639898" stroke-width="5" stroke-linecap="round"/>
                   </svg>
                 </div>
               </div>
@@ -1007,7 +1061,7 @@
           <div class="glass-panel insight-panel">
             <div class="chart-line" style="height: 180px; margin-top: 0;">
               <svg viewBox="0 0 300 180" preserveAspectRatio="none">
-                <path d="M0 110 C25 75 50 95 72 60 S120 142 152 93 S198 48 232 74 S275 92 300 37" fill="none" stroke="#164E45" stroke-width="5" stroke-linecap="round"/>
+                <path pathLength="100" d="M0 110 C25 75 50 95 72 60 S120 142 152 93 S198 48 232 74 S275 92 300 37" fill="none" stroke="#164E45" stroke-width="5" stroke-linecap="round"/>
                 <path d="M0 110 C25 75 50 95 72 60 S120 142 152 93 S198 48 232 74 S275 92 300 37 L300 180 L0 180 Z" fill="rgba(22,78,69,0.12)"/>
               </svg>
             </div>
@@ -1032,7 +1086,7 @@
             <div class="huge">5.5 <small>mmol/L</small></div>
             <div class="chart-line">
               <svg viewBox="0 0 300 115" preserveAspectRatio="none">
-                <path d="M0 38 C34 54 54 92 82 68 S123 37 155 50 S205 88 238 58 S272 44 300 22" fill="none" stroke="#639898" stroke-width="5" stroke-linecap="round"/>
+                <path pathLength="100" d="M0 38 C34 54 54 92 82 68 S123 37 155 50 S205 88 238 58 S272 44 300 22" fill="none" stroke="#639898" stroke-width="5" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
@@ -1103,7 +1157,7 @@
         </div>
         <div class="footer-cta-area">
           <a class="footer-btn primary" href="index.html">Get Started</a>
-          <a class="footer-btn secondary" href="index.html">View Features</a>
+          <a class="footer-btn secondary" href="index.html#bento">View Features</a>
         </div>
       </div>
 
@@ -1166,6 +1220,12 @@
 
 
 <script>
+(function () {
+  const CARD_SELECTORS = 'section, .data-card, .step, .insight-panel, .habit, .testimonial, .cta-card, .meal-row, .monthly-panel, .analysis-card, .safety-card, .recommend-card, .chart-label';
+
+  
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = Array.from(navLinks).map(link => {
@@ -1192,5 +1252,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+  <script src="scroll-reveal.js"></script>
 </body>
 </html>
