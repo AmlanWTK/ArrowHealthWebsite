@@ -949,7 +949,295 @@
       }
     }
 
+
+    /* ════════════════════════════════════════════════════
+       MOBILE RESPONSIVE — meal_estimation.html
+       Desktop/laptop layout completely untouched above.
+       These rules only apply at ≤768px and ≤480px.
+    ════════════════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+
+      /* ── Nav ── */
+      .nav { padding: 14px 16px; height: 68px; box-sizing: border-box; display: flex; align-items: center; }
+      .nav-inner { gap: 12px; padding-right: 56px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+      .nav-links { display: none; }
+      .nav-actions .btn:not(.btn-primary) { display: none; }
+      .nav-actions .btn-primary { height: 40px; padding: 0 18px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 14px; }
+      .brand { font-size: 17px; gap: 10px; display: flex; align-items: center; }
+      .brand-mark { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+
+      .close-btn {
+        top: 14px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        min-height: auto;
+        padding: 100px 18px 40px;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 28px;
+      }
+      h1 {
+        font-size: clamp(36px, 9vw, 56px);
+        line-height: 1;
+        max-width: 100%;
+      }
+      .hero-copy { font-size: 15px; line-height: 1.7; margin: 18px 0 24px; max-width: 100%; }
+      .eyebrow { font-size: 11px; padding: 8px 12px; margin-bottom: 16px; }
+
+      /* ── Hero actions ── */
+      .hero-actions { flex-direction: column; gap: 10px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Scan stage — hide complex 3D food frame on mobile ── */
+      .scan-stage { display: none; }
+
+      /* ── Hero summary bar ── */
+      .hero-summary {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 24px;
+        margin-top: 32px;
+      }
+      .summary-item {
+        padding: 20px 16px;
+        border-right: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .summary-item:nth-child(2n) { border-right: 0; }
+      .summary-item:nth-last-child(-n+2) { border-bottom: 0; }
+      .summary-value { font-size: 26px; }
+      .summary-label { font-size: 13px; margin-bottom: 8px; }
+
+      /* ── Sections ── */
+      section { padding: 56px 18px; }
+      .section-title { font-size: clamp(26px, 7vw, 42px); }
+      .section-copy { font-size: 15px; max-width: 100%; }
+
+      /* ── Timeline grid ── */
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      /* Grid items must have min-width:0 so text wraps and
+         the horizontal scroll inside doesn't burst the parent */
+      .timeline-grid > div {
+        min-width: 0 !important;
+        overflow: hidden !important;
+      }
+      .timeline-grid .section-title,
+      .timeline-grid .section-copy {
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      /* ── Timeline list → horizontal scroll cards ── */
+      .timeline-list {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 12px !important;
+        margin-top: 20px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none !important;
+      }
+      .timeline-list::-webkit-scrollbar { display: none; }
+      .meal-row {
+        flex: 0 0 190px !important;
+        min-width: 190px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 16px !important;
+        border-radius: 18px !important;
+        grid-template-columns: unset !important;
+      }
+      .meal-time {
+        width: 46px !important; height: 46px !important;
+        border-radius: 14px !important; font-size: 11px !important;
+      }
+      .meal-row h3 { font-size: 15px !important; margin: 4px 0 3px !important; }
+      .meal-row p  { font-size: 12px !important; }
+      .impact { align-self: flex-start !important; margin-top: auto !important; }
+      .meal-row h3 { font-size: 16px; }
+      .meal-row p { font-size: 13px; }
+
+      /* ── Monthly panel ── */
+      .monthly-panel { padding: 20px; }
+      .month-head { flex-direction: row; gap: 10px; margin-bottom: 16px; }
+      .month-head h3 { font-size: 20px; }
+      .month-chart { height: 200px; border-radius: 18px; }
+      .chart-labels {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .chart-label { padding: 13px; border-radius: 14px; }
+      .chart-label strong { font-size: 20px; }
+
+      /* ── Analysis board ── */
+      .analysis-board {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 18px;
+        margin-top: 22px;
+      }
+      .analysis-card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .analysis-card h3 { font-size: 16px; margin: 10px 0 6px; }
+      .analysis-card p { font-size: 13px; }
+      .icon-bubble { width: 38px; height: 38px; font-size: 18px; border-radius: 13px; }
+
+      /* ── Safety section ── */
+      .safety-section { padding-top: 30px; }
+      .safety-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .safety-card { min-height: 320px; border-radius: 26px; }
+      .safety-card.second-photo { min-height: 200px; margin-top: 16px; }
+      .safety-content {
+        inset: auto 18px 18px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .safety-content h3 { font-size: 20px; }
+      .safety-content p { font-size: 14px; }
+
+      /* ── Recommend card ── */
+      .recommend-card { padding: 22px; }
+      .recommend-card h3 { font-size: 24px; margin-bottom: 14px; }
+      .recommend-list { gap: 10px; margin-top: 16px; }
+      .recommend-item {
+        grid-template-columns: 36px 1fr;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 15px;
+      }
+      .recommend-item strong { font-size: 14px; }
+      .recommend-item span { font-size: 13px; }
+
+      /* ── CTA Card ── */
+      .cta { padding-top: 0; padding-bottom: 60px; }
+      .cta-card {
+        padding: 36px 22px;
+        border-radius: 26px;
+      }
+      .cta-card h2 { font-size: clamp(26px, 6vw, 38px); }
+      .cta-card p { font-size: 15px; margin-bottom: 22px; }
+      .cta-card .hero-actions { flex-direction: column; gap: 10px; }
+      .cta-card .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Analysis board → horizontal scroll cards ── */
+      .glass.analysis-board {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 14px !important;
+        padding: 20px 18px !important;
+        margin-top: 24px !important;
+        scrollbar-width: none !important;
+      }
+      .glass.analysis-board::-webkit-scrollbar { display: none; }
+      .analysis-card {
+        flex: 0 0 210px !important;
+        min-width: 210px !important;
+        min-height: auto !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+      }
+      .analysis-card h3 { font-size: 16px !important; margin: 12px 0 8px !important; }
+      .analysis-card p  { font-size: 13px !important; }
+
+      /* ── Footer ── */
+      .arrow-footer { padding: 52px 18px 28px; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-bottom: 28px;
+      }
+      .footer-title { font-size: clamp(1.7rem, 6.5vw, 2.5rem); }
+      .footer-cta-area { justify-content: flex-start; flex-direction: column; gap: 10px; }
+      .footer-btn { width: 100%; justify-content: center; }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 0;
+      }
+      .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      /* ── Navbar ── */
+      .nav { padding: 12px 14px; height: 62px; }
+      .brand { font-size: 15px; }
+      .brand > span:last-child { display: none; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 11px; }
+      .nav-actions .btn-primary { height: 38px; padding: 0 14px; border-radius: 12px; }
+      .close-btn {
+        top: 12px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
+      }
+
+      /* ── Hero ── */
+      .hero { padding: 88px 14px 30px; }
+      h1 { font-size: clamp(30px, 8.5vw, 42px); }
+      .hero-copy { font-size: 14px; }
+
+      /* ── Summary bar — single column ── */
+      .hero-summary { grid-template-columns: 1fr; }
+      .summary-item { border-right: 0; border-bottom: 1px solid var(--border-soft); }
+      .summary-item:last-child { border-bottom: 0; }
+
+      /* ── Meal row — stack ── */
+      .meal-row { grid-template-columns: 1fr; gap: 8px; }
+      .meal-time { width: 42px; height: 42px; }
+
+      /* ── Chart labels — single col ── */
+      .chart-labels { grid-template-columns: 1fr; }
+
+      /* ── Analysis board — single col ── */
+      .analysis-board { grid-template-columns: 1fr; padding: 14px; }
+
+      /* ── CTA ── */
+      .cta-card { padding: 28px 16px; }
+
+      /* ── Footer links ── */
+      .footer-links-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+
   </style>
+
   <link rel="stylesheet" href="scroll-reveal.css">
 </head>
 <body>
@@ -1214,28 +1502,28 @@
             <h4>Product</h4>
             <a href="glucose.html">Glucose Tracking</a>
             <a href="meal_estimation.html">Food Analysis</a>
-            <a href="#">Medicine Scan</a>
+            <a href="medicine.html">Medicine Scan</a>
             <a href="ai_wellness.html">AI Health Chat</a>
           </div>
           <div class="footer-col">
             <h4>AI Tools</h4>
-            <a href="#">Smart Camera</a>
-            <a href="#">Meal Insights</a>
-            <a href="#">Health Summary</a>
-            <a href="#">Wellness Guidance</a>
+            <a href="index.html">Smart Camera</a>
+            <a href="meal_estimation.html">Meal Insights</a>
+            <a href="index.html">Health Summary</a>
+            <a href="ai_wellness.html">Wellness Guidance</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Why Arrow Health</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#why">Why Arrow Health</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#support">Support</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-            <a href="#">Terms</a>
+            <a href="index.html">Privacy</a>
+            <a href="index.html">Security</a>
+            <a href="index.html">Terms</a>
             <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
@@ -1244,9 +1532,9 @@
       <div class="footer-bottom-bar">
         <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Use</a>
+          <a href="index.html">Accessibility</a>
         </div>
       </div>
     </div>
@@ -1287,5 +1575,34 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+  <script>
+  (function autoScrollCarousels() {
+    if (window.innerWidth > 768) return;
+    const SPEED = 0.6;
+    const scrollers = [
+      document.querySelector('.glass.analysis-board'),
+      document.querySelector('.timeline-list'),
+    ].filter(Boolean);
+    scrollers.forEach(function(scroller) {
+    let rafId = null, paused = false, pauseTimer = null, direction = 1, active = false;
+    function animate() {
+      if (active && !paused) {
+        scroller.scrollLeft += SPEED * direction;
+        const max = scroller.scrollWidth - scroller.clientWidth;
+        if (scroller.scrollLeft >= max - 1) direction = -1;
+        else if (scroller.scrollLeft <= 1)  direction =  1;
+      }
+      rafId = requestAnimationFrame(animate);
+    }
+    function startAuto() { if (rafId) return; active = true; rafId = requestAnimationFrame(animate); }
+    function stopAuto()  { cancelAnimationFrame(rafId); rafId = null; active = false; direction = 1; scroller.scrollLeft = 0; }
+    scroller.addEventListener('touchstart', () => { paused = true; clearTimeout(pauseTimer); }, { passive: true });
+    scroller.addEventListener('touchend',   () => { clearTimeout(pauseTimer); pauseTimer = setTimeout(() => { paused = false; }, 3000); }, { passive: true });
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { e.isIntersecting ? startAuto() : stopAuto(); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }).observe(scroller);
+    }); // end scrollers.forEach
+  })();
+  </script>
 </body>
 </html>

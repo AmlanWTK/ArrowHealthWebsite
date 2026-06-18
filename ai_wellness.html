@@ -920,7 +920,290 @@
       font-weight: 800 !important;
     }
 
+
+    /* ════════════════════════════════════════════════════
+       MOBILE RESPONSIVE — ai_wellness.html
+       Desktop/laptop layout completely untouched above.
+       These rules only apply at ≤768px and ≤480px.
+    ════════════════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+
+      /* ── Nav ── */
+      .nav { padding: 14px 16px; }
+      .nav-inner { gap: 12px; }
+      .nav-links { display: none; }
+      .nav-actions .btn:not(.btn-primary) { display: none; }
+      .brand { font-size: 17px; gap: 10px; }
+      .brand-mark { width: 34px; height: 34px; border-radius: 11px; }
+
+      /* ── Hero ── */
+      .hero {
+        min-height: auto;
+        padding: 100px 18px 40px;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        min-height: auto;
+      }
+      h1 {
+        font-size: clamp(38px, 9vw, 56px);
+        line-height: 1;
+        max-width: 100%;
+      }
+      .hero-copy { font-size: 16px; line-height: 1.7; margin: 20px 0 24px; }
+      .eyebrow { font-size: 11px; padding: 8px 12px; margin-bottom: 16px; }
+      .hero-actions { flex-direction: column; gap: 10px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Trust Row ── */
+      .trust-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: 100%;
+        margin-top: 24px;
+      }
+      .trust-item { padding: 12px 10px; font-size: 12px; }
+      .trust-icon { width: 28px; height: 28px; font-size: 14px; border-radius: 10px; }
+
+      /* ── Chat Stage (hero right panel) ── */
+      .chat-stage {
+        min-height: auto;
+        perspective: none;
+        position: relative;
+        height: auto;
+      }
+      .assistant-panel {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100%;
+        transform: none !important;
+        animation: none;
+        border-radius: 28px;
+        padding: 14px;
+      }
+      .assistant-header {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 22px;
+        gap: 14px;
+      }
+      .ai-logo { width: 52px; height: 52px; border-radius: 16px; font-size: 22px; }
+      .assistant-header h3 { font-size: 20px; }
+      .assistant-header p { font-size: 13px; }
+      .chat-body { padding: 18px 12px 8px; gap: 12px; }
+      .bubble { padding: 14px 15px; font-size: 14px; border-radius: 18px; }
+      .prompt-row { gap: 8px; padding: 10px; border-radius: 18px; }
+      .prompt-input { padding: 12px 14px; font-size: 14px; }
+      .send-btn { width: 46px; height: 46px; font-size: 18px; border-radius: 14px; }
+
+      /* ── Floating cards — hide on mobile (they overlap badly) ── */
+      .memory-card,
+      .insight-card,
+      .hero-photo-card { display: none; }
+
+      /* ── Overview Bar ── */
+      .overview-bar {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 24px;
+      }
+      .overview-item {
+        padding: 20px 16px;
+        border-right: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .overview-item:nth-child(2n) { border-right: 0; }
+      .overview-item:nth-last-child(-n+2) { border-bottom: 0; }
+      .overview-item strong { font-size: 24px; }
+
+      /* ── Close button — keep visible, shift nav CTA left so they don't overlap ── */
+      .close-btn { display: flex !important; top: 14px !important; right: 14px !important; width: 40px !important; height: 40px !important; }
+      .nav-actions { padding-right: 58px !important; }
+
+      /* ── Sections ── */
+      section { padding: 56px 18px; }
+      .section-title { font-size: clamp(28px, 7vw, 44px); }
+      .section-copy { font-size: 15px; }
+
+      /* ── Capability Grid ── */
+      .capability-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .cap-list { margin-top: 20px; gap: 12px; }
+      .cap-item {
+        grid-template-columns: 50px 1fr;
+        gap: 14px;
+        padding: 16px;
+        border-radius: 20px;
+      }
+      .cap-icon { width: 46px; height: 46px; font-size: 20px; border-radius: 15px; }
+      .cap-item h3 { font-size: 17px; }
+      .data-panel { padding: 20px; }
+      .data-panel-head { flex-direction: column; align-items: flex-start; gap: 10px; }
+      .data-panel-head h3 { font-size: 22px; }
+      .data-row {
+        grid-template-columns: 46px 1fr auto;
+        gap: 12px;
+        padding: 14px;
+        border-radius: 16px;
+      }
+      .data-row-icon { width: 42px; height: 42px; font-size: 18px; border-radius: 13px; }
+
+      /* ── Question Grid → horizontal scroll WITHIN section boundary ── */
+      #questions { overflow: hidden !important; }
+      #questions .section-inner { overflow: hidden !important; min-width: 0 !important; }
+      .question-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 14px !important;
+        margin-top: 24px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none !important;
+      }
+      .question-card {
+        flex: 0 0 260px !important;
+        min-width: 260px !important;
+        min-height: auto !important;
+        padding: 22px !important;
+        border-radius: 24px !important;
+        box-sizing: border-box !important;
+      }
+      .question-card h3 { font-size: 20px; margin: 14px 0 10px; }
+
+      /* ── Data Stack → horizontal scroll WITHIN panel boundary ── */
+      .data-panel { overflow: hidden !important; min-width: 0 !important; }
+      .data-stack {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 12px !important;
+        scrollbar-width: none !important;
+      }
+      .data-row {
+        flex: 0 0 210px !important;
+        min-width: 210px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 16px !important;
+        border-radius: 16px !important;
+        box-sizing: border-box !important;
+      }
+      .data-row > div { flex: 1 1 auto !important; min-width: 0 !important; }
+      .data-row strong { display: block !important; margin-bottom: 4px !important; font-size: 15px !important; }
+      .data-row span { font-size: 13px !important; display: block !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+      .data-row .tag { align-self: flex-start !important; margin-top: auto !important; }
+
+      /* ── Image Story ── */
+      .image-story-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .story-photo { min-height: 280px; }
+      .story-caption { padding: 18px; }
+      .story-caption h3 { font-size: 20px; }
+      .story-caption p { font-size: 14px; }
+
+      /* ── Conversation Grid ── */
+      .conversation-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .phone-chat { padding: 20px; border-radius: 28px; }
+      .phone-top { padding: 14px; gap: 12px; border-radius: 18px; }
+      .sample-bubble { padding: 14px; font-size: 14px; border-radius: 18px; }
+      .safety-note { font-size: 13px; padding: 14px; }
+
+      /* ── CTA Card ── */
+      .cta { padding-top: 10px; padding-bottom: 60px; }
+      .cta-card {
+        padding: 36px 22px;
+        border-radius: 26px;
+      }
+      .cta-card h2 { font-size: clamp(26px, 6vw, 38px); }
+      .cta-card p { font-size: 15px; }
+      .cta-card .hero-actions { flex-direction: column; gap: 10px; }
+      .cta-card .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Footer ── */
+      .arrow-footer { padding: 52px 18px 28px; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-bottom: 28px;
+      }
+      .footer-title { font-size: clamp(1.7rem, 6.5vw, 2.5rem); }
+      .footer-cta-area { justify-content: flex-start; flex-direction: column; gap: 10px; }
+      .footer-btn { width: 100%; justify-content: center; }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 0;
+      }
+      .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      /* ── Container/Nav ── */
+      .nav { padding: 12px 14px; }
+      .brand { font-size: 15px; }
+
+      /* ── Hero ── */
+      .hero { padding: 88px 14px 32px; }
+      h1 { font-size: clamp(32px, 8.5vw, 44px); }
+      .hero-copy { font-size: 15px; }
+
+      /* ── Trust — single column ── */
+      .trust-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+      /* ── Overview bar — full single col ── */
+      .overview-bar { grid-template-columns: 1fr; }
+      .overview-item { border-right: 0; border-bottom: 1px solid var(--border-soft); }
+      .overview-item:last-child { border-bottom: 0; }
+
+      /* ── Question cards ── */
+      .question-card { padding: 18px; border-radius: 20px; }
+      .question-card h3 { font-size: 18px; }
+
+      /* ── Data row — stack ── */
+      .data-row { grid-template-columns: 1fr; }
+      .data-row-icon { display: none; }
+
+      /* ── Footer links — single col ── */
+      .footer-links-grid { grid-template-columns: 1fr; gap: 18px; }
+
+      /* ── CTA ── */
+      .cta-card { padding: 28px 16px; }
+
+      /* ── Hide brand text on very small phones ── */
+      .brand > span:last-child { display: none; }
+    }
+
   </style>
+
   <link rel="stylesheet" href="scroll-reveal.css">
 </head>
 <body>
@@ -1167,28 +1450,28 @@
             <h4>Product</h4>
             <a href="glucose.html">Glucose Tracking</a>
             <a href="meal_estimation.html">Food Analysis</a>
-            <a href="#">Medicine Scan</a>
+            <a href="medicine.html">Medicine Scan</a>
             <a href="ai_wellness.html">AI Health Chat</a>
           </div>
           <div class="footer-col">
             <h4>AI Tools</h4>
-            <a href="#">Smart Camera</a>
-            <a href="#">Meal Insights</a>
-            <a href="#">Health Summary</a>
-            <a href="#">Wellness Guidance</a>
+            <a href="index.html">Smart Camera</a>
+            <a href="meal_estimation.html">Meal Insights</a>
+            <a href="index.html">Health Summary</a>
+            <a href="ai_wellness.html">Wellness Guidance</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Why Arrow Health</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#why">Why Arrow Health</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#support">Support</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-            <a href="#">Terms</a>
+            <a href="index.html">Privacy</a>
+            <a href="index.html">Security</a>
+            <a href="index.html">Terms</a>
             <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
@@ -1197,9 +1480,9 @@
       <div class="footer-bottom-bar">
         <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Use</a>
+          <a href="index.html">Accessibility</a>
         </div>
       </div>
     </div>
@@ -1234,5 +1517,33 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+
+<script>
+(function autoScrollAICards() {
+  if (window.innerWidth > 768) return;
+  var SPEED = 0.6;
+  ['.question-grid', '.data-stack'].forEach(function(sel) {
+    var scroller = document.querySelector(sel);
+    if (!scroller) return;
+    var rafId = null, paused = false, pauseTimer = null, direction = 1, active = false;
+    function animate() {
+      if (active && !paused) {
+        scroller.scrollLeft += SPEED * direction;
+        var max = scroller.scrollWidth - scroller.clientWidth;
+        if (scroller.scrollLeft >= max - 1) direction = -1;
+        else if (scroller.scrollLeft <= 1) direction = 1;
+      }
+      rafId = requestAnimationFrame(animate);
+    }
+    function startAuto() { if (rafId) return; active = true; rafId = requestAnimationFrame(animate); }
+    function stopAuto() { cancelAnimationFrame(rafId); rafId = null; active = false; direction = 1; scroller.scrollLeft = 0; }
+    scroller.addEventListener('touchstart', function() { paused = true; clearTimeout(pauseTimer); }, { passive: true });
+    scroller.addEventListener('touchend', function() { clearTimeout(pauseTimer); pauseTimer = setTimeout(function() { paused = false; }, 3000); }, { passive: true });
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { e.isIntersecting ? startAuto() : stopAuto(); });
+    }, { threshold: 0.1 }).observe(scroller);
+  });
+})();
+</script>
 </body>
 </html>

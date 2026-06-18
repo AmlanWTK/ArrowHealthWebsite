@@ -542,21 +542,134 @@
       .metric-cell { border-bottom: 1px solid var(--border-soft); }
       .side-column { grid-template-columns: 1fr; }
     }
+    @media (max-width: 768px) {
+
+      /* ── Fix: close-btn overlaps notification bell ──
+         Hide the bell icon; close-btn already handles nav. */
+      .icon-btn { display: none !important; }
+      .close-btn {
+        top: 14px !important;
+        right: 14px !important;
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      /* ── Navbar ── */
+      .navbar { padding: 12px 16px; height: 66px; }
+
+      /* ── Hero ── */
+      .hero { margin: 0; border-radius: 0; }
+      .hero-grid { grid-template-columns: 1fr !important; padding: 36px 20px 28px !important; gap: 24px !important; }
+      .hero-text h1 { font-size: clamp(30px, 8vw, 44px) !important; }
+      .hero-text .hero-copy { font-size: 14px !important; line-height: 1.6 !important; }
+      .hero-actions { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+      .hero-actions .btn { width: 100% !important; justify-content: center !important; text-align: center !important; }
+      .scanner-card { display: none !important; }
+
+      /* ── Stats band ── */
+      .stats-band {
+        grid-template-columns: repeat(2, 1fr) !important;
+        margin: 16px 16px 0 !important;
+        border-radius: 18px !important;
+      }
+      .stat-item { border-right: 0 !important; border-bottom: 1px solid var(--border-soft) !important; padding: 16px !important; }
+      .stat-item:nth-child(odd) { border-right: 1px solid var(--border-soft) !important; }
+      .stat-item:last-child, .stat-item:nth-last-child(2):nth-child(odd) { border-bottom: 0 !important; }
+      .stat-item strong { font-size: 18px !important; }
+
+      /* ── Content grid ── */
+      .content-grid {
+        grid-template-columns: 1fr !important;
+        padding: 16px !important;
+        gap: 14px !important;
+      }
+
+      /* ── Latest medicine panel — 2-col layout to fill card width ── */
+      .latest-panel { padding: 22px 20px !important; min-height: auto !important; }
+
+      /* Top row: avatar left, name/dose/time right */
+      .latest-panel > div:first-child {
+        display: grid !important;
+        grid-template-columns: 64px 1fr !important;
+        grid-template-rows: auto auto auto auto !important;
+        column-gap: 16px !important;
+        align-items: start !important;
+      }
+      .panel-label {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 10px !important;
+      }
+      .saved-line {
+        grid-column: 1 / -1 !important;
+        margin-bottom: 14px !important;
+        font-size: 13px !important;
+      }
+      .medicine-avatar {
+        grid-column: 1 !important;
+        grid-row: 3 !important;
+        width: 64px !important; height: 64px !important;
+        font-size: 30px !important; border-radius: 16px !important;
+        margin-bottom: 0 !important;
+        align-self: start !important;
+      }
+      /* Name, dose, time all in right column */
+      .latest-panel h2 {
+        grid-column: 2 !important;
+        grid-row: 3 !important;
+        font-size: 22px !important;
+        margin: 0 0 6px !important;
+        align-self: start !important;
+      }
+      .dose-pill {
+        grid-column: 2 !important;
+        grid-row: 4 !important;
+        font-size: 12px !important;
+        padding: 5px 11px !important;
+        margin-bottom: 0 !important;
+        align-self: center !important;
+      }
+      .time-row {
+        grid-column: 1 / -1 !important;
+        font-size: 12px !important;
+        margin-top: 12px !important;
+      }
+      .latest-actions {
+        gap: 10px !important;
+        margin-top: 18px !important;
+      }
+      .latest-actions .btn { font-size: 14px !important; padding: 13px 18px !important; }
+
+      /* ── Main detail panel ── */
+      .main-detail { padding: 20px !important; min-height: auto !important; }
+      .main-detail::after { display: none !important; }    /* hide decorative ♥ */
+      .detail-title { font-size: 20px !important; }
+      .about-text { font-size: 14px !important; line-height: 1.65 !important; }
+      .detail-metrics { grid-template-columns: repeat(2, 1fr) !important; }
+      .metric-cell { padding: 16px !important; border-right: 0 !important; border-bottom: 1px solid var(--border-soft) !important; }
+      .metric-cell:nth-child(odd) { border-right: 1px solid var(--border-soft) !important; }
+      .metric-value { font-size: 20px !important; }
+      .metric-label { font-size: 11px !important; }
+
+      /* ── Side column ── */
+      .side-column { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .history-card, .download-card { padding: 18px !important; }
+      .history-head h3, .recent-title { font-size: 20px !important; }
+
+      /* ── Footer ── */
+      .footer-links-grid { grid-template-columns: 1fr 1fr !important; }
+      .footer-bottom-bar { flex-direction: column !important; align-items: flex-start !important; gap: 8px !important; }
+    }
+
     @media (max-width: 640px) {
       .container { width: min(100% - 24px, 1440px); }
       .app-shell { padding-top: 0; }
       .main-frame { border-radius: 0; }
       .profile-pill { display: none; }
-      .hero { margin: 0; border-radius: 0; }
-      h1 { font-size: 46px; }
-      .hero-actions { flex-direction: column; align-items: stretch; }
-      .scanner-card { display: none; }
-      .stats-band { grid-template-columns: 1fr; margin-top: 18px; }
-      .stat-item { border-right: 0; border-bottom: 1px solid var(--border-soft); }
-      .stat-item:last-child { border-bottom: 0; }
+      .stats-band { grid-template-columns: 1fr !important; }
+      .stat-item:nth-child(odd) { border-right: 0 !important; }
       .content-grid { padding-left: 12px; padding-right: 12px; }
-      .detail-metrics { grid-template-columns: 1fr; }
-      .metric-cell { border-right: 0; }
+      .detail-metrics { grid-template-columns: 1fr !important; }
+      .metric-cell { border-right: 0 !important; }
       .footer-links-grid { grid-template-columns: 1fr; }
       .footer-bottom-bar { flex-direction: column; align-items: flex-start; }
     }
@@ -763,28 +876,28 @@
             <h4>Product</h4>
             <a href="glucose.html">Glucose Tracking</a>
             <a href="meal_estimation.html">Food Analysis</a>
-            <a href="#">Medicine Scan</a>
+            <a href="medicine.html">Medicine Scan</a>
             <a href="ai_wellness.html">AI Health Chat</a>
           </div>
           <div class="footer-col">
             <h4>AI Tools</h4>
-            <a href="#">Smart Camera</a>
-            <a href="#">Meal Insights</a>
-            <a href="#">Health Summary</a>
-            <a href="#">Wellness Guidance</a>
+            <a href="index.html">Smart Camera</a>
+            <a href="meal_estimation.html">Meal Insights</a>
+            <a href="index.html">Health Summary</a>
+            <a href="ai_wellness.html">Wellness Guidance</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Why Arrow Health</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#why">Why Arrow Health</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#support">Support</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-            <a href="#">Terms</a>
+            <a href="index.html">Privacy</a>
+            <a href="index.html">Security</a>
+            <a href="index.html">Terms</a>
             <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
@@ -792,9 +905,9 @@
       <div class="footer-bottom-bar">
         <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Use</a>
+          <a href="index.html">Accessibility</a>
         </div>
       </div>
     </div>

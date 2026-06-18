@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ── Mobile hamburger menu ──
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNavPanel = document.getElementById('mobileNavPanel');
+
+    if (mobileMenuBtn && mobileNavPanel) {
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileNavPanel.classList.toggle('is-open');
+            mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        });
+
+        // Close when any link is tapped
+        mobileNavPanel.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavPanel.classList.remove('is-open');
+                mobileMenuBtn.textContent = '☰';
+                mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+            });
+        });
+    }
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -626,5 +646,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         sections.forEach(section => spyObserver.observe(section));
+    }
+
+    // ================================================================
+    // Hash-based modal opener — allows other pages to deep-link into modals
+    // e.g. index.html#about  →  opens About modal
+    //      index.html#why    →  opens Why Arrow Health modal
+    //      index.html#support → opens Support modal
+    //      index.html#contact → opens Contact modal
+    // ================================================================
+    const hashModalMap = {
+        '#about':   document.getElementById('aboutModal'),
+        '#why':     document.getElementById('whyModal'),
+        '#support': document.getElementById('supportModal'),
+        '#contact': document.getElementById('contactModal'),
+        '#privacy': document.getElementById('privacyModal'),
+    };
+    const closeButtonMap = {
+        '#about':   document.getElementById('closeAboutBtn'),
+        '#why':     document.getElementById('closeModalBtn'),
+        '#support': document.getElementById('closeSupportBtn'),
+        '#contact': document.getElementById('closeContactBtn'),
+        '#privacy': document.getElementById('closePrivacyBtn'),
+    };
+    const targetModal = hashModalMap[window.location.hash];
+    if (targetModal) {
+        openModal(targetModal);
+        // Wait for modal to actually paint before revealing page — prevents hero flash
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+            document.documentElement.style.visibility = '';
+        }));
+        // Close button: go back to the page the user came from, not stay on index.html
+        const closeBtn = closeButtonMap[window.location.hash];
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (e) => {
+                e.stopImmediatePropagation();
+                history.back();
+            }, { capture: true, once: true });
+        }
+    } else {
+        document.documentElement.style.visibility = '';
     }
 });

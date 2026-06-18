@@ -402,6 +402,7 @@
       backdrop-filter: blur(22px);
       box-shadow: var(--shadow-soft);
       overflow: hidden;
+      margin-top: 48px;
     }
 
     .metric {
@@ -905,7 +906,285 @@
       }
     }
 
+
+    /* ════════════════════════════════════════════════════
+       MOBILE RESPONSIVE — glucose.html
+       Desktop/laptop layout completely untouched above.
+       These rules only apply at ≤768px and ≤480px.
+    ════════════════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+
+      /* ── Navbar ── */
+      .navbar { padding: 14px 16px; height: 68px; box-sizing: border-box; display: flex; align-items: center; }
+      .nav-inner { gap: 12px; padding-right: 56px; width: 100%; display: flex; align-items: center; justify-content: space-between; }
+      .nav-links { display: none; }
+      .nav-actions .btn:not(.btn-primary) { display: none; }
+      .nav-actions .btn-primary { height: 40px; padding: 0 18px; box-sizing: border-box; display: inline-flex; align-items: center; border-radius: 14px; }
+      .brand { font-size: 17px; gap: 10px; display: flex; align-items: center; }
+      .brand-mark { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+
+      .close-btn {
+        top: 14px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        min-height: auto;
+        padding: 100px 18px 40px;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 30px;
+      }
+      h1 {
+        font-size: clamp(36px, 9vw, 56px);
+        line-height: 1;
+        max-width: 100%;
+      }
+      .hero-copy { font-size: 15px; line-height: 1.7; margin: 18px 0 24px; max-width: 100%; }
+      .eyebrow { font-size: 11px; padding: 8px 12px; margin-bottom: 16px; }
+
+      /* ── Feature strip ── */
+      .feature-strip {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+        max-width: 100%;
+        margin: 22px 0;
+      }
+      .mini-feature { padding: 10px 4px; font-size: 11px; border-left: 1px solid var(--border-soft); }
+      .mini-icon { width: 24px; height: 24px; font-size: 13px; border-radius: 8px; margin-bottom: 6px; }
+
+      /* ── Hero actions ── */
+      .hero-actions { flex-direction: column; gap: 10px; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Visual stage — hide floating device & cards on mobile ── */
+      .visual-stage { display: none; }
+
+      /* ── Hero metrics bar ── */
+      .hero-metrics {
+        grid-template-columns: 1fr 1fr;
+        border-radius: 24px;
+        margin-top: 32px;
+      }
+      .metric {
+        padding: 20px 16px;
+        border-right: 1px solid var(--border-soft);
+        border-bottom: 1px solid var(--border-soft);
+      }
+      .metric:nth-child(2n) { border-right: 0; }
+      .metric:nth-last-child(-n+2) { border-bottom: 0; }
+      .metric-value { font-size: 26px; }
+      .metric-title { font-size: 13px; margin: 8px 0 10px; }
+
+      /* ── Sections ── */
+      section { padding: 56px 18px; }
+      .section-title { font-size: clamp(28px, 7vw, 42px); }
+      .section-copy { font-size: 15px; max-width: 100%; }
+
+      /* ── How it works grid ── */
+      .how-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      /* ── Steps → horizontal scroll cards (contained within section) ── */
+      .steps {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 14px !important;
+        padding-bottom: 10px !important;
+        scrollbar-width: none !important;
+        /* No negative margins — stays within section boundary */
+      }
+      .steps::-webkit-scrollbar { display: none; }
+      .step {
+        flex: 0 0 220px !important;
+        min-width: 220px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 14px !important;
+        padding: 20px 18px !important;
+        background: rgba(255,255,255,0.85) !important;
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+      }
+      .step-icon { width: 50px; height: 50px; font-size: 20px; }
+      .step h3 { font-size: 17px; margin: 0 0 6px !important; }
+      .step p { font-size: 13px; margin: 0 !important; }
+
+      /* ── Glass insight panel ── */
+      .insight-panel { padding: 22px; }
+
+      /* ── Insight grid ── */
+      .insight-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        padding: 18px;
+        margin-top: 22px;
+      }
+      .data-card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .data-card h3 { font-size: 15px; }
+      .huge { font-size: 38px; margin: 16px 0 4px; }
+      .donut { width: 110px; height: 110px; margin: 20px auto 14px; }
+      .donut::before { width: 72px; height: 72px; font-size: 20px; }
+      .pattern-list { gap: 8px; margin-top: 12px; }
+      .pattern-row { padding: 10px 12px; font-size: 13px; border-radius: 12px; }
+
+      /* ── Lifestyle section ── */
+      .lifestyle { padding-bottom: 60px; min-height: auto; }
+      .lifestyle-inner {
+        grid-template-columns: 1fr;
+        overflow: hidden !important;
+      }
+      /* Grid items must have min-width:0 or they expand beyond the grid track
+         and burst out of the overflow:hidden parent */
+      .lifestyle-copy {
+        padding: 32px 22px;
+        min-width: 0 !important;
+        overflow: hidden !important;
+      }
+      .lifestyle .section-title {
+        font-size: clamp(24px, 6.5vw, 38px);
+        white-space: normal !important;
+        word-break: break-word;
+      }
+
+      /* ── Habit grid → horizontal scroll ── */
+      .habit-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 12px !important;
+        margin-top: 24px !important;
+        padding-bottom: 10px !important;
+        scrollbar-width: none !important;
+      }
+      .habit-grid::-webkit-scrollbar { display: none; }
+      .habit {
+        flex: 0 0 175px !important;
+        min-width: 175px !important;
+        padding: 18px !important;
+        border-radius: 16px !important;
+      }
+      .habit h3 { font-size: 15px; margin: 10px 0 6px; }
+
+      /* ── Testimonial ── */
+      .testimonial {
+        align-self: auto !important;
+        min-width: 0 !important;          /* grid item must not expand past track */
+        width: auto !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        margin: 16px 22px 28px !important;
+        padding: 20px !important;
+        border-radius: 18px !important;
+      }
+      .testimonial p {
+        font-size: 15px !important;
+        margin: 10px 0 !important;
+        line-height: 1.45 !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      .testimonial small { font-size: 12px !important; }
+
+      /* ── CTA card ── */
+      .cta-card {
+        padding: 36px 22px;
+        border-radius: 26px;
+      }
+      .cta-card h2 { font-size: clamp(26px, 6vw, 38px); }
+      .cta-card p { font-size: 15px; margin-bottom: 22px; }
+      .cta-card .hero-actions { flex-direction: column; gap: 10px; }
+      .cta-card .hero-actions .btn { width: 100%; justify-content: center; }
+
+      /* ── Footer ── */
+      .arrow-footer { padding: 52px 18px 28px; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-bottom: 28px;
+      }
+      .footer-title { font-size: clamp(1.7rem, 6.5vw, 2.5rem); }
+      .footer-cta-area { justify-content: flex-start; flex-direction: column; gap: 10px; }
+      .footer-btn { width: 100%; justify-content: center; }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 0;
+      }
+      .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-top: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      /* ── Navbar ── */
+      .navbar { padding: 12px 14px; height: 62px; }
+      .brand { font-size: 15px; }
+      .brand > span:last-child { display: none; }
+      .brand-mark { width: 38px; height: 38px; border-radius: 11px; }
+      .nav-actions .btn-primary { height: 38px; padding: 0 14px; border-radius: 12px; }
+      .close-btn {
+        top: 12px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
+      }
+
+      /* ── Hero ── */
+      .hero { padding: 88px 14px 32px; }
+      h1 { font-size: clamp(30px, 8.5vw, 42px); }
+      .hero-copy { font-size: 14px; }
+
+      /* ── Feature strip — keep 4 columns horizontal on small screens ── */
+      .feature-strip { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+
+      /* ── Metrics — full single column ── */
+      .hero-metrics { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--border-soft); }
+      .metric:last-child { border-bottom: 0; }
+
+      /* ── Insight grid — single column ── */
+      .insight-grid { grid-template-columns: 1fr; }
+
+      /* ── Habit grid — single column ── */
+      .habit-grid { grid-template-columns: 1fr; }
+
+      /* ── CTA ── */
+      .cta-card { padding: 28px 16px; }
+
+      /* ── Footer links ── */
+      .footer-links-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+
   </style>
+
   <link rel="stylesheet" href="scroll-reveal.css">
 </head>
 <body>
@@ -1180,28 +1459,28 @@
             <h4>Product</h4>
             <a href="glucose.html">Glucose Tracking</a>
             <a href="meal_estimation.html">Food Analysis</a>
-            <a href="#">Medicine Scan</a>
+            <a href="medicine.html">Medicine Scan</a>
             <a href="ai_wellness.html">AI Health Chat</a>
           </div>
           <div class="footer-col">
             <h4>AI Tools</h4>
-            <a href="#">Smart Camera</a>
-            <a href="#">Meal Insights</a>
-            <a href="#">Health Summary</a>
-            <a href="#">Wellness Guidance</a>
+            <a href="index.html">Smart Camera</a>
+            <a href="meal_estimation.html">Meal Insights</a>
+            <a href="index.html">Health Summary</a>
+            <a href="ai_wellness.html">Wellness Guidance</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Why Arrow Health</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#why">Why Arrow Health</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#support">Support</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-            <a href="#">Terms</a>
+            <a href="index.html">Privacy</a>
+            <a href="index.html">Security</a>
+            <a href="index.html">Terms</a>
             <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
@@ -1210,9 +1489,9 @@
       <div class="footer-bottom-bar">
         <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Use</a>
+          <a href="index.html">Accessibility</a>
         </div>
       </div>
     </div>
@@ -1253,5 +1532,65 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+
+  <script>
+  /* Mobile auto-scroll — smooth conveyor belt on horizontal card rows */
+  (function autoScrollCarousels() {
+    if (window.innerWidth > 768) return;
+
+    const SPEED = 0.6; // px per rAF frame
+
+    const scrollerSels = [
+      '.steps',
+      '.habit-grid',
+    ];
+
+    scrollerSels.forEach(function(sel) {
+      const scroller = document.querySelector(sel);
+      if (!scroller) return;
+
+      let rafId = null, paused = false, pauseTimer = null;
+      let direction = 1, active = false;
+
+      function animate() {
+        if (active && !paused) {
+          scroller.scrollLeft += SPEED * direction;
+          const max = scroller.scrollWidth - scroller.clientWidth;
+          if (scroller.scrollLeft >= max - 1) direction = -1;
+          else if (scroller.scrollLeft <= 1)  direction =  1;
+        }
+        rafId = requestAnimationFrame(animate);
+      }
+
+      function startAuto() {
+        if (rafId) return;
+        active = true;
+        rafId = requestAnimationFrame(animate);
+      }
+
+      function stopAuto() {
+        cancelAnimationFrame(rafId);
+        rafId = null; active = false; direction = 1;
+        scroller.scrollLeft = 0;
+      }
+
+      scroller.addEventListener('touchstart', function() {
+        paused = true; clearTimeout(pauseTimer);
+      }, { passive: true });
+
+      scroller.addEventListener('touchend', function() {
+        clearTimeout(pauseTimer);
+        pauseTimer = setTimeout(function() { paused = false; }, 3000);
+      }, { passive: true });
+
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          e.isIntersecting ? startAuto() : stopAuto();
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }).observe(scroller);
+    });
+  })();
+  </script>
+
 </body>
 </html>

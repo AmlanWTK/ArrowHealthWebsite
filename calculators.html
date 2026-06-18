@@ -399,7 +399,197 @@
       font-weight: 800 !important;
     }
 
+
+    /* ════════════════════════════════════════════════════
+       MOBILE RESPONSIVE — calculators.html
+       Laptop/desktop layout is untouched above.
+       These rules only apply at ≤768px and ≤480px.
+    ════════════════════════════════════════════════════ */
+
+    @media (max-width: 768px) {
+
+      /* ── Topbar ── */
+      .topbar-inner {
+        padding: 14px 0;
+        gap: 12px;
+      }
+      .nav { display: none; }
+      .actions .btn:not(.btn-primary) { display: none; }
+      .brand { font-size: 18px; gap: 10px; }
+      .brand-mark { width: 36px; height: 36px; border-radius: 11px; font-size: 14px; }
+
+      /* ── Hero ── */
+      .hero { padding: 36px 0 20px; }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .hero h1 {
+        font-size: clamp(36px, 9vw, 52px);
+        line-height: 1;
+        margin-bottom: 14px;
+      }
+      .hero p { font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+      .eyebrow { font-size: 11px; padding: 8px 12px; margin-bottom: 16px; }
+
+      /* ── Search ── */
+      .hero-search { flex-direction: column; gap: 10px; }
+      .search { min-width: unset; width: 100%; padding: 14px 16px; border-radius: 16px; }
+      .search input { font-size: 15px; }
+
+      /* ── Filter Pills ── */
+      .pill-row { gap: 8px; }
+      .pill { padding: 10px 14px; font-size: 13px; }
+
+      /* ── Hero Side / Glass Card ── */
+      .hero-side {
+        min-height: auto;
+        padding: 20px;
+        border-radius: 24px;
+      }
+      .preview-tabs { gap: 8px; margin-bottom: 14px; }
+      .tab { padding: 9px 13px; font-size: 12px; }
+      .preview-card {
+        min-height: auto;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .result-number .big { font-size: 58px; }
+      .result-number .unit { font-size: 20px; }
+      .floating-metrics { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+      .metric { padding: 12px 10px; border-radius: 14px; }
+      .metric strong { font-size: 22px; }
+      .metric small { font-size: 10px; }
+      .info-box { font-size: 13px; padding: 14px; }
+
+      /* ── Main Layout ── */
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 16px 0 60px;
+      }
+
+      /* ── Featured Card ── */
+      .featured { grid-template-columns: 1fr; min-height: auto; }
+      .featured-left { padding: 24px; }
+      .featured h3 { font-size: 28px; }
+      .featured p { font-size: 15px; margin-bottom: 18px; }
+      .featured-right { min-height: 200px; padding: 20px; }
+      .mini-calc { padding: 18px; border-radius: 18px; }
+
+      /* ── Hide "Open calculators" nav button — X close btn is enough ── */
+      .actions .btn-primary { display: none !important; }
+      /* Keep X close button visible, give it room */
+      .close-btn { display: flex !important; top: 14px !important; right: 14px !important; width: 40px !important; height: 40px !important; }
+
+      /* ── Calculator Grid → horizontal scroll WITHIN container ── */
+      .calc-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 14px !important;
+        padding-bottom: 8px !important;
+        scrollbar-width: none !important;
+      }
+      /* Constrain calc-grid to viewport so it scrolls internally, nothing bleeds */
+      .calc-grid { max-width: calc(100vw - 40px) !important; }
+      .calc-item {
+        flex: 0 0 230px !important;
+        min-width: 230px !important;
+        padding: 20px !important;
+        border-radius: 22px !important;
+        box-sizing: border-box !important;
+      }
+      .calc-item h4 { font-size: 20px; }
+      .calc-item p { font-size: 13px; }
+      .calc-icon { width: 48px; height: 48px; font-size: 22px; border-radius: 14px; margin-bottom: 14px; }
+
+      /* ── Aside Stack ── */
+      .aside-stack { gap: 16px; }
+      .aside-card { padding: 20px; border-radius: 22px; }
+      .aside-card h3 { font-size: 20px; }
+      .history-item { padding: 14px; border-radius: 14px; gap: 10px; }
+      .history-item h5 { font-size: 15px; }
+      .history-item p { font-size: 13px; }
+
+      /* ── Footer CTA Card ── */
+      .footer-cta {
+        padding: 28px 20px;
+        border-radius: 24px;
+        margin: 16px 0 48px;
+      }
+      .footer-cta h2 { font-size: 28px; margin-bottom: 12px; }
+      .footer-cta p { font-size: 15px; margin-bottom: 18px; }
+      .featured-cta { flex-direction: column; gap: 10px; }
+      .featured-cta .btn { width: 100%; text-align: center; justify-content: center; }
+
+      /* ── Footer ── */
+      .arrow-footer { padding: 56px 20px 28px; }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-bottom: 32px;
+      }
+      .footer-title { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+      .footer-cta-area { justify-content: flex-start; flex-direction: column; gap: 10px; }
+      .footer-btn { width: 100%; text-align: center; justify-content: center; }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 36px 0;
+      }
+      .footer-links-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 20px;
+      }
+      .footer-bottom-links { flex-wrap: wrap; gap: 14px; }
+
+      /* ── Section Titles ── */
+      .section-title h2 { font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+
+      /* ── Container ── */
+      .container { width: calc(100% - 28px); }
+
+      /* ── Hero ── */
+      .hero { padding: 24px 0 16px; }
+      .hero h1 { font-size: clamp(30px, 8vw, 42px); }
+      .hero p { font-size: 14px; }
+
+      /* ── Metrics — 2 column on tiny screens ── */
+      .floating-metrics { grid-template-columns: 1fr 1fr; }
+
+      /* ── Featured ── */
+      .featured h3 { font-size: 24px; }
+      .feature-chips { gap: 6px; }
+      .feature-chip { font-size: 12px; padding: 8px 12px; }
+
+      /* ── Calc items ── */
+      .calc-item h4 { font-size: 20px; }
+      .calc-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+
+      /* ── Footer links ── */
+      .footer-links-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      /* ── Footer CTA ── */
+      .footer-cta h2 { font-size: 24px; }
+
+      /* ── Topbar brand text on very small phones ── */
+      .brand span { display: none; } /* hide "Arrow Health" text, keep logo mark */
+    }
+
   </style>
+
   <link rel="stylesheet" href="scroll-reveal.css">
 </head>
 <body>
@@ -581,28 +771,28 @@
             <h4>Product</h4>
             <a href="glucose.html">Glucose Tracking</a>
             <a href="meal_estimation.html">Food Analysis</a>
-            <a href="#">Medicine Scan</a>
+            <a href="medicine.html">Medicine Scan</a>
             <a href="ai_wellness.html">AI Health Chat</a>
           </div>
           <div class="footer-col">
             <h4>AI Tools</h4>
-            <a href="#">Smart Camera</a>
-            <a href="#">Meal Insights</a>
-            <a href="#">Health Summary</a>
-            <a href="#">Wellness Guidance</a>
+            <a href="index.html">Smart Camera</a>
+            <a href="meal_estimation.html">Meal Insights</a>
+            <a href="index.html">Health Summary</a>
+            <a href="ai_wellness.html">Wellness Guidance</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#">About</a>
-            <a href="#">Why Arrow Health</a>
-            <a href="#">Contact</a>
-            <a href="#">Support</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#why">Why Arrow Health</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#support">Support</a>
           </div>
           <div class="footer-col">
             <h4>Trust</h4>
-            <a href="#">Privacy</a>
-            <a href="#">Security</a>
-            <a href="#">Terms</a>
+            <a href="index.html">Privacy</a>
+            <a href="index.html">Security</a>
+            <a href="index.html">Terms</a>
             <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
@@ -611,9 +801,9 @@
       <div class="footer-bottom-bar">
         <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Accessibility</a>
+          <a href="index.html">Privacy Policy</a>
+          <a href="index.html">Terms of Use</a>
+          <a href="index.html">Accessibility</a>
         </div>
       </div>
     </div>
@@ -648,5 +838,30 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+
+<script>
+(function autoScrollCalcCards() {
+  if (window.innerWidth > 768) return;
+  var scroller = document.querySelector('.calc-grid');
+  if (!scroller) return;
+  var SPEED = 0.6, rafId = null, paused = false, pauseTimer = null, direction = 1, active = false;
+  function animate() {
+    if (active && !paused) {
+      scroller.scrollLeft += SPEED * direction;
+      var max = scroller.scrollWidth - scroller.clientWidth;
+      if (scroller.scrollLeft >= max - 1) direction = -1;
+      else if (scroller.scrollLeft <= 1) direction = 1;
+    }
+    rafId = requestAnimationFrame(animate);
+  }
+  function startAuto() { if (rafId) return; active = true; rafId = requestAnimationFrame(animate); }
+  function stopAuto() { cancelAnimationFrame(rafId); rafId = null; active = false; direction = 1; scroller.scrollLeft = 0; }
+  scroller.addEventListener('touchstart', function() { paused = true; clearTimeout(pauseTimer); }, { passive: true });
+  scroller.addEventListener('touchend', function() { clearTimeout(pauseTimer); pauseTimer = setTimeout(function() { paused = false; }, 3000); }, { passive: true });
+  new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { e.isIntersecting ? startAuto() : stopAuto(); });
+  }, { threshold: 0.1 }).observe(scroller);
+})();
+</script>
 </body>
 </html>

@@ -724,9 +724,37 @@
       .macro-card { right: 2%; bottom: 0; }
       .hero-summary, .analysis-board { grid-template-columns: repeat(2, 1fr); }
     }
+    @media (max-width: 768px) {
+      /* ── Analysis board → horizontal scroll cards ── */
+      .analysis-board {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+        scroll-snap-type: none !important;
+        scroll-behavior: auto !important;
+        gap: 14px !important;
+        padding: 20px 18px !important;
+        margin-top: 24px !important;
+        scrollbar-width: none !important;
+      }
+      .analysis-board::-webkit-scrollbar { display: none; }
+      .analysis-card {
+        flex: 0 0 210px !important;
+        min-width: 210px !important;
+        min-height: auto !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+      }
+      .analysis-card h3 { font-size: 16px !important; margin: 12px 0 8px !important; }
+      .analysis-card p  { font-size: 13px !important; }
+    }
+
     @media (max-width: 640px) {
       .nav-actions .btn:first-child { display: none; }
-      .hero-summary, .analysis-board, .macro-grid, .chart-labels { grid-template-columns: 1fr; }
+      .hero-summary, .macro-grid, .chart-labels { grid-template-columns: 1fr; }
       .summary-item { border-right: 0; border-bottom: 1px solid var(--border-soft); }
       .scan-stage { display: none; }
       .hero-grid { min-height: auto; }
@@ -1039,5 +1067,30 @@
     </div>
   </footer>
   <script src="scroll-reveal.js"></script>
+  <script>
+  (function autoScrollCarousels() {
+    if (window.innerWidth > 768) return;
+    const SPEED = 0.6;
+    const scroller = document.querySelector('.analysis-board');
+    if (!scroller) return;
+    let rafId = null, paused = false, pauseTimer = null, direction = 1, active = false;
+    function animate() {
+      if (active && !paused) {
+        scroller.scrollLeft += SPEED * direction;
+        const max = scroller.scrollWidth - scroller.clientWidth;
+        if (scroller.scrollLeft >= max - 1) direction = -1;
+        else if (scroller.scrollLeft <= 1)  direction =  1;
+      }
+      rafId = requestAnimationFrame(animate);
+    }
+    function startAuto() { if (rafId) return; active = true; rafId = requestAnimationFrame(animate); }
+    function stopAuto()  { cancelAnimationFrame(rafId); rafId = null; active = false; direction = 1; scroller.scrollLeft = 0; }
+    scroller.addEventListener('touchstart', () => { paused = true; clearTimeout(pauseTimer); }, { passive: true });
+    scroller.addEventListener('touchend',   () => { clearTimeout(pauseTimer); pauseTimer = setTimeout(() => { paused = false; }, 3000); }, { passive: true });
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { e.isIntersecting ? startAuto() : stopAuto(); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' }).observe(scroller);
+  })();
+  </script>
 </body>
 </html>
