@@ -1258,15 +1258,15 @@
         <span>ArrowHealth</span>
       </a>
       <nav class="nav-links">
-        <a href="#overview">Overview</a>
-        <a href="#timeline">Meal timeline</a>
-        <a href="#analysis">Nutrition</a>
-        <a href="#safety">AI safety</a>
-        <a href="#tips">Tips</a>
+        <a href="#overview" data-i18n="meal-nav-overview">Overview</a>
+        <a href="#timeline" data-i18n="meal-nav-timeline">Meal timeline</a>
+        <a href="#analysis" data-i18n="meal-nav-analysis">Nutrition</a>
+        <a href="#safety" data-i18n="meal-nav-safety">AI safety</a>
+        <a href="#tips" data-i18n="meal-nav-tips">Tips</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn" href="#">Login</a>
-        <a class="btn btn-primary" href="#overview">Scan meal</a>
+        <a class="btn" href="#" data-i18n="meal-nav-login">Login</a>
+        <a class="btn btn-primary" href="#overview" data-i18n="meal-nav-scan">Scan meal</a>
       </div>
     </div>
   </header>
@@ -1276,17 +1276,17 @@
       <div class="hero-inner">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow reveal">🍽 Meal Analysis</div>
-            <h1 class="reveal delay-1">
+            <div class="eyebrow reveal">🍽 <span data-i18n="meal-hero-eyebrow">Meal Analysis</span></div>
+            <h1 class="reveal delay-1" data-i18n-html="meal-hero-h1">
               Discover if your meal is
               <span class="accent"><span class="italic">truly safe</span></span>
             </h1>
-            <p class="hero-copy reveal delay-2">
+            <p class="hero-copy reveal delay-2" data-i18n="meal-hero-copy">
               Scan your food, identify ingredients, estimate macros, and understand how each meal may affect your glucose before it surprises you.
             </p>
             <div class="hero-actions reveal delay-3">
-              <a href="#timeline" class="btn btn-primary">Explore meal insights</a>
-              <a href="#safety" class="btn">See AI guidance →</a>
+              <a href="#timeline" class="btn btn-primary" data-i18n="meal-hero-btn-1">Explore meal insights</a>
+              <a href="#safety" class="btn" data-i18n="meal-hero-btn-2">See AI guidance →</a>
             </div>
           </div>
 
@@ -1324,20 +1324,20 @@
 
         <div class="hero-summary reveal delay-3">
           <div class="summary-item">
-            <div class="summary-label">Foods detected</div>
+            <div class="summary-label" data-i18n="meal-sum-1">Foods detected</div>
             <div class="summary-value">8</div>
           </div>
           <div class="summary-item">
-            <div class="summary-label">Monthly meals</div>
+            <div class="summary-label" data-i18n="meal-sum-2">Monthly meals</div>
             <div class="summary-value">42</div>
           </div>
           <div class="summary-item">
-            <div class="summary-label">Avg meal impact</div>
+            <div class="summary-label" data-i18n="meal-sum-3">Avg meal impact</div>
             <div class="summary-value">+3.3 <small>mmol/L</small></div>
           </div>
           <div class="summary-item">
-            <div class="summary-label">Highest risk meal</div>
-            <div class="summary-value">Snack</div>
+            <div class="summary-label" data-i18n="meal-sum-4">Highest risk meal</div>
+            <div class="summary-value" data-i18n="meal-sum-4-val">Snack</div>
           </div>
         </div>
       </div>
@@ -1346,28 +1346,28 @@
     <section id="timeline">
       <div class="section-inner timeline-grid">
         <div>
-          <div class="section-kicker">Monthly meal memory</div>
-          <h2 class="section-title">See what you ate, when you ate it, and how it affected you.</h2>
-          <p class="section-copy">The meal section becomes a visual history of your month: breakfast, lunch, dinner, snacks, detected foods, macros, calories, and predicted glucose response.</p>
+          <div class="section-kicker" data-i18n="meal-timeline-kicker">Monthly meal memory</div>
+          <h2 class="section-title" data-i18n="meal-timeline-h2">See what you ate, when you ate it, and how it affected you.</h2>
+          <p class="section-copy" data-i18n="meal-timeline-p">The meal section becomes a visual history of your month: breakfast, lunch, dinner, snacks, detected foods, macros, calories, and predicted glucose response.</p>
           <div class="timeline-list">
             <div class="meal-row">
               <div class="meal-time">8:20<br>AM</div>
-              <div><h3>Before Breakfast</h3><p>Oats, banana, milk · 420 kcal</p></div>
+              <div><h3 data-i18n="meal-row-1-h">Before Breakfast</h3><p data-i18n="meal-row-1-p">Oats, banana, milk · 420 kcal</p></div>
               <div class="impact low">+1.2 mmol/L</div>
             </div>
             <div class="meal-row">
               <div class="meal-time">1:15<br>PM</div>
-              <div><h3>After Lunch</h3><p>Rice, beef curry, vegetables · 860 kcal</p></div>
+              <div><h3 data-i18n="meal-row-2-h">After Lunch</h3><p data-i18n="meal-row-2-p">Rice, beef curry, vegetables · 860 kcal</p></div>
               <div class="impact">+3.3 mmol/L</div>
             </div>
             <div class="meal-row">
               <div class="meal-time">5:40<br>PM</div>
-              <div><h3>Snack</h3><p>Khichuri, pulao, beef bhuna · 3251 kcal</p></div>
+              <div><h3 data-i18n="meal-row-3-h">Snack</h3><p data-i18n="meal-row-3-p">Khichuri, pulao, beef bhuna · 3251 kcal</p></div>
               <div class="impact high">+246 mg/dL</div>
             </div>
             <div class="meal-row">
               <div class="meal-time">9:05<br>PM</div>
-              <div><h3>Dinner</h3><p>Grilled fish, salad, lentils · 610 kcal</p></div>
+              <div><h3 data-i18n="meal-row-4-h">Dinner</h3><p data-i18n="meal-row-4-p">Grilled fish, salad, lentils · 610 kcal</p></div>
               <div class="impact low">+1.7 mmol/L</div>
             </div>
           </div>
@@ -1376,10 +1376,10 @@
         <div class="glass monthly-panel">
           <div class="month-head">
             <div>
-              <h3>May 2026</h3>
-              <span>42 meals scanned · 10 high impact meals</span>
+              <h3 data-i18n="meal-month-h">May 2026</h3>
+              <span data-i18n="meal-month-sub">42 meals scanned · 10 high impact meals</span>
             </div>
-            <a class="btn" href="#">Export PDF</a>
+            <a class="btn" href="#" data-i18n="meal-export-btn">Export PDF</a>
           </div>
           <div class="month-chart">
             <svg viewBox="0 0 600 300" preserveAspectRatio="none">
@@ -1390,10 +1390,10 @@
             </svg>
           </div>
           <div class="chart-labels">
-            <div class="chart-label"><strong>18</strong>Balanced</div>
-            <div class="chart-label"><strong>14</strong>Medium</div>
-            <div class="chart-label"><strong>10</strong>High impact</div>
-            <div class="chart-label"><strong>7</strong>Skipped logs</div>
+            <div class="chart-label"><strong>18</strong><span data-i18n="meal-chart-1">Balanced</span></div>
+            <div class="chart-label"><strong>14</strong><span data-i18n="meal-chart-2">Medium</span></div>
+            <div class="chart-label"><strong>10</strong><span data-i18n="meal-chart-3">High impact</span></div>
+            <div class="chart-label"><strong>7</strong><span data-i18n="meal-chart-4">Skipped logs</span></div>
           </div>
         </div>
       </div>
@@ -1401,29 +1401,29 @@
 
     <section id="analysis">
       <div class="section-inner">
-        <div class="section-kicker">What your photo becomes</div>
-        <h2 class="section-title">From one meal photo to full nutrition intelligence.</h2>
-        <p class="section-copy">This page should feel less like a form and more like an AI-powered meal report that explains the “why” behind every number.</p>
+        <div class="section-kicker" data-i18n="meal-analysis-kicker">What your photo becomes</div>
+        <h2 class="section-title" data-i18n="meal-analysis-h2">From one meal photo to full nutrition intelligence.</h2>
+        <p class="section-copy" data-i18n="meal-analysis-p">This page should feel less like a form and more like an AI-powered meal report that explains the "why" behind every number.</p>
         <div class="glass analysis-board">
           <div class="analysis-card">
             <div class="icon-bubble">▦</div>
-            <h3>Detected items</h3>
-            <p>Automatically identify foods such as dal khichuri, pulao rice, beef curry, onion, lime, and chili.</p>
+            <h3 data-i18n="meal-card-1-h">Detected items</h3>
+            <p data-i18n="meal-card-1-p">Automatically identify foods such as dal khichuri, pulao rice, beef curry, onion, lime, and chili.</p>
           </div>
           <div class="analysis-card">
             <div class="icon-bubble">◔</div>
-            <h3>Macro breakdown</h3>
-            <p>Show carbs, protein, fat, and calories in premium cards with clear color-coded risk.</p>
+            <h3 data-i18n="meal-card-2-h">Macro breakdown</h3>
+            <p data-i18n="meal-card-2-p">Show carbs, protein, fat, and calories in premium cards with clear color-coded risk.</p>
           </div>
           <div class="analysis-card">
             <div class="icon-bubble">〽</div>
-            <h3>Glucose response</h3>
-            <p>Estimate expected rise, peak glucose, and whether the meal is low, medium, or high impact.</p>
+            <h3 data-i18n="meal-card-3-h">Glucose response</h3>
+            <p data-i18n="meal-card-3-p">Estimate expected rise, peak glucose, and whether the meal is low, medium, or high impact.</p>
           </div>
           <div class="analysis-card">
             <div class="icon-bubble">✦</div>
-            <h3>AI suggestions</h3>
-            <p>Give practical advice like smaller portions, more fiber, walking after meals, or hydration reminders.</p>
+            <h3 data-i18n="meal-card-4-h">AI suggestions</h3>
+            <p data-i18n="meal-card-4-p">Give practical advice like smaller portions, more fiber, walking after meals, or hydration reminders.</p>
           </div>
         </div>
       </div>
@@ -1431,26 +1431,26 @@
 
     <section id="safety" class="safety-section">
       <div class="section-inner">
-        <div class="section-kicker">Personalized AI safety</div>
-        <h2 class="section-title">Make the result feel helpful, not scary.</h2>
+        <div class="section-kicker" data-i18n="meal-safety-kicker">Personalized AI safety</div>
+        <h2 class="section-title" data-i18n="meal-safety-h2">Make the result feel helpful, not scary.</h2>
         <div class="safety-grid">
           <div>
             <div class="safety-card photo">
               <div class="safety-content">
-                <h3>Know before you eat</h3>
-                <p>Use beautiful visual cards to explain meal safety, expected glucose rise, and ingredient-level impact.</p>
+                <h3 data-i18n="meal-safety-card-h">Know before you eat</h3>
+                <p data-i18n="meal-safety-card-p">Use beautiful visual cards to explain meal safety, expected glucose rise, and ingredient-level impact.</p>
               </div>
             </div>
             <div class="safety-card second-photo"></div>
           </div>
           <div class="glass recommend-card">
-            <div class="risk-pill">⚠ Health Alert · 100%</div>
-            <h3 style="margin-top:22px;">This snack is likely to create a high glucose response.</h3>
-            <p class="section-copy">Instead of only warning the user, show clear next steps that feel caring and actionable.</p>
+            <div class="risk-pill">⚠ <span data-i18n="meal-alert">Health Alert · 100%</span></div>
+            <h3 style="margin-top:22px;" data-i18n="meal-alert-h">This snack is likely to create a high glucose response.</h3>
+            <p class="section-copy" data-i18n="meal-alert-p">Instead of only warning the user, show clear next steps that feel caring and actionable.</p>
             <div class="recommend-list">
-              <div class="recommend-item"><div class="icon-bubble">🥗</div><div><strong>Reduce the portion</strong><span>Try half the rice portion and add more vegetables or salad.</span></div></div>
-              <div class="recommend-item"><div class="icon-bubble">🚶</div><div><strong>Move after eating</strong><span>A short walk after this meal may help reduce the spike.</span></div></div>
-              <div class="recommend-item"><div class="icon-bubble">💧</div><div><strong>Hydrate well</strong><span>Drink water and avoid adding sugary drinks with this meal.</span></div></div>
+              <div class="recommend-item"><div class="icon-bubble">🥗</div><div><strong data-i18n="meal-rec-1-h">Reduce the portion</strong><span data-i18n="meal-rec-1-p">Try half the rice portion and add more vegetables or salad.</span></div></div>
+              <div class="recommend-item"><div class="icon-bubble">🚶</div><div><strong data-i18n="meal-rec-2-h">Move after eating</strong><span data-i18n="meal-rec-2-p">A short walk after this meal may help reduce the spike.</span></div></div>
+              <div class="recommend-item"><div class="icon-bubble">💧</div><div><strong data-i18n="meal-rec-3-h">Hydrate well</strong><span data-i18n="meal-rec-3-p">Drink water and avoid adding sugary drinks with this meal.</span></div></div>
             </div>
           </div>
         </div>
@@ -1459,9 +1459,9 @@
 
     <section id="tips" class="cta">
       <div class="cta-card">
-        <h2>Turn every meal into a smarter health decision.</h2>
-        <p>Use this learn-more section to show users how food scanning connects meals, macros, calories, glucose response, and monthly eating habits in one premium story.</p>
-        <a href="#overview" class="btn btn-primary">Scan your next meal</a>
+        <h2 data-i18n="meal-cta-h2">Turn every meal into a smarter health decision.</h2>
+        <p data-i18n="meal-cta-p">Use this learn-more section to show users how food scanning connects meals, macros, calories, glucose response, and monthly eating habits in one premium story.</p>
+        <a href="#overview" class="btn btn-primary" data-i18n="meal-cta-btn">Scan your next meal</a>
       </div>
     </section>
   </main>
@@ -1471,15 +1471,15 @@
     <div class="footer-container">
       <div class="footer-top">
         <div>
-          <div class="footer-eyebrow">Built for everyday health clarity</div>
-          <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
-          <p class="footer-description">
+          <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
+          <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
+          <p class="footer-description" data-i18n="footer-p">
             Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey organized in one calm, intelligent app.
           </p>
         </div>
         <div class="footer-cta-area">
-          <a class="footer-btn primary" href="index.html">Get Started</a>
-          <a class="footer-btn secondary" href="index.html#bento">View Features</a>
+          <a class="footer-btn primary" href="index.html" data-i18n="footer-btn-primary">Get Started</a>
+          <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
         </div>
       </div>
 
@@ -1489,52 +1489,52 @@
             <div class="footer-logo-mark">↗</div>
             <span>Arrow Health</span>
           </div>
-          <p>A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
+          <p data-i18n="footer-brand-p">A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
           <div class="footer-trust-list">
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Privacy-focused health experience</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Clear insights, not confusing numbers</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Designed for everyday users</div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-1-text">Privacy-focused health experience</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-2-text">Clear insights, not confusing numbers</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-3-text">Designed for everyday users</span></div>
           </div>
         </div>
 
         <div class="footer-links-grid">
           <div class="footer-col">
-            <h4>Product</h4>
-            <a href="glucose.html">Glucose Tracking</a>
-            <a href="meal_estimation.html">Food Analysis</a>
-            <a href="medicine.html">Medicine Scan</a>
-            <a href="ai_wellness.html">AI Health Chat</a>
+            <h4 data-i18n="footer-col-product">Product</h4>
+            <a href="glucose.html" data-i18n="footer-link-glucose">Glucose Tracking</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-food">Food Analysis</a>
+            <a href="medicine.html" data-i18n="footer-link-medicine">Medicine Scan</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-chat">AI Health Chat</a>
           </div>
           <div class="footer-col">
-            <h4>AI Tools</h4>
-            <a href="index.html">Smart Camera</a>
-            <a href="meal_estimation.html">Meal Insights</a>
-            <a href="index.html">Health Summary</a>
-            <a href="ai_wellness.html">Wellness Guidance</a>
+            <h4 data-i18n="footer-col-ai">AI Tools</h4>
+            <a href="index.html" data-i18n="footer-link-camera">Smart Camera</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-meal">Meal Insights</a>
+            <a href="index.html" data-i18n="footer-link-summary">Health Summary</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-wellness">Wellness Guidance</a>
           </div>
           <div class="footer-col">
-            <h4>Company</h4>
-            <a href="index.html#about">About</a>
-            <a href="index.html#why">Why Arrow Health</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="index.html#support">Support</a>
+            <h4 data-i18n="footer-col-company">Company</h4>
+            <a href="index.html#about" data-i18n="footer-link-about">About</a>
+            <a href="index.html#why" data-i18n="footer-link-why">Why Arrow Health</a>
+            <a href="index.html#contact" data-i18n="footer-link-contact">Contact</a>
+            <a href="index.html#support" data-i18n="footer-link-support">Support</a>
           </div>
           <div class="footer-col">
-            <h4>Trust</h4>
-            <a href="index.html">Privacy</a>
-            <a href="index.html">Security</a>
-            <a href="index.html">Terms</a>
-            <span>Not a substitute for professional medical advice.</span>
+            <h4 data-i18n="footer-col-trust">Trust</h4>
+            <a href="index.html" data-i18n="footer-link-privacy">Privacy</a>
+            <a href="index.html" data-i18n="footer-link-security">Security</a>
+            <a href="index.html" data-i18n="footer-link-terms">Terms</a>
+            <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <div>© 2026 Arrow Health. All rights reserved.</div>
+        <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="index.html">Privacy Policy</a>
-          <a href="index.html">Terms of Use</a>
-          <a href="index.html">Accessibility</a>
+          <a href="index.html" data-i18n="footer-bottom-privacy">Privacy Policy</a>
+          <a href="index.html" data-i18n="footer-bottom-terms">Terms of Use</a>
+          <a href="index.html" data-i18n="footer-bottom-access">Accessibility</a>
         </div>
       </div>
     </div>
@@ -1575,6 +1575,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+  <script src="translations.js"></script>
   <script>
   (function autoScrollCarousels() {
     if (window.innerWidth > 768) return;

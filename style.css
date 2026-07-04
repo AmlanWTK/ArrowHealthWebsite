@@ -118,6 +118,26 @@ a {
     font-size: 14px;
 }
 
+.lang-toggle-btn {
+    border: 1px solid var(--border-soft);
+    background: rgba(22, 78, 69, 0.06);
+    color: var(--brand-primary);
+    border-radius: 999px;
+    font-weight: 750;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    padding: 9px 16px;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    margin-right: 4px;
+}
+
+.lang-toggle-btn:hover {
+    background: var(--brand-primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
 /* Hero Section */
 .hero {
     width: min(1180px, calc(100% - 40px));
@@ -4717,7 +4737,7 @@ a {
 .expert-avatar-wrap {
     width: 140px;
     height: 140px;
-    border-radius: 28px;
+    border-radius: 50%;
     overflow: hidden;
     border: 1px solid rgba(24, 32, 30, 0.08);
     background: linear-gradient(180deg, #E7F1EE, #F6F1E8);

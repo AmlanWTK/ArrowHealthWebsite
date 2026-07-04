@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ramadan Diabetes Risk Calculator | Arrow Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Premium Arrow Health Palette */
+      --bg-main: #F8F5EF;
+      --surface: #FFFFFF;
+      --text-main: #18201E;
+      --text-muted: #6E746F;
+      --border-soft: rgba(24,32,30,.09);
+      
+      --brand-primary: #164E45;
+      --brand-secondary: #A9855A;
+      --brand-dark: #0F1816;
+      --hero-active-color: #639898;
+      
+      --risk-low: #10B981;
+      --risk-low-bg: #F0FDF4;
+      --risk-low-border: #A7F3D0;
+      
+      --risk-med: #F59E0B;
+      --risk-med-bg: #FFFBEB;
+      --risk-med-border: #FBD34D;
+      
+      --risk-high: #EF4444;
+      --risk-high-bg: #FEF2F2;
+      --risk-high-border: #FCA5A5;
+
+      --shadow-card: 0 16px 45px rgba(15,24,22,.06);
+      --radius-lg: 24px;
+      --radius-md: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(24px);
+      background: rgba(252,250,247,.78);
+      border-bottom: 1px solid var(--border-soft);
+      padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 20px; color: var(--brand-dark); text-decoration: none;}
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 12px; display: grid; place-items: center; color: #fff;
+      background: linear-gradient(135deg, var(--brand-primary), var(--hero-active-color));
+      font-weight: 900;
+    }
+    
+    .nav-actions a {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border-soft);
+      color: var(--brand-dark);
+      font-weight: 700;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .nav-actions a:hover {
+      background: var(--surface);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      height: 4px; width: 100%;
+      background-color: #E2E8F0;
+      position: sticky;
+      top: 70px;
+      z-index: 49;
+    }
+    .progress-bar {
+      height: 100%;
+      background-color: var(--brand-primary);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Layout */
+    .layout {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 40px;
+      align-items: start;
+      min-height: calc(100vh - 75px);
+    }
+
+    /* Left scrollable column */
+    .questions-col {
+      padding-bottom: 60px;
+    }
+
+    /* Right column: sticky, fills viewport height, centers card vertically */
+    .score-col {
+      position: sticky;
+      top: 75px;
+      height: calc(100vh - 75px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Intro Card */
+    .intro-card {
+      background: var(--surface);
+      padding: 32px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 30px;
+    }
+    .intro-card h1 { margin: 0 0 12px; font-size: 28px; color: var(--brand-dark); letter-spacing: -0.03em; }
+    .intro-card p { margin: 0; color: var(--text-muted); font-size: 16px; line-height: 1.6; }
+
+    /* Questions */
+    .question-card {
+      background: var(--surface);
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 20px;
+    }
+    .q-title {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 18px; font-weight: 700; color: var(--brand-dark);
+      margin-bottom: 16px;
+    }
+    .q-icon {
+      color: var(--brand-primary);
+      background: rgba(22,78,69,.08);
+      padding: 8px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    
+    .option {
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid transparent;
+      background: #F8FAFC;
+      cursor: pointer;
+      display: flex; align-items: center; gap: 12px;
+      transition: all 0.2s;
+    }
+    .option:last-child { margin-bottom: 0; }
+    .option:hover { background: #F1F5F9; }
+    .option.selected {
+      background: rgba(22,78,69,.06);
+      border-color: var(--brand-primary);
+    }
+    
+    .radio-circle {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      border: 2px solid #CBD5E1;
+      display: grid; place-items: center;
+      transition: all 0.2s;
+    }
+    .option.selected .radio-circle {
+      border-color: var(--brand-primary);
+      background: var(--brand-primary);
+    }
+    .option.selected .radio-circle::after {
+      content: "";
+      width: 10px; height: 10px;
+      background: white;
+      border-radius: 50%;
+    }
+    .option-label {
+      font-size: 15px; color: var(--text-muted); font-weight: 500;
+    }
+    .option.selected .option-label {
+      color: var(--brand-dark); font-weight: 700;
+    }
+
+    /* Score Card */
+    .score-card {
+      width: 100%;
+      padding: 36px 28px;
+      border-radius: var(--radius-lg);
+      border: 2px solid transparent;
+      text-align: center;
+      transition: all 0.4s ease;
+      background: var(--surface);
+      box-shadow: 0 20px 60px rgba(15,24,22,.10), 0 4px 16px rgba(15,24,22,.05);
+    }
+    
+    .score-circle {
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; font-weight: 900;
+      transition: all 0.4s ease;
+      background: #F8FAFC;
+      color: #94A3B8;
+      border: 2px solid #E2E8F0;
+    }
+    
+    .risk-label { font-size: 18px; font-weight: 800; margin-bottom: 12px; color: #64748B;}
+    .risk-icon { font-size: 36px; margin-bottom: 12px; }
+    .risk-advice-main { font-size: 15px; font-weight: 700; color: var(--brand-dark); margin-bottom: 10px; line-height: 1.5; }
+    .risk-advice-sub { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+    /* Dynamic Risk States */
+    .state-low { background: var(--risk-low-bg); border-color: var(--risk-low-border); }
+    .state-low .score-circle { background: rgba(16, 185, 129, 0.15); color: var(--risk-low); border-color: rgba(16, 185, 129, 0.3); }
+    .state-low .risk-label { color: var(--risk-low); }
+
+    .state-med { background: var(--risk-med-bg); border-color: var(--risk-med-border); }
+    .state-med .score-circle { background: rgba(245, 158, 11, 0.15); color: var(--risk-med); border-color: rgba(245, 158, 11, 0.3); }
+    .state-med .risk-label { color: var(--risk-med); }
+
+    .state-high { background: var(--risk-high-bg); border-color: var(--risk-high-border); }
+    .state-high .score-circle { background: rgba(239, 68, 68, 0.15); color: var(--risk-high); border-color: rgba(239, 68, 68, 0.3); }
+    .state-high .risk-label { color: var(--risk-high); }
+
+    /* Mobile adjustments */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        padding: 20px 16px;
+        min-height: unset;
+      }
+      .score-col {
+        position: relative;
+        top: 0;
+        height: auto;
+        order: -1; /* Show score card ABOVE questions on mobile */
+      }
+      .score-card {
+        margin-bottom: 24px;
+      }
+      .topbar { padding: 14px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">↗</span>
+      Arrow Health
+    </a>
+    <div class="nav-actions">
+      <a href="index.html">Back to Home</a>
+    </div>
+  </nav>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="layout">
+    <div class="questions-col" id="questionsContainer">
+      <div class="intro-card">
+        <h1>রমজান ডায়াবেটিস ঝুঁকি ক্যালকুলেটর</h1>
+        <p>এই ক্যালকুলেটরটি আপনার রমজান উপবাস করার সময় ডায়াবেটিসের ঝুঁকি মূল্যায়ন করতে সাহায্য করে। সঠিক উত্তর নির্বাচন করে আপনার ঝুঁকি জেনে নিন।</p>
+      </div>
+      <!-- Questions injected by JS -->
+    </div>
+
+    <div class="score-col">
+      <div class="score-card" id="scoreCard">
+        <div class="score-circle" id="scoreValue">0.0</div>
+        <div class="risk-label" id="riskLabel">উত্তর দিন</div>
+        <div class="risk-advice-main" id="riskAdviceMain">আপনার ঝুঁকি মূল্যায়ন করতে বাম পাশের প্রশ্নগুলোর উত্তর দিন।</div>
+        <div class="risk-advice-sub" id="riskAdviceSub"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        id: 1, title: '1. ডায়াবেটিসের ধরণ', icon: '📊',
+        options: [
+          { label: 'টাইপ 1 ডায়াবেটিস (Type 1)', score: 1.0 },
+          { label: 'টাইপ 2 ডায়াবেটিস (Type 2)', score: 0.0 }
+        ]
+      },
+      {
+        id: 2, title: '2. ডায়াবেটিসের স্থায়িত্ব', icon: '📅',
+        options: [
+          { label: '10 বছরের বেশি সময় ধরে ডায়াবেটিস আছে', score: 1.0 },
+          { label: '10 বছরের কম সময় ধরে ডায়াবেটিস আছে', score: 0.0 }
+        ]
+      },
+      {
+        id: 3, title: '3. হাইপোগ্লাইসেমিয়া (সুগার কমে যাওয়া)', icon: '💧',
+        options: [
+          { label: 'সুগার কমে গেলে শরীর কোনো সতর্ক সংকেত দেয় না (Unawareness)', score: 5.5 },
+          { label: 'গত 3 মাসে মারাত্মক হাইপো হয়ে হাসপাতালে ভর্তি বা অক্সিজেন লেগেছে', score: 5.5 },
+          { label: 'সপ্তাহে অন্তত একবার বা তার বেশি হাইপো হয়', score: 3.5 },
+          { label: 'উপরের কোনোটিই নয়', score: 0.0 }
+        ]
+      },
+      {
+        id: 4, title: '4. সুগার নিয়ন্ত্রণ (HbA1c)', icon: '📈',
+        options: [
+          { label: '9.0% বা তার বেশি (খুবই খারাপ নিয়ন্ত্রণ)', score: 2.0 },
+          { label: '7.5% থেকে 9.0% এর মধ্যে', score: 1.0 },
+          { label: '7.5% এর কম (ভালো নিয়ন্ত্রণ)', score: 0.0 }
+        ]
+      },
+      {
+        id: 5, title: '5. কিডনির অবস্থা (eGFR)', icon: '❤️',
+        options: [
+          { label: 'স্টেজ 4 বা 5 (কিডনি বিকল বা eGFR < 30)', score: 6.5 },
+          { label: 'স্টেজ 3b (eGFR 30-45)', score: 2.0 },
+          { label: 'স্টেজ 3a (eGFR 45-60)', score: 1.0 },
+          { label: 'স্বাভাবিক বা স্টেজ 1-2', score: 0.0 }
+        ]
+      },
+      {
+        id: 6, title: '6. হার্টের অবস্থা', icon: '🫀',
+        options: [
+          { label: 'হার্ট ফেইলিউর, বা গত 3 মাসে হার্ট অ্যাটাক/স্ট্রোক হয়েছে', score: 5.5 },
+          { label: 'হার্টের রোগ আছে কিন্তু নিয়ন্ত্রণে আছে (Stable)', score: 2.0 },
+          { label: 'হার্টের সমস্যা নেই', score: 0.0 }
+        ]
+      },
+      {
+        id: 7, title: '7. বয়স ও মানসিক অবস্থা', icon: '👤',
+        options: [
+          { label: 'স্মৃতিভ্রম (Dementia) বা আলঝেইমার রোগ থাকলে', score: 6.5 },
+          { label: 'বয়স্ক এবং একা বসবাস করেন (দেখভাল করার কেউ নেই)', score: 3.0 },
+          { label: '75 বছরের বেশি বয়স', score: 1.0 },
+          { label: 'অন্যান্য / প্রযোজ্য নয়', score: 0.0 }
+        ]
+      },
+      {
+        id: 8, title: '8. গর্ভাবস্থা', icon: '🤰',
+        options: [
+          { label: 'ডায়াবেটিস থাকা অবস্থায় গর্ভবতী (GDM)', score: 6.5 },
+          { label: 'গর্ভবতী নন / পুরুষ', score: 0.0 }
+        ]
+      },
+      {
+        id: 9, title: '9. ওষুধের ধরণ', icon: '💊',
+        options: [
+          { label: 'দিনে একাধিকবার ইনসুলিন নিতে হয় (Basal-Bolus)', score: 3.0 },
+          { label: 'সালফোনাইলইউরিয়া (যেমন- Glibenclamide, Glimepiride)', score: 1.0 },
+          { label: 'মেটফর্মিন, লিনাগ্লিপটিন বা এসজিএলটি-2 আই', score: 0.0 }
+        ]
+      },
+      {
+        id: 10, title: '10. পূর্ব অভিজ্ঞতা', icon: '⏳',
+        options: [
+          { label: 'আগের রোজায় ডিকেএ (DKA) বা হাসপাতালে ভর্তি হতে হয়েছিল', score: 3.0 },
+          { label: 'এমন অভিজ্ঞতা নেই', score: 0.0 }
+        ]
+      }
+    ];
+
+    const selections = {};
+    const container = document.getElementById('questionsContainer');
+
+    function renderQuestions() {
+      questions.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.innerHTML = `
+          <div class="q-title">
+            <div class="q-icon">${q.icon}</div>
+            <span>${q.title}</span>
+          </div>
+          <div class="options-list" id="q-${q.id}">
+            ${q.options.map((opt, idx) => `
+              <div class="option" onclick="selectOption(${q.id}, ${idx})">
+                <div class="radio-circle"></div>
+                <div class="option-label">${opt.label}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    window.selectOption = function(qId, optIdx) {
+      selections[qId] = optIdx;
+      
+      // Update UI for this question
+      const opts = document.getElementById(`q-${qId}`).querySelectorAll('.option');
+      opts.forEach((el, i) => {
+        if(i === optIdx) el.classList.add('selected');
+        else el.classList.remove('selected');
+      });
+
+      updateScore();
+    }
+
+    function updateScore() {
+      let total = 0;
+      let answered = 0;
+
+      for (let i = 1; i <= questions.length; i++) {
+        if (selections[i] !== undefined) {
+          total += questions[i-1].options[selections[i]].score;
+          answered++;
+        }
+      }
+
+      // Update Progress
+      const prog = (answered / questions.length) * 100;
+      document.getElementById('progressBar').style.width = prog + '%';
+
+      // Update Score Card
+      const scoreCard = document.getElementById('scoreCard');
+      const scoreValue = document.getElementById('scoreValue');
+      const label = document.getElementById('riskLabel');
+      const adviceMain = document.getElementById('riskAdviceMain');
+      const adviceSub = document.getElementById('riskAdviceSub');
+
+      scoreValue.innerText = total.toFixed(1);
+
+      // Remove existing states
+      scoreCard.classList.remove('state-low', 'state-med', 'state-high');
+
+      if (answered === 0) return;
+
+      if (total <= 3.0) {
+        scoreCard.classList.add('state-low');
+        label.innerText = 'কম ঝুঁকি (Low Risk)';
+        adviceMain.innerText = 'আলহামদুলিল্লাহ! আপনার জন্য রোজা রাখা নিরাপদ।';
+        adviceSub.innerText = 'তবে পুষ্টি গাইডলাইন মেনে চলতে ভুলবেন না।';
+      } else if (total <= 6.0) {
+        scoreCard.classList.add('state-med');
+        label.innerText = 'মাঝারি ঝুঁকি (Moderate Risk)';
+        adviceMain.innerText = 'সাবধান! চিকিৎসাবিজ্ঞান আপনাকে রোজা না রাখার পরামর্শ দেয়।';
+        adviceSub.innerText = 'রোজা রাখতে চাইলে অবশ্যই ডাক্তারের পরামর্শ নিয়ে ওষুধের ডোজ ঠিক করুন।';
+      } else {
+        scoreCard.classList.add('state-high');
+        label.innerText = 'উচ্চ ঝুঁকি (High Risk)';
+        adviceMain.innerText = 'বিপদজনক! আপনার জন্য রোজা রাখা চিকিৎসাবিজ্ঞানে কঠোরভাবে নিষিদ্ধ।';
+        adviceSub.innerText = 'ফিদিয়ার সহজ বিধান পালন করাই আপনার জন্য শ্রেয়।';
+      }
+    }
+
+    renderQuestions();
+  </script>
+</body>
+</html>

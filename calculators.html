@@ -607,9 +607,9 @@
     <div class="container topbar-inner">
       <div class="brand"><div class="brand-mark">A</div><div>ArrowHealth</div></div>
       <nav class="nav">
-        <a href="#">Overview</a><a href="#">Calculators</a><a href="#">Health Pulse</a><a href="#">History</a><a href="#">Insights</a>
+        <a href="#" data-i18n="calc-nav-overview">Overview</a><a href="#" data-i18n="calc-nav-calculators">Calculators</a><a href="#" data-i18n="calc-nav-pulse">Health Pulse</a><a href="#" data-i18n="calc-nav-history">History</a><a href="#" data-i18n="calc-nav-insights">Insights</a>
       </nav>
-      <div class="actions"><button class="btn">History</button><button class="btn btn-primary">Open calculators</button></div>
+      <div class="actions"><button class="btn" data-i18n="calc-nav-history-btn">History</button><button class="btn btn-primary" data-i18n="calc-nav-open">Open calculators</button></div>
     </div>
   </header>
 
@@ -617,24 +617,24 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow reveal">Health Tools • Smart Calculators</div>
-          <h1 class="reveal d1">Premium health calculators<span>that feel intelligent, useful, and beautiful.</span></h1>
-          <p class="reveal d2">Explore BMI, BMR, TDEE, Growth IQ, heart rate insights, wellness scoring, and saved records in one premium health dashboard designed for trust and clarity.</p>
+          <div class="eyebrow reveal" data-i18n="calc-hero-eyebrow">Health Tools • Smart Calculators</div>
+          <h1 class="reveal d1" data-i18n-html="calc-hero-h1">Premium health calculators<span>that feel intelligent, useful, and beautiful.</span></h1>
+          <p class="reveal d2" data-i18n="calc-hero-p">Explore BMI, BMR, TDEE, Growth IQ, heart rate insights, wellness scoring, and saved records in one premium health dashboard designed for trust and clarity.</p>
           <div class="hero-search reveal d3">
-            <div class="search"><span>🔎</span><input type="text" placeholder="Search calculators, results, or tools..." /></div>
-            <button class="btn btn-primary">Search</button>
+            <div class="search"><span>🔎</span><input type="text" placeholder="Search calculators, results, or tools..." data-i18n-placeholder="calc-search-placeholder" /></div>
+            <button class="btn btn-primary" data-i18n="calc-search-btn">Search</button>
           </div>
           <div class="pill-row reveal d4">
-            <div class="pill active">All</div><div class="pill">Nutrition</div><div class="pill">Fitness</div><div class="pill">Body</div><div class="pill">Child Growth</div><div class="pill">Vitals</div>
+            <div class="pill active" data-i18n="calc-pill-all">All</div><div class="pill" data-i18n="calc-pill-nutrition">Nutrition</div><div class="pill" data-i18n="calc-pill-fitness">Fitness</div><div class="pill" data-i18n="calc-pill-body">Body</div><div class="pill" data-i18n="calc-pill-growth">Child Growth</div><div class="pill" data-i18n="calc-pill-vitals">Vitals</div>
           </div>
         </div>
 
         <div class="glass hero-side reveal d2">
           <div class="preview-tabs">
-            <div class="tab active" onclick="showPreview('bmi', this)">BMI</div>
-            <div class="tab" onclick="showPreview('bmr', this)">BMR</div>
-            <div class="tab" onclick="showPreview('growth', this)">Growth IQ</div>
-            <div class="tab" onclick="showPreview('pulse', this)">Health Pulse</div>
+            <div class="tab active" onclick="showPreview('bmi', this)" data-i18n="calc-tab-bmi">BMI</div>
+            <div class="tab" onclick="showPreview('bmr', this)" data-i18n="calc-tab-bmr">BMR</div>
+            <div class="tab" onclick="showPreview('growth', this)" data-i18n="calc-tab-growth">Growth IQ</div>
+            <div class="tab" onclick="showPreview('pulse', this)" data-i18n="calc-tab-pulse">Health Pulse</div>
           </div>
           <div class="preview-card" id="preview-content"></div>
         </div>
@@ -644,22 +644,22 @@
     <section class="layout">
       <div>
         <div class="section">
-          <div class="section-title"><h2>Featured calculator</h2></div>
+          <div class="section-title"><h2 data-i18n="calc-featured-label">Featured calculator</h2></div>
           <div class="card featured">
             <div class="featured-left">
-              <div class="featured-tag">⭐ Featured</div>
-              <h3>BMI Calculator</h3>
-              <p>Find out if your weight is healthy for your height using a premium visual gauge, saved history, and quick interpretation.</p>
-              <div class="feature-chips"><div class="feature-chip">Height</div><div class="feature-chip">Weight</div><div class="feature-chip">Age</div><div class="feature-chip">Metric / Imperial</div></div>
-              <div class="featured-cta"><button class="btn btn-primary">Start calculator</button><button class="btn">View history</button></div>
+              <div class="featured-tag">⭐ <span data-i18n="calc-featured-tag">Featured</span></div>
+              <h3 data-i18n="calc-featured-h">BMI Calculator</h3>
+              <p data-i18n="calc-featured-p">Find out if your weight is healthy for your height using a premium visual gauge, saved history, and quick interpretation.</p>
+              <div class="feature-chips"><div class="feature-chip" data-i18n="calc-chip-height">Height</div><div class="feature-chip" data-i18n="calc-chip-weight">Weight</div><div class="feature-chip" data-i18n="calc-chip-age">Age</div><div class="feature-chip" data-i18n="calc-chip-metric">Metric / Imperial</div></div>
+              <div class="featured-cta"><button class="btn btn-primary" data-i18n="calc-start-btn">Start calculator</button><button class="btn" data-i18n="calc-history-btn">View history</button></div>
             </div>
             <div class="featured-right">
               <div class="mini-calc">
-                <div class="top"><span>Body composition</span><span>Normal range</span></div>
+                <div class="top"><span data-i18n="calc-body-comp">Body composition</span><span data-i18n="calc-normal-range">Normal range</span></div>
                 <div class="result-number"><div class="big" style="font-size:62px;color:#fff;">22.5</div><div class="unit">BMI</div></div>
-                <div class="status-badge">● Normal</div>
-                <div class="mini-row"><span>Height</span><span>172 cm</span></div>
-                <div class="mini-row"><span>Weight</span><span>66.5 kg</span></div>
+                <div class="status-badge">● <span data-i18n="calc-normal">Normal</span></div>
+                <div class="mini-row"><span data-i18n="calc-chip-height">Height</span><span>172 cm</span></div>
+                <div class="mini-row"><span data-i18n="calc-chip-weight">Weight</span><span>66.5 kg</span></div>
                 <div class="mini-bar"><div></div></div>
               </div>
             </div>
@@ -667,34 +667,34 @@
         </div>
 
         <div class="section">
-          <div class="section-title"><h2>All calculators</h2></div>
+          <div class="section-title"><h2 data-i18n="calc-all-label">All calculators</h2></div>
           <div class="calc-grid">
-            <div class="calc-item"><div class="calc-icon">⚡</div><h4>BMR Calculator</h4><p>Estimate the calories your body burns at complete rest with age, height, weight, and sex.</p><div class="calc-meta"><div class="calc-badges"><div class="badge">~1 min</div><div class="badge">Metabolism</div></div><div>→</div></div></div>
-            <div class="calc-item"><div class="calc-icon">⏱</div><h4>TDEE Calculator</h4><p>Project your daily energy needs based on activity level, making meal planning smarter.</p><div class="calc-meta"><div class="calc-badges"><div class="badge">Activity</div><div class="badge">Daily burn</div></div><div>→</div></div></div>
-            <div class="calc-item"><div class="calc-icon">📈</div><h4>Growth IQ</h4><p>Track percentile, Z-score, region, and child growth insights in a calm, trustworthy layout.</p><div class="calc-meta"><div class="calc-badges"><div class="badge">Pediatric</div><div class="badge">CDC / WHO</div></div><div>→</div></div></div>
-            <div class="calc-item"><div class="calc-icon">❤️</div><h4>Health Pulse</h4><p>Bring together heart rate, HRV, stress, and energy into a premium result summary.</p><div class="calc-meta"><div class="calc-badges"><div class="badge">Vitals</div><div class="badge">Wellness</div></div><div>→</div></div></div>
+            <div class="calc-item"><div class="calc-icon">⚡</div><h4 data-i18n="calc-item-1-h">BMR Calculator</h4><p data-i18n="calc-item-1-p">Estimate the calories your body burns at complete rest with age, height, weight, and sex.</p><div class="calc-meta"><div class="calc-badges"><div class="badge" data-i18n="calc-badge-1min">~1 min</div><div class="badge" data-i18n="calc-badge-metabolism">Metabolism</div></div><div>→</div></div></div>
+            <div class="calc-item"><div class="calc-icon">⏱</div><h4 data-i18n="calc-item-2-h">TDEE Calculator</h4><p data-i18n="calc-item-2-p">Project your daily energy needs based on activity level, making meal planning smarter.</p><div class="calc-meta"><div class="calc-badges"><div class="badge" data-i18n="calc-badge-activity">Activity</div><div class="badge" data-i18n="calc-badge-burn">Daily burn</div></div><div>→</div></div></div>
+            <div class="calc-item"><div class="calc-icon">📈</div><h4 data-i18n="calc-item-3-h">Growth IQ</h4><p data-i18n="calc-item-3-p">Track percentile, Z-score, region, and child growth insights in a calm, trustworthy layout.</p><div class="calc-meta"><div class="calc-badges"><div class="badge" data-i18n="calc-badge-pediatric">Pediatric</div><div class="badge">CDC / WHO</div></div><div>→</div></div></div>
+            <div class="calc-item"><div class="calc-icon">❤️</div><h4 data-i18n="calc-item-4-h">Health Pulse</h4><p data-i18n="calc-item-4-p">Bring together heart rate, HRV, stress, and energy into a premium result summary.</p><div class="calc-meta"><div class="calc-badges"><div class="badge" data-i18n="calc-badge-vitals">Vitals</div><div class="badge" data-i18n="calc-badge-wellness">Wellness</div></div><div>→</div></div></div>
           </div>
         </div>
       </div>
 
       <aside class="aside-stack">
         <div class="aside-card">
-          <h3>Saved results</h3>
+          <h3 data-i18n="calc-saved-h">Saved results</h3>
           <div class="history-list">
-            <div class="history-item"><div class="history-dot"></div><div><h5>BMI History</h5><p>22.5 BMI • 66.5 kg • 172 cm</p></div><div class="tag green">Normal</div></div>
-            <div class="history-item"><div class="history-dot"></div><div><h5>Heart Rate</h5><p>71 BPM • HRV 140 ms • Stress 18%</p></div><div class="tag teal">Healthy</div></div>
-            <div class="history-item"><div class="history-dot"></div><div><h5>Growth IQ</h5><p>73rd percentile • Z-score 0.60</p></div><div class="tag green">Expected</div></div>
-            <div class="history-item"><div class="history-dot"></div><div><h5>BMR Result</h5><p>1605 kcal/day • Age 28 • Male</p></div><div class="tag teal">Baseline</div></div>
+            <div class="history-item"><div class="history-dot"></div><div><h5 data-i18n="calc-hist-1-h">BMI History</h5><p>22.5 BMI • 66.5 kg • 172 cm</p></div><div class="tag green" data-i18n="calc-normal">Normal</div></div>
+            <div class="history-item"><div class="history-dot"></div><div><h5 data-i18n="calc-hist-2-h">Heart Rate</h5><p>71 BPM • HRV 140 ms • Stress 18%</p></div><div class="tag teal" data-i18n="calc-healthy">Healthy</div></div>
+            <div class="history-item"><div class="history-dot"></div><div><h5 data-i18n="calc-hist-3-h">Growth IQ</h5><p>73rd percentile • Z-score 0.60</p></div><div class="tag green" data-i18n="calc-expected">Expected</div></div>
+            <div class="history-item"><div class="history-dot"></div><div><h5 data-i18n="calc-hist-4-h">BMR Result</h5><p>1605 kcal/day • Age 28 • Male</p></div><div class="tag teal" data-i18n="calc-baseline">Baseline</div></div>
           </div>
         </div>
-        <div class="aside-card"><h3>Smart insight</h3><div class="insight-box"><strong>Your health profile is stable.</strong>Your BMI is in the normal range, heart rate is healthy, stress is low, and HRV is excellent. This is the kind of reassuring, premium feedback the web design should surface beautifully.</div></div>
+        <div class="aside-card"><h3 data-i18n="calc-insight-h">Smart insight</h3><div class="insight-box" data-i18n-html="calc-insight-body"><strong>Your health profile is stable.</strong>Your BMI is in the normal range, heart rate is healthy, stress is low, and HRV is excellent. This is the kind of reassuring, premium feedback the web design should surface beautifully.</div></div>
       </aside>
     </section>
 
     <section class="footer-cta">
-      <h2>Make health tools feel premium, not clinical.</h2>
-      <p>This web design direction gives your calculator section a premium product feel — clear, elegant, informative, and visually rich — while staying aligned with the ArrowHealth warm cream and deep green brand.</p>
-      <button class="btn btn-primary">Continue with this design system</button>
+      <h2 data-i18n="calc-cta-h2">Make health tools feel premium, not clinical.</h2>
+      <p data-i18n="calc-cta-p">This web design direction gives your calculator section a premium product feel — clear, elegant, informative, and visually rich — while staying aligned with the ArrowHealth warm cream and deep green brand.</p>
+      <button class="btn btn-primary" data-i18n="calc-cta-btn">Continue with this design system</button>
     </section>
   </main>
 
@@ -740,15 +740,15 @@
     <div class="footer-container">
       <div class="footer-top">
         <div>
-          <div class="footer-eyebrow">Built for everyday health clarity</div>
-          <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
-          <p class="footer-description">
+          <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
+          <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
+          <p class="footer-description" data-i18n="footer-p">
             Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey organized in one calm, intelligent app.
           </p>
         </div>
         <div class="footer-cta-area">
-          <a class="footer-btn primary" href="index.html">Get Started</a>
-          <a class="footer-btn secondary" href="index.html#bento">View Features</a>
+          <a class="footer-btn primary" href="index.html" data-i18n="footer-btn-primary">Get Started</a>
+          <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
         </div>
       </div>
 
@@ -758,52 +758,52 @@
             <div class="footer-logo-mark">↗</div>
             <span>Arrow Health</span>
           </div>
-          <p>A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
+          <p data-i18n="footer-brand-p">A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
           <div class="footer-trust-list">
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Privacy-focused health experience</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Clear insights, not confusing numbers</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Designed for everyday users</div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-1-text">Privacy-focused health experience</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-2-text">Clear insights, not confusing numbers</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-3-text">Designed for everyday users</span></div>
           </div>
         </div>
 
         <div class="footer-links-grid">
           <div class="footer-col">
-            <h4>Product</h4>
-            <a href="glucose.html">Glucose Tracking</a>
-            <a href="meal_estimation.html">Food Analysis</a>
-            <a href="medicine.html">Medicine Scan</a>
-            <a href="ai_wellness.html">AI Health Chat</a>
+            <h4 data-i18n="footer-col-product">Product</h4>
+            <a href="glucose.html" data-i18n="footer-link-glucose">Glucose Tracking</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-food">Food Analysis</a>
+            <a href="medicine.html" data-i18n="footer-link-medicine">Medicine Scan</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-chat">AI Health Chat</a>
           </div>
           <div class="footer-col">
-            <h4>AI Tools</h4>
-            <a href="index.html">Smart Camera</a>
-            <a href="meal_estimation.html">Meal Insights</a>
-            <a href="index.html">Health Summary</a>
-            <a href="ai_wellness.html">Wellness Guidance</a>
+            <h4 data-i18n="footer-col-ai">AI Tools</h4>
+            <a href="index.html" data-i18n="footer-link-camera">Smart Camera</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-meal">Meal Insights</a>
+            <a href="index.html" data-i18n="footer-link-summary">Health Summary</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-wellness">Wellness Guidance</a>
           </div>
           <div class="footer-col">
-            <h4>Company</h4>
-            <a href="index.html#about">About</a>
-            <a href="index.html#why">Why Arrow Health</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="index.html#support">Support</a>
+            <h4 data-i18n="footer-col-company">Company</h4>
+            <a href="index.html#about" data-i18n="footer-link-about">About</a>
+            <a href="index.html#why" data-i18n="footer-link-why">Why Arrow Health</a>
+            <a href="index.html#contact" data-i18n="footer-link-contact">Contact</a>
+            <a href="index.html#support" data-i18n="footer-link-support">Support</a>
           </div>
           <div class="footer-col">
-            <h4>Trust</h4>
-            <a href="index.html">Privacy</a>
-            <a href="index.html">Security</a>
-            <a href="index.html">Terms</a>
-            <span>Not a substitute for professional medical advice.</span>
+            <h4 data-i18n="footer-col-trust">Trust</h4>
+            <a href="index.html" data-i18n="footer-link-privacy">Privacy</a>
+            <a href="index.html" data-i18n="footer-link-security">Security</a>
+            <a href="index.html" data-i18n="footer-link-terms">Terms</a>
+            <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <div>© 2026 Arrow Health. All rights reserved.</div>
+        <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="index.html">Privacy Policy</a>
-          <a href="index.html">Terms of Use</a>
-          <a href="index.html">Accessibility</a>
+          <a href="index.html" data-i18n="footer-bottom-privacy">Privacy Policy</a>
+          <a href="index.html" data-i18n="footer-bottom-terms">Terms of Use</a>
+          <a href="index.html" data-i18n="footer-bottom-access">Accessibility</a>
         </div>
       </div>
     </div>
@@ -838,6 +838,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+  <script src="translations.js"></script>
 
 <script>
 (function autoScrollCalcCards() {

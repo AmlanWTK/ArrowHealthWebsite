@@ -1123,11 +1123,11 @@
         <span>ArrowHealth</span>
       </a>
       <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#" class="active">Activity</a>
-        <a href="meal_estimation.html">Meals</a>
-        <a href="glucose.html">Monitoring</a>
-        <a href="ai_wellness.html">AI Chat</a>
+        <a href="index.html" data-i18n="act-nav-home">Home</a>
+        <a href="#" class="active" data-i18n="act-nav-activity">Activity</a>
+        <a href="meal_estimation.html" data-i18n="act-nav-meals">Meals</a>
+        <a href="glucose.html" data-i18n="act-nav-monitoring">Monitoring</a>
+        <a href="ai_wellness.html" data-i18n="act-nav-chat">AI Chat</a>
       </nav>
       <div class="nav-actions">
         <div class="icon-btn">🔔</div>
@@ -1141,24 +1141,24 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy-block reveal">
-          <div class="eyebrow">Your Rhythm</div>
-          <h1>Track your daily activity & <span>burn</span></h1>
-          <p class="hero-copy">
+          <div class="eyebrow" data-i18n="act-hero-eyebrow">Your Rhythm</div>
+          <h1 data-i18n-html="act-hero-h1">Track your daily activity & <span>burn</span></h1>
+          <p class="hero-copy" data-i18n="act-hero-copy">
             Stay active, stay in control. Monitor your steps, distance, time, and calories in real time, then turn every session into beautiful daily and weekly progress reports.
           </p>
           <div class="hero-feature-row">
             <div class="hero-feature">
               <div class="hero-feature-icon">⌁</div>
-              <div><strong>Live tracking</strong><span>See your progress as it happens</span></div>
+              <div><strong data-i18n="act-feat-1-h">Live tracking</strong><span data-i18n="act-feat-1-p">See your progress as it happens</span></div>
             </div>
             <div class="hero-feature">
               <div class="hero-feature-icon">↗</div>
-              <div><strong>Weekly insights</strong><span>Understand your movement patterns</span></div>
+              <div><strong data-i18n="act-feat-2-h">Weekly insights</strong><span data-i18n="act-feat-2-p">Understand your movement patterns</span></div>
             </div>
           </div>
           <div class="hero-actions">
-            <a href="#dashboard" class="btn btn-primary">▶ Start Your Activity</a>
-            <a href="#reports" class="btn">How it works →</a>
+            <a href="#dashboard" class="btn btn-primary">▶ <span data-i18n="act-hero-btn-1">Start Your Activity</span></a>
+            <a href="#reports" class="btn" data-i18n="act-hero-btn-2">How it works →</a>
           </div>
         </div>
 
@@ -1172,32 +1172,32 @@
           </div>
           <div class="live-card">
             <div class="live-head">
-              <span>Live Activity</span>
-              <small><span class="status-dot"></span>Walking</small>
+              <span data-i18n="act-live-title">Live Activity</span>
+              <small><span class="status-dot"></span><span data-i18n="act-walking">Walking</span></small>
             </div>
             <div class="toggle">
-              <span class="active">Walking</span>
-              <span>Running</span>
+              <span class="active" data-i18n="act-walking">Walking</span>
+              <span data-i18n="act-running">Running</span>
             </div>
             <div class="duration-row">
               <div class="duration">
-                <small>Duration</small>
+                <small data-i18n="act-duration">Duration</small>
                 <strong>00:00:14</strong>
               </div>
               <div class="mini-btns">
-                <button class="mini-btn stop">Ⅱ Pause</button>
-                <button class="mini-btn finish">Finish</button>
+                <button class="mini-btn stop">Ⅱ <span data-i18n="act-pause">Pause</span></button>
+                <button class="mini-btn finish" data-i18n="act-finish">Finish</button>
               </div>
             </div>
             <div class="live-metrics">
-              <div class="live-metric"><div class="ico">🚶</div><span>Steps</span><strong>26</strong></div>
-              <div class="live-metric"><div class="ico">📍</div><span>Distance</span><strong>0.01 km</strong></div>
-              <div class="live-metric"><div class="ico">🔥</div><span>Calories</span><strong>1 kcal</strong></div>
+              <div class="live-metric"><div class="ico">🚶</div><span data-i18n="act-steps">Steps</span><strong>26</strong></div>
+              <div class="live-metric"><div class="ico">📍</div><span data-i18n="act-distance">Distance</span><strong>0.01 km</strong></div>
+              <div class="live-metric"><div class="ico">🔥</div><span data-i18n="act-calories">Calories</span><strong>1 kcal</strong></div>
             </div>
           </div>
           <div class="note-card">
-            <strong>Keep it up! 💪</strong>
-            <span>You're on track today.</span>
+            <strong data-i18n="act-note-title">Keep it up! 💪</strong>
+            <span data-i18n="act-note-p">You're on track today.</span>
           </div>
         </div>
       </div>
@@ -1208,7 +1208,7 @@
       <div class="container">
         <div class="grid-top">
           <article class="card overview-card reveal">
-            <h2 class="card-title">Today's Activity Overview</h2>
+            <h2 class="card-title" data-i18n="act-overview-h">Today's Activity Overview</h2>
             <div class="card-subtitle">Monday, May 18, 2026</div>
             <div class="overview-layout">
               <div>
@@ -1216,19 +1216,19 @@
                   <div class="ring-content">
                     <div class="icon">🚶</div>
                     <strong>73</strong>
-                    <span>Steps</span>
+                    <span data-i18n="act-steps">Steps</span>
                   </div>
                 </div>
                 <div class="goal-row">
-                  <div class="goal-head"><span>Step goal</span><span>73 / 10000</span></div>
+                  <div class="goal-head"><span data-i18n="act-step-goal">Step goal</span><span>73 / 10000</span></div>
                   <div class="progress-track"><span class="progress-bar-fill"></span></div>
                 </div>
               </div>
               <div class="overview-mini-grid">
-                <div class="overview-mini"><div class="mini-icon calorie-icon">🔥</div><span>Total Calories</span><strong>2 kcal</strong></div>
-                <div class="overview-mini"><div class="mini-icon time-icon">⏱</div><span>Total Time</span><strong>00:00:18</strong></div>
-                <div class="overview-mini"><div class="mini-icon distance-icon">🗺</div><span>Total Distance</span><strong>0.04 km</strong></div>
-                <div class="overview-mini"><div class="mini-icon steps-icon">◉</div><span>Total Steps</span><strong>73</strong></div>
+                <div class="overview-mini"><div class="mini-icon calorie-icon">🔥</div><span data-i18n="act-total-calories">Total Calories</span><strong>2 kcal</strong></div>
+                <div class="overview-mini"><div class="mini-icon time-icon">⏱</div><span data-i18n="act-total-time">Total Time</span><strong>00:00:18</strong></div>
+                <div class="overview-mini"><div class="mini-icon distance-icon">🗺</div><span data-i18n="act-total-distance">Total Distance</span><strong>0.04 km</strong></div>
+                <div class="overview-mini"><div class="mini-icon steps-icon">◉</div><span data-i18n="act-total-steps">Total Steps</span><strong>73</strong></div>
               </div>
             </div>
           </article>
@@ -1236,10 +1236,10 @@
           <article class="card weekly-card reveal delay-1">
             <div class="weekly-head">
               <div>
-                <h2 class="card-title">Weekly Summary</h2>
+                <h2 class="card-title" data-i18n="act-weekly-h">Weekly Summary</h2>
                 <div class="card-subtitle">May 12 – May 18, 2026</div>
               </div>
-              <div class="select-pill">This Week⌄</div>
+              <div class="select-pill" data-i18n="act-this-week">This Week⌄</div>
             </div>
             <div class="bar-chart">
               <div class="bar" data-day="Mon" style="height:32%" data-delay="0.05"></div>
@@ -1251,18 +1251,18 @@
               <div class="bar" data-day="Sun" style="height:65%" data-delay="0.35"></div>
             </div>
             <div class="weekly-summary-row">
-              <div class="weekly-stat"><span>Total Steps</span><strong>27,842</strong></div>
-              <div class="weekly-stat"><span>Distance</span><strong>18.34 km</strong></div>
-              <div class="weekly-stat"><span>Calories</span><strong>1,245</strong></div>
-              <div class="weekly-stat"><span>Total Time</span><strong>04:12:36</strong></div>
+              <div class="weekly-stat"><span data-i18n="act-total-steps">Total Steps</span><strong>27,842</strong></div>
+              <div class="weekly-stat"><span data-i18n="act-distance">Distance</span><strong>18.34 km</strong></div>
+              <div class="weekly-stat"><span data-i18n="act-calories">Calories</span><strong>1,245</strong></div>
+              <div class="weekly-stat"><span data-i18n="act-total-time">Total Time</span><strong>04:12:36</strong></div>
             </div>
           </article>
 
           <article class="card session-card reveal delay-2">
             <div class="session-illustration">🚴</div>
-            <h3>Session Complete</h3>
-            <p>Great job staying active. Your session has been saved and added to your progress.</p>
-            <a href="#" class="btn">View Summary</a>
+            <h3 data-i18n="act-session-h">Session Complete</h3>
+            <p data-i18n="act-session-p">Great job staying active. Your session has been saved and added to your progress.</p>
+            <a href="#" class="btn" data-i18n="act-view-summary">View Summary</a>
           </article>
         </div>
 
@@ -1270,24 +1270,24 @@
           <article class="card download-card reveal delay-1">
             <div class="report-icon">📄</div>
             <div>
-              <h3>Weekly Report</h3>
-              <p>Get a detailed breakdown of your weekly activity, progress trends, and health insights.</p>
-              <a href="#" class="btn btn-primary">⬇ Download Weekly Report</a>
+              <h3 data-i18n="act-report-h">Weekly Report</h3>
+              <p data-i18n="act-report-p">Get a detailed breakdown of your weekly activity, progress trends, and health insights.</p>
+              <a href="#" class="btn btn-primary">⬇ <span data-i18n="act-report-btn">Download Weekly Report</span></a>
             </div>
           </article>
-          <article class="card small-stat reveal delay-2"><div class="badge-icon">🏅</div><span>Best Day</span><strong>Thursday</strong><p>8,642 steps</p></article>
-          <article class="card small-stat reveal delay-2"><div class="badge-icon">🔥</div><span>Longest Streak</span><strong>5 Days</strong><p>Keep it going!</p></article>
-          <article class="card small-stat reveal delay-3"><div class="badge-icon">📈</div><span>Weekly Progress</span><strong>+24%</strong><p>vs last week</p></article>
-          <article class="card small-stat reveal delay-3"><div class="badge-icon">🎯</div><span>Goal Progress</span><strong>28%</strong><p>of weekly goal</p></article>
+          <article class="card small-stat reveal delay-2"><div class="badge-icon">🏅</div><span data-i18n="act-best-day">Best Day</span><strong data-i18n="act-thursday">Thursday</strong><p data-i18n="act-best-day-steps">8,642 steps</p></article>
+          <article class="card small-stat reveal delay-2"><div class="badge-icon">🔥</div><span data-i18n="act-streak">Longest Streak</span><strong data-i18n="act-5-days">5 Days</strong><p data-i18n="act-keep-going">Keep it going!</p></article>
+          <article class="card small-stat reveal delay-3"><div class="badge-icon">📈</div><span data-i18n="act-progress">Weekly Progress</span><strong>+24%</strong><p data-i18n="act-vs-last-week">vs last week</p></article>
+          <article class="card small-stat reveal delay-3"><div class="badge-icon">🎯</div><span data-i18n="act-goal-progress">Goal Progress</span><strong>28%</strong><p data-i18n="act-of-goal">of weekly goal</p></article>
         </div>
 
         <div class="cta-strip reveal delay-3">
           <div class="heart-orb">♥</div>
           <div>
-            <h2>Stay active. Stay unstoppable.</h2>
-            <p>Every step you take brings you closer to a healthier, happier you.</p>
+            <h2 data-i18n="act-cta-h2">Stay active. Stay unstoppable.</h2>
+            <p data-i18n="act-cta-p">Every step you take brings you closer to a healthier, happier you.</p>
           </div>
-          <a href="#" class="btn">▶ Start Tracking Now</a>
+          <a href="#" class="btn">▶ <span data-i18n="act-cta-btn">Start Tracking Now</span></a>
         </div>
       </div>
     </section>
@@ -1296,14 +1296,14 @@
     <section class="ai-section">
       <div class="container ai-inner">
         <div>
-          <div class="ai-label">✦ AI Wellness Companion</div>
-          <h2>Ask about your activity, goals, and recovery.</h2>
-          <p>Care AI reads your step count, session history, and weekly trends to give you personalized advice on how to improve your daily movement and reach your fitness goals.</p>
+          <div class="ai-label">✦ <span data-i18n="act-ai-label">AI Wellness Companion</span></div>
+          <h2 data-i18n="act-ai-h2">Ask about your activity, goals, and recovery.</h2>
+          <p data-i18n="act-ai-p">Care AI reads your step count, session history, and weekly trends to give you personalized advice on how to improve your daily movement and reach your fitness goals.</p>
           <div class="ai-chip-row">
-            <div class="ai-chip">💪 Recovery tips</div>
-            <div class="ai-chip">🎯 Goal planning</div>
-            <div class="ai-chip">📊 Progress insights</div>
-            <div class="ai-chip">🔥 Calorie guidance</div>
+            <div class="ai-chip">💪 <span data-i18n="act-chip-1">Recovery tips</span></div>
+            <div class="ai-chip">🎯 <span data-i18n="act-chip-2">Goal planning</span></div>
+            <div class="ai-chip">📊 <span data-i18n="act-chip-3">Progress insights</span></div>
+            <div class="ai-chip">🔥 <span data-i18n="act-chip-4">Calorie guidance</span></div>
           </div>
         </div>
 
@@ -1311,18 +1311,18 @@
           <div class="chat-header">
             <div class="chat-ai-logo">✦</div>
             <div>
-              <h3>Wellness Companion</h3>
-              <span><span class="pulse-dot"></span>AI · Always available</span>
+              <h3 data-i18n="act-chat-title">Wellness Companion</h3>
+              <span><span class="pulse-dot"></span><span data-i18n="act-chat-sub">AI · Always available</span></span>
             </div>
           </div>
           <div class="chat-messages" id="chat-msgs">
-            <div class="chat-bubble user" data-delay="0.3">How many more steps should I walk today?</div>
-            <div class="chat-bubble ai" data-delay="1.6"><strong>Care AI:</strong> You've logged 73 steps so far today. To reach your 10,000 step goal, you need about 9,927 more. A 45–60 minute walk would comfortably get you there!</div>
-            <div class="chat-bubble user" data-delay="3.2">What's my best performing day this week?</div>
-            <div class="chat-bubble ai" data-delay="4.5"><strong>Great news:</strong> Thursday was your best day with 8,642 steps and 24% above your weekly average. Keep that energy going tomorrow!</div>
+            <div class="chat-bubble user" data-delay="0.3" data-i18n="act-chat-1">How many more steps should I walk today?</div>
+            <div class="chat-bubble ai" data-delay="1.6" data-i18n-html="act-chat-2"><strong>Care AI:</strong> You've logged 73 steps so far today. To reach your 10,000 step goal, you need about 9,927 more. A 45–60 minute walk would comfortably get you there!</div>
+            <div class="chat-bubble user" data-delay="3.2" data-i18n="act-chat-3">What's my best performing day this week?</div>
+            <div class="chat-bubble ai" data-delay="4.5" data-i18n-html="act-chat-4"><strong>Great news:</strong> Thursday was your best day with 8,642 steps and 24% above your weekly average. Keep that energy going tomorrow!</div>
           </div>
           <div class="chat-input-row">
-            <span>Ask about your activity...</span>
+            <span data-i18n="act-chat-placeholder">Ask about your activity...</span>
             <div class="send-orb">↑</div>
           </div>
         </div>
@@ -1335,15 +1335,15 @@
     <div class="footer-container">
       <div class="footer-top">
         <div>
-          <div class="footer-eyebrow">Built for everyday health clarity</div>
-          <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
-          <p class="footer-description">
+          <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
+          <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
+          <p class="footer-description" data-i18n="footer-p">
             Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey organized in one calm, intelligent app.
           </p>
         </div>
         <div class="footer-cta-area">
-          <a class="footer-btn primary" href="index.html">Get Started</a>
-          <a class="footer-btn secondary" href="index.html#bento">View Features</a>
+          <a class="footer-btn primary" href="index.html" data-i18n="footer-btn-primary">Get Started</a>
+          <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
         </div>
       </div>
 
@@ -1353,52 +1353,52 @@
             <div class="footer-logo-mark">↗</div>
             <span>Arrow Health</span>
           </div>
-          <p>A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
+          <p data-i18n="footer-brand-p">A unified health companion designed to help you track, understand, and improve your daily wellness with AI-powered tools.</p>
           <div class="footer-trust-list">
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Privacy-focused health experience</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Clear insights, not confusing numbers</div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Designed for everyday users</div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-1-text">Privacy-focused health experience</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-2-text">Clear insights, not confusing numbers</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-3-text">Designed for everyday users</span></div>
           </div>
         </div>
 
         <div class="footer-links-grid">
           <div class="footer-col">
-            <h4>Product</h4>
-            <a href="glucose.html">Glucose Tracking</a>
-            <a href="meal_estimation.html">Food Analysis</a>
-            <a href="medicine.html">Medicine Scan</a>
-            <a href="ai_wellness.html">AI Health Chat</a>
+            <h4 data-i18n="footer-col-product">Product</h4>
+            <a href="glucose.html" data-i18n="footer-link-glucose">Glucose Tracking</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-food">Food Analysis</a>
+            <a href="medicine.html" data-i18n="footer-link-medicine">Medicine Scan</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-chat">AI Health Chat</a>
           </div>
           <div class="footer-col">
-            <h4>AI Tools</h4>
-            <a href="index.html">Smart Camera</a>
-            <a href="meal_estimation.html">Meal Insights</a>
-            <a href="index.html">Health Summary</a>
-            <a href="ai_wellness.html">Wellness Guidance</a>
+            <h4 data-i18n="footer-col-ai">AI Tools</h4>
+            <a href="index.html" data-i18n="footer-link-camera">Smart Camera</a>
+            <a href="meal_estimation.html" data-i18n="footer-link-meal">Meal Insights</a>
+            <a href="index.html" data-i18n="footer-link-summary">Health Summary</a>
+            <a href="ai_wellness.html" data-i18n="footer-link-wellness">Wellness Guidance</a>
           </div>
           <div class="footer-col">
-            <h4>Company</h4>
-            <a href="index.html#about">About</a>
-            <a href="index.html#why">Why Arrow Health</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="index.html#support">Support</a>
+            <h4 data-i18n="footer-col-company">Company</h4>
+            <a href="index.html#about" data-i18n="footer-link-about">About</a>
+            <a href="index.html#why" data-i18n="footer-link-why">Why Arrow Health</a>
+            <a href="index.html#contact" data-i18n="footer-link-contact">Contact</a>
+            <a href="index.html#support" data-i18n="footer-link-support">Support</a>
           </div>
           <div class="footer-col">
-            <h4>Trust</h4>
-            <a href="index.html">Privacy</a>
-            <a href="index.html">Security</a>
-            <a href="index.html">Terms</a>
-            <span>Not a substitute for professional medical advice.</span>
+            <h4 data-i18n="footer-col-trust">Trust</h4>
+            <a href="index.html" data-i18n="footer-link-privacy">Privacy</a>
+            <a href="index.html" data-i18n="footer-link-security">Security</a>
+            <a href="index.html" data-i18n="footer-link-terms">Terms</a>
+            <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <div>© 2026 Arrow Health. All rights reserved.</div>
+        <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="index.html">Privacy Policy</a>
-          <a href="index.html">Terms of Use</a>
-          <a href="index.html">Accessibility</a>
+          <a href="index.html" data-i18n="footer-bottom-privacy">Privacy Policy</a>
+          <a href="index.html" data-i18n="footer-bottom-terms">Terms of Use</a>
+          <a href="index.html" data-i18n="footer-bottom-access">Accessibility</a>
         </div>
       </div>
     </div>
@@ -1480,5 +1480,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
   <script src="scroll-reveal.js"></script>
+  <script src="translations.js"></script>
 </body>
 </html>

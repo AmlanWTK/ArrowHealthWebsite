@@ -201,15 +201,6 @@
        .mobile-nav-panel a:last-child {
          border-bottom: none;
        }
-       .mobile-nav-panel .lang-toggle-btn {
-         display: block;
-         width: 100%;
-         text-align: center;
-         margin: 10px 0 0;
-         padding: 12px !important;
-         border-radius: 14px;
-         font-size: 15px;
-       }
        .mobile-nav-panel .mobile-nav-cta {
          margin-top: 14px;
          display: block;
@@ -2067,51 +2058,47 @@
       Arrow Health
     </a>
     <div class="nav-links">
-      <a href="#hero-section" data-i18n="nav-overview">Overview</a>
-      <a href="#bento" data-i18n="nav-features">Features</a>
-      <a href="#features" data-i18n="nav-insights">Insights</a>
-      <a href="#consultation" data-i18n="nav-experts">Meet Experts</a>
-      <a href="#wellness-guidance" data-i18n="nav-ai">AI Tools</a>
-      <a href="#premium" data-i18n="nav-plans">Plans</a>
-      <a href="ramadan_calculator.html" style="display:flex; align-items:center; gap:6px;"><span data-i18n="nav-calculator">🧮 Calculator</span></a>
+      <a href="#hero-section">Overview</a>
+      <a href="#bento">Features</a>
+      <a href="#features">Insights</a>
+      <a href="#consultation">Meet Experts</a>
+      <a href="#wellness-guidance">AI Tools</a>
+      <a href="#premium">Plans</a>
     </div>
-    <button id="lang-toggle-btn" class="lang-toggle-btn" onclick="arrowToggleLang()" title="বাংলায় পড়ুন" aria-label="Switch language">BN</button>
     <a class="nav-button" href="#">Join Waitlist</a>
     <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
   </nav>
 
   <!-- Mobile nav panel (shown only on mobile via hamburger) -->
   <div class="mobile-nav-panel" id="mobileNavPanel">
-    <a href="#hero-section" data-i18n="nav-overview">Overview</a>
-    <a href="#bento" data-i18n="nav-features">Features</a>
-    <a href="#features" data-i18n="nav-insights">Insights</a>
-    <a href="#consultation" data-i18n="nav-experts">Meet Experts</a>
-    <a href="#wellness-guidance" data-i18n="nav-ai">AI Tools</a>
-    <a href="#premium" data-i18n="nav-plans">Plans</a>
-      <a href="ramadan_calculator.html" style="display:flex; align-items:center; gap:6px;"><span data-i18n="nav-calculator">🧮 Calculator</span></a>
-    <button id="lang-toggle-btn-mobile" class="lang-toggle-btn" onclick="arrowToggleLang()" aria-label="Switch language">BN</button>
+    <a href="#hero-section">Overview</a>
+    <a href="#bento">Features</a>
+    <a href="#features">Insights</a>
+    <a href="#consultation">Meet Experts</a>
+    <a href="#wellness-guidance">AI Tools</a>
+    <a href="#premium">Plans</a>
     <a href="#" class="mobile-nav-cta">Join Waitlist</a>
   </div>
 
   <section class="hero" id="hero-section">
     <div class="hero-copy">
-      <div class="eyebrow" data-i18n="hero-eyebrow">Premium health intelligence</div>
-      <h1><span data-i18n="hero-h1-line1" style="color:inherit;">Your health,</span><br><span id="heroBrandHighlight" data-i18n="hero-h1-line2">beautifully understood.</span></h1>
-      <p data-i18n="hero-para">
+      <div class="eyebrow">Premium health intelligence</div>
+      <h1>Your health,<br><span id="heroBrandHighlight">beautifully understood.</span></h1>
+      <p>
         Arrow Health brings your health data, habits, reports, reminders, and daily progress into one calm dashboard —
         designed with a premium, mature color system.
       </p>
 
       <!-- Dynamic Toggles -->
       <div class="service-toggles" id="serviceToggles">
-        <button class="service-toggle active" data-service="glucose" data-i18n="hero-toggle-glucose">Glucose</button>
-        <button class="service-toggle" data-service="meal" data-i18n="hero-toggle-nutrition">Nutrition</button>
-        <button class="service-toggle" data-service="heart" data-i18n="hero-toggle-heart">Heart</button>
-        <button class="service-toggle" data-service="activity" data-i18n="hero-toggle-activity">Activity</button>
+        <button class="service-toggle active" data-service="glucose">Glucose</button>
+        <button class="service-toggle" data-service="meal">Nutrition</button>
+        <button class="service-toggle" data-service="heart">Heart</button>
+        <button class="service-toggle" data-service="activity">Activity</button>
       </div>
 
       <div class="hero-actions">
-        <a class="button-primary" href="#features" data-i18n="hero-cta">View Services</a>
+        <a class="button-primary" href="#features">View Services</a>
       </div>
     </div>
 
@@ -2188,8 +2175,8 @@
   <section class="bento-section" id="bento">
     <div class="bento-container">
       <div class="bento-header">
-        <h2 data-i18n="bento-h2">A calmer way to understand your health.</h2>
-        <p data-i18n="bento-p">Beautiful health insights, AI tools, glucose trends, and expert support — designed to feel simple every day.
+        <h2>A calmer way to understand your health.</h2>
+        <p>Beautiful health insights, AI tools, glucose trends, and expert support — designed to feel simple every day.
         </p>
       </div>
 
@@ -2201,13 +2188,13 @@
             <div class="card-bg" style="background-image: url('appimages/glucose.png');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-glucose">🩸 Glucose Trend</span>
+              <span class="card-badge">🩸 Glucose Trend</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-glucose">Understand your <i style="color:#F87A7A;">glucose trends</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-glucose">Get insights into your daily glucose levels, see how meals affect your body in <span style="color:#FFAD9E;font-weight:700;">real-time</span>, and <span style="color:#F87A7A;font-weight:700;">stay in range</span> effortlessly.</p>
-              <a href="glucose.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Understand your <i style="color:#F87A7A;">glucose trends</i></h3>
+              <p class="feature-desc">Get insights into your daily glucose levels, see how meals affect your body in <span style="color:#FFAD9E;font-weight:700;">real-time</span>, and <span style="color:#F87A7A;font-weight:700;">stay in range</span> effortlessly.</p>
+              <a href="glucose.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <!-- Graph Card -->
@@ -2261,13 +2248,13 @@
             <div class="card-bg" style="background-image: url('appimages/meal_estimation.png');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-meal">🥗 Meal Estimation</span>
+              <span class="card-badge">🥗 Meal Estimation</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-meal">Discover if your meal is <i style="color:#8FD47A;">truly safe</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-meal">Use our <span style="color:#8FD47A;font-weight:700;">AI</span> to scan your food, breakdown <span style="color:#A8E89C;font-weight:700;">macros</span>, and estimate safety based on your <span style="color:#8FD47A;font-weight:700;">personal health profile</span>.</p>
-              <a href="meal_estimation.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Discover if your meal is <i style="color:#8FD47A;">truly safe</i></h3>
+              <p class="feature-desc">Use our <span style="color:#8FD47A;font-weight:700;">AI</span> to scan your food, breakdown <span style="color:#A8E89C;font-weight:700;">macros</span>, and estimate safety based on your <span style="color:#8FD47A;font-weight:700;">personal health profile</span>.</p>
+              <a href="meal_estimation.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <!-- Snack Impact Widget -->
@@ -2337,13 +2324,13 @@
             <div class="card-bg" style="background-image: url('appimages/med.png');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-medicine">💊 Auto Scan</span>
+              <span class="card-badge">💊 Auto Scan</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-medicine">Instantly scan your <i style="color:#6DD5C0;">medications</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-medicine">Point your camera at any medicine to instantly get <span style="color:#6DD5C0;font-weight:700;">dosage instructions</span>, side effects, and <span style="color:#7AEAD8;font-weight:700;">clash warnings</span>.</p>
-              <a href="medicine.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Instantly scan your <i style="color:#6DD5C0;">medications</i></h3>
+              <p class="feature-desc">Point your camera at any medicine to instantly get <span style="color:#6DD5C0;font-weight:700;">dosage instructions</span>, side effects, and <span style="color:#7AEAD8;font-weight:700;">clash warnings</span>.</p>
+              <a href="medicine.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <!-- Medicine Detected Card -->
@@ -2406,13 +2393,13 @@
             <div class="card-bg" style="background-image: url('appimages/chatwithai.png');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-ai">🤖 AI Health Expert</span>
+              <span class="card-badge">🤖 AI Health Expert</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-ai">Discuss your health with <i style="color:#79C8F0;">AI</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-ai">Chat with our advanced AI health expert to understand your data, get <span style="color:#79C8F0;font-weight:700;">tailored advice</span>, and plan your <span style="color:#A3DBFF;font-weight:700;">wellness journey</span>.</p>
-              <a href="ai_wellness.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Discuss your health with <i style="color:#79C8F0;">AI</i></h3>
+              <p class="feature-desc">Chat with our advanced AI health expert to understand your data, get <span style="color:#79C8F0;font-weight:700;">tailored advice</span>, and plan your <span style="color:#A3DBFF;font-weight:700;">wellness journey</span>.</p>
+              <a href="ai_wellness.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <div class="mini-widget chat-bubble user">
@@ -2429,13 +2416,13 @@
             <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-calc">🧮 Calculators</span>
+              <span class="card-badge">🧮 Calculators</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-calc">Insights from <i style="color:#B8A9FF;">health calculators</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-calc">Utilize our diverse range of clinical calculators to stay on top of your <span style="color:#B8A9FF;font-weight:700;">BMI</span>, <span style="color:#CFC0FF;font-weight:700;">BMR</span>, and other <span style="color:#B8A9FF;font-weight:700;">vital metrics</span>.</p>
-              <a href="calculators.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Insights from <i style="color:#B8A9FF;">health calculators</i></h3>
+              <p class="feature-desc">Utilize our diverse range of clinical calculators to stay on top of your <span style="color:#B8A9FF;font-weight:700;">BMI</span>, <span style="color:#CFC0FF;font-weight:700;">BMR</span>, and other <span style="color:#B8A9FF;font-weight:700;">vital metrics</span>.</p>
+              <a href="calculators.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <div class="mini-widget">
@@ -2455,13 +2442,13 @@
             <div class="card-bg" style="background-image: url('appimages/activity.png');"></div>
             <div class="card-gradient"></div>
             <div class="card-header">
-              <span class="card-badge" data-i18n="bento-badge-activity">🏃 Activity Tracking</span>
+              <span class="card-badge">🏃 Activity Tracking</span>
               <button class="expand-btn">+</button>
             </div>
             <div class="card-content-left">
-              <h3 data-i18n-html="bento-h3-activity">Track your daily <i style="color:#FFB347;">activity & burn</i></h3>
-              <p class="feature-desc" data-i18n-html="bento-desc-activity">Measure your daily steps, distance, and <span style="color:#FFB347;font-weight:700;">calories burned</span> to hit your <span style="color:#FFCC80;font-weight:700;">fitness goals</span> and stay active.</p>
-              <a href="activity.html" class="feature-learn-more" data-i18n="learn-more">Learn More →</a>
+              <h3>Track your daily <i style="color:#FFB347;">activity & burn</i></h3>
+              <p class="feature-desc">Measure your daily steps, distance, and <span style="color:#FFB347;font-weight:700;">calories burned</span> to hit your <span style="color:#FFCC80;font-weight:700;">fitness goals</span> and stay active.</p>
+              <a href="activity.html" class="feature-learn-more">Learn More →</a>
             </div>
             <div class="card-content-right">
               <!-- Live Activity Widget -->
@@ -2529,9 +2516,9 @@
 
       <div class="section-inner">
         <div class="feat-intro">
-          <div class="kicker"><span class="kicker-dot"></span> <span data-i18n="feat-kicker">Features</span></div>
-          <h2 data-i18n-html="feat-h2">Everything works together around <span class="accent">your health.</span></h2>
-          <p class="lead" data-i18n="feat-lead">
+          <div class="kicker"><span class="kicker-dot"></span> Features</div>
+          <h2>Everything works together around <span class="accent">your health.</span></h2>
+          <p class="lead">
             Arrow Health is not just a set of separate tools. Your scans, readings, reports, reminders, and AI guidance connect into one calm health companion.
           </p>
 
@@ -2557,15 +2544,15 @@
           <div class="mini-proof">
             <div class="proof-card">
               <strong>1</strong>
-              <span data-i18n="proof-1">Unified health timeline</span>
+              <span>Unified health timeline</span>
             </div>
             <div class="proof-card">
               <strong>24/7</strong>
-              <span data-i18n="proof-2">AI companion support</span>
+              <span>AI companion support</span>
             </div>
             <div class="proof-card">
               <strong>PDF</strong>
-              <span data-i18n="proof-3">Doctor-ready reports</span>
+              <span>Doctor-ready reports</span>
             </div>
           </div>
         </div>
@@ -2574,25 +2561,25 @@
           <article class="feat-card highlight">
             <div class="memory-orbit"></div>
             <div class="feat-icon">✦</div>
-            <h3 data-i18n="feat-h3-1">Connected health memory</h3>
-            <p data-i18n="feat-p-1">
+            <h3>Connected health memory</h3>
+            <p>
               Glucose, meals, medicine, activity, vitals, and reports stay connected so the app understands the bigger picture behind each day.
             </p>
 
             <div class="connected-line">
               <div class="connection-row">
                 <span class="connection-icon">🩸</span>
-                <span data-i18n="feat-conn-1">Glucose + meals linked</span>
+                <span>Glucose + meals linked</span>
                 <span class="connection-status"></span>
               </div>
               <div class="connection-row">
                 <span class="connection-icon">💊</span>
-                <span data-i18n="feat-conn-2">Medicine + reminders saved</span>
+                <span>Medicine + reminders saved</span>
                 <span class="connection-status"></span>
               </div>
               <div class="connection-row">
                 <span class="connection-icon">❤️</span>
-                <span data-i18n="feat-conn-3">Vitals + activity summarized</span>
+                <span>Vitals + activity summarized</span>
                 <span class="connection-status"></span>
               </div>
             </div>
@@ -2600,8 +2587,8 @@
 
           <article class="feat-card">
             <div class="feat-icon">🤖</div>
-            <h3 data-i18n="feat-h3-2">AI understands your patterns</h3>
-            <p data-i18n="feat-p-2">
+            <h3>AI understands your patterns</h3>
+            <p>
               Care AI can use logged meals, glucose readings, medicine history, and activity data to give more personal guidance.
             </p>
             <div class="card-sparkline">
@@ -2613,8 +2600,8 @@
 
           <article class="feat-card">
             <div class="feat-icon">⚠</div>
-            <h3 data-i18n="feat-h3-3">Smart risk detection</h3>
-            <p data-i18n="feat-p-3">
+            <h3>Smart risk detection</h3>
+            <p>
               Highlight high-glucose meals, unusual trends, missed medicine logs, low activity days, or patterns worth reviewing.
             </p>
             <div class="risk-meter"><span></span></div>
@@ -2623,15 +2610,15 @@
           <article class="feat-card wide-card">
             <div class="feat-icon">▣</div>
             <div>
-              <h3 data-i18n="feat-h3-4">Daily, weekly, and monthly summaries</h3>
-              <p data-i18n="feat-p-4">
+              <h3>Daily, weekly, and monthly summaries</h3>
+              <p>
                 Users can see their progress over time instead of only seeing one screen at a time. Reports feel calm, visual, and easy to share.
               </p>
             </div>
             <div class="report-preview">
-              <small data-i18n="feat-weekly-report">Weekly report</small>
+              <small>Weekly report</small>
               <strong>90%</strong>
-              <small data-i18n="feat-time-range">time in range</small>
+              <small>time in range</small>
               <div class="report-bars">
                 <div class="feat-bar"><span style="width: 90%;"></span></div>
                 <div class="feat-bar"><span style="width: 62%; background: linear-gradient(90deg, var(--brand-secondary), var(--activity));"></span></div>
@@ -2645,22 +2632,22 @@
 
   <section class="consult-section" id="consultation">
     <div class="consult-copy">
-      <div class="eyebrow" data-i18n="consult-eyebrow">Expert consultation</div>
-      <h2 data-i18n-html="consult-h2">Book trusted doctors from the <span>Arrow Health app.</span></h2>
-      <p data-i18n="consult-p">
+      <div class="eyebrow">Expert consultation</div>
+      <h2>Book trusted doctors from the <span>Arrow Health app.</span></h2>
+      <p>
         Connect with experienced health experts directly from Arrow Health. Users can book consultations, discuss
         glucose concerns, review habits, and get guidance from professionals when they need support.
       </p>
 
       <div class="consult-actions">
-        <a class="consult-btn consult-btn-primary" href="#" data-i18n="consult-btn-primary">Book Consultation</a>
-        <a class="consult-btn consult-btn-secondary" id="meetExpertsBtn" href="#" data-i18n="consult-btn-secondary">Meet Experts</a>
+        <a class="consult-btn consult-btn-primary" href="#">Book Consultation</a>
+        <a class="consult-btn consult-btn-secondary" id="meetExpertsBtn" href="#">Meet Experts</a>
       </div>
 
       <div class="trust-strip">
-        <div class="trust-chip"><span>✓</span><span data-i18n="trust-chip-1-text">In-app booking</span></div>
-        <div class="trust-chip"><span>✓</span><span data-i18n="trust-chip-2-text">Health experts</span></div>
-        <div class="trust-chip"><span>✓</span><span data-i18n="trust-chip-3-text">Personalized guidance</span></div>
+        <div class="trust-chip"><span>✓</span>In-app booking</div>
+        <div class="trust-chip"><span>✓</span>Health experts</div>
+        <div class="trust-chip"><span>✓</span>Personalized guidance</div>
       </div>
     </div>
 
@@ -2855,36 +2842,36 @@
         <div class="ai-guidance-copy-side">
           <div class="ai-guidance-eyebrow">
             <span class="ai-guidance-ai-guidance-eyebrow-icon">✦</span>
-            <span data-i18n="ai-eyebrow">Complete AI Suite</span>
+            <span>Complete AI Suite</span>
           </div>
 
-          <h1 data-i18n-html="ai-h1">
+          <h1>
             AI Health Tools,
             <span class="ai-guidance-gold">all</span>
             in one place.
           </h1>
 
-          <p class="ai-guidance-hero-copy" data-i18n="ai-p">
+          <p class="ai-guidance-hero-copy">
             Arrow Health features advanced AI tools for glucose prediction, meal analysis, medicine scanning, and natural language health chat—so you have a personal health assistant, every day.
           </p>
 
           <a href="#" class="ai-guidance-hero-btn">
-            <span data-i18n="ai-cta">Explore AI Tools</span>
+            <span>Explore AI Tools</span>
             <span class="ai-guidance-arrow">→</span>
           </a>
 
           <div class="ai-guidance-trust-row">
             <div class="ai-guidance-trust-item">
               <div class="ai-guidance-trust-icon">🛡</div>
-              <span data-i18n-html="ai-trust-1">Private & secure<br>by design</span>
+              <span>Private & secure<br>by design</span>
             </div>
             <div class="ai-guidance-trust-item">
               <div class="ai-guidance-trust-icon">✦</div>
-              <span data-i18n-html="ai-trust-2">Personalized<br>for you</span>
+              <span>Personalized<br>for you</span>
             </div>
             <div class="ai-guidance-trust-item">
               <div class="ai-guidance-trust-icon">〽</div>
-              <span data-i18n-html="ai-trust-3">Powered by<br>health science</span>
+              <span>Powered by<br>health science</span>
             </div>
           </div>
         </div>
@@ -2893,7 +2880,7 @@
           <article class="ai-guidance-glass-card ai-guidance-meal-card">
             <div class="ai-guidance-card-title">
               <span class="ai-guidance-tiny-icon">📷</span>
-              <span data-i18n="ai-card-meal">Meal intelligence</span>
+              <span>Meal intelligence</span>
             </div>
             <div class="ai-guidance-meal-photo">
               <div class="ai-guidance-balance-pill">Great<br>balance</div>
@@ -2903,7 +2890,7 @@
           <article class="ai-guidance-glass-card ai-guidance-report-card">
             <div class="ai-guidance-card-title">
               <span class="ai-guidance-tiny-icon">💚</span>
-              <span data-i18n="ai-card-report">Health report</span>
+              <span>Health report</span>
             </div>
 
             <div class="ai-guidance-score-row">
@@ -2933,8 +2920,8 @@
 
           <article class="ai-guidance-glass-card ai-guidance-main-guidance-card">
             <div class="ai-guidance-guidance-icon-main">✦</div>
-            <h2 data-i18n="ai-h2-main">Your personal health AI</h2>
-            <p data-i18n="ai-p-main">
+            <h2>Your personal health AI</h2>
+            <p>
               From analyzing your meals to predicting glucose spikes, identifying medicines, and answering complex health questions, our AI suite is built to empower your daily decisions.
             </p>
 
@@ -2942,8 +2929,8 @@
               <div class="ai-guidance-suggestion-row">
                 <div class="ai-guidance-suggestion-icon">🌙</div>
                 <div>
-                  <strong data-i18n="ai-suggest-1-title">Analyze any meal instantly</strong>
-                  <span data-i18n="ai-suggest-1-sub">With the Smart Camera</span>
+                  <strong>Analyze any meal instantly</strong>
+                  <span>With the Smart Camera</span>
                 </div>
                 <div class="ai-guidance-status-ring"></div>
               </div>
@@ -2951,8 +2938,8 @@
               <div class="ai-guidance-suggestion-row">
                 <div class="ai-guidance-suggestion-icon">🚶</div>
                 <div>
-                  <strong data-i18n="ai-suggest-2-title">Understand your medications</strong>
-                  <span data-i18n="ai-suggest-2-sub">Medicine Scan explains effects</span>
+                  <strong>Understand your medications</strong>
+                  <span>Medicine Scan explains effects</span>
                 </div>
                 <div class="ai-guidance-status-ring"></div>
               </div>
@@ -2960,14 +2947,14 @@
               <div class="ai-guidance-suggestion-row">
                 <div class="ai-guidance-suggestion-icon">💧</div>
                 <div>
-                  <strong data-i18n="ai-suggest-3-title">Ask health questions naturally</strong>
-                  <span data-i18n="ai-suggest-3-sub">AI Health Chat is ready 24/7</span>
+                  <strong>Ask health questions naturally</strong>
+                  <span>AI Health Chat is ready 24/7</span>
                 </div>
                 <div class="ai-guidance-status-ring"></div>
               </div>
             </div>
 
-            <div class="ai-guidance-private-note" data-i18n="ai-private-note">🛡 Always in one place. Always private.</div>
+            <div class="ai-guidance-private-note">🛡 Always in one place. Always private.</div>
           </article>
 
           <div class="ai-guidance-side-stack">
@@ -2996,8 +2983,8 @@
           <div class="ai-guidance-bottom-toast">
             <div class="ai-guidance-toast-icon">〽</div>
             <div>
-              <strong data-i18n="ai-toast-title">Insights update as you go</strong>
-              <span data-i18n="ai-toast-sub">AI learns. You improve.</span>
+              <strong>Insights update as you go</strong>
+              <span>AI learns. You improve.</span>
             </div>
           </div>
         </div>
@@ -3007,15 +2994,15 @@
   <section class="premium-section" id="premium">
     <div class="premium-container">
       <div class="premium-header">
-        <div class="eyebrow" data-i18n="pricing-eyebrow">Arrow Health Plans</div>
-        <h2 data-i18n-html="pricing-h2">Choose your health <span>journey.</span></h2>
-        <p data-i18n="pricing-p">Start free with 10,000 credits. Upgrade anytime to unlock the full power of Arrow Health.</p>
+        <div class="eyebrow">Arrow Health Plans</div>
+        <h2>Choose your health <span>journey.</span></h2>
+        <p>Start free with 10,000 credits. Upgrade anytime to unlock the full power of Arrow Health.</p>
       </div>
 
       <!-- Welcome banner -->
       <div class="pricing-welcome-banner">
         <span class="pw-icon">🎁</span>
-        <div data-i18n-html="pricing-banner"><strong>10,000 Free Credits</strong> on every new account — no card required.</div>
+        <div><strong>10,000 Free Credits</strong> on every new account — no card required.</div>
       </div>
 
       <!-- Horizontal scrollable cards -->
@@ -3024,90 +3011,90 @@
 
           <!-- Free -->
           <div class="pricing-card-h free-tier">
-            <div class="tier-label-h" data-i18n="tier-free-label">Free</div>
+            <div class="tier-label-h">Free</div>
             <div class="tier-price-h"><span class="currency">৳</span>0</div>
-            <div class="tier-duration-h" data-i18n="tier-free-duration">Forever</div>
-            <div class="tier-credits-h" data-i18n="tier-free-credits">✦ 10,000 Credits</div>
+            <div class="tier-duration-h">Forever</div>
+            <div class="tier-credits-h">✦ 10,000 Credits</div>
             <div class="tier-divider"></div>
             <ul class="tier-features-h">
-              <li data-i18n="tier-free-f1">Standard glucose logging</li>
-              <li data-i18n="tier-free-f2">5 AI food scans / month</li>
-              <li data-i18n="tier-free-f3">Medicine reminders</li>
-              <li data-i18n="tier-free-f4">Basic health dashboard</li>
+              <li>Standard glucose logging</li>
+              <li>5 AI food scans / month</li>
+              <li>Medicine reminders</li>
+              <li>Basic health dashboard</li>
             </ul>
-            <button class="tier-btn-h secondary" data-i18n="tier-free-btn">Get Started Free</button>
+            <button class="tier-btn-h secondary">Get Started Free</button>
           </div>
 
           <!-- Plus — monthly -->
           <div class="pricing-card-h plus-tier">
-            <div class="tier-badge-h" data-i18n="tier-plus-badge">Most Popular</div>
-            <div class="tier-label-h" data-i18n="tier-plus-label">Plus</div>
+            <div class="tier-badge-h">Most Popular</div>
+            <div class="tier-label-h">Plus</div>
             <div class="tier-price-h"><span class="currency">৳</span>299</div>
-            <div class="tier-duration-h" data-i18n="tier-plus-duration">/ month</div>
-            <div class="tier-credits-h" data-i18n="tier-plus-credits">✦ 35,000 Credits</div>
+            <div class="tier-duration-h">/ month</div>
+            <div class="tier-credits-h">✦ 35,000 Credits</div>
             <div class="tier-divider"></div>
             <ul class="tier-features-h">
-              <li data-i18n="tier-plus-f1">Ad-Free Experience</li>
-              <li data-i18n="tier-plus-f2">Faster AI Processing</li>
-              <li data-i18n="tier-plus-f3">Priority Queue Access</li>
-              <li data-i18n="tier-plus-f4">3 Daily Premium Scans</li>
-              <li data-i18n="tier-plus-f5">Detailed Nutrition Reports</li>
-              <li data-i18n="tier-plus-f6">Extended Health History</li>
+              <li>Ad-Free Experience</li>
+              <li>Faster AI Processing</li>
+              <li>Priority Queue Access</li>
+              <li>3 Daily Premium Scans</li>
+              <li>Detailed Nutrition Reports</li>
+              <li>Extended Health History</li>
             </ul>
-            <button class="tier-btn-h primary" data-i18n="tier-plus-btn">Upgrade to Plus</button>
+            <button class="tier-btn-h primary">Upgrade to Plus</button>
           </div>
 
           <!-- Premium Semi-Annual -->
           <div class="pricing-card-h premium-6m-tier">
-            <div class="tier-badge-h" data-i18n="tier-premium-badge">Save 20%</div>
-            <div class="tier-label-h" data-i18n="tier-premium-label">Premium</div>
+            <div class="tier-badge-h">Save 20%</div>
+            <div class="tier-label-h">Premium</div>
             <div class="tier-price-h"><span class="currency">৳</span>1,435</div>
-            <div class="tier-duration-h" data-i18n="tier-premium-duration">/ 6 months</div>
-            <div class="tier-credits-h" data-i18n="tier-premium-credits">✦ 220,000 Credits</div>
+            <div class="tier-duration-h">/ 6 months</div>
+            <div class="tier-credits-h">✦ 220,000 Credits</div>
             <div class="tier-divider"></div>
             <ul class="tier-features-h">
-              <li data-i18n="tier-premium-f1">Everything in Plus</li>
-              <li data-i18n="tier-premium-f2">20% Subscription Savings</li>
-              <li data-i18n="tier-premium-f3">Priority Processing</li>
-              <li data-i18n="tier-premium-f4">Expanded Health Tracking</li>
-              <li data-i18n="tier-premium-f5">Advanced AI Recommendations</li>
+              <li>Everything in Plus</li>
+              <li>20% Subscription Savings</li>
+              <li>Priority Processing</li>
+              <li>Expanded Health Tracking</li>
+              <li>Advanced AI Recommendations</li>
             </ul>
-            <button class="tier-btn-h primary" data-i18n="tier-premium-btn">Get 6-Month Plan</button>
+            <button class="tier-btn-h primary">Get 6-Month Plan</button>
           </div>
 
           <!-- Premium Annual -->
           <div class="pricing-card-h premium-12m-tier">
-            <div class="tier-badge-h" data-i18n="tier-annual-badge">Best Value</div>
-            <div class="tier-label-h" data-i18n="tier-annual-label">Premium Annual</div>
+            <div class="tier-badge-h">Best Value</div>
+            <div class="tier-label-h">Premium Annual</div>
             <div class="tier-price-h"><span class="currency">৳</span>2,500</div>
-            <div class="tier-duration-h" data-i18n="tier-annual-duration">/ year</div>
-            <div class="tier-credits-h" data-i18n="tier-annual-credits">✦ 450,000 Credits</div>
+            <div class="tier-duration-h">/ year</div>
+            <div class="tier-credits-h">✦ 450,000 Credits</div>
             <div class="tier-divider"></div>
             <ul class="tier-features-h">
-              <li data-i18n="tier-annual-f1">Everything in Plus</li>
-              <li data-i18n="tier-annual-f2">Maximum Annual Savings</li>
-              <li data-i18n="tier-annual-f3">Priority Processing</li>
-              <li data-i18n="tier-annual-f4">Expanded Health Tracking</li>
-              <li data-i18n="tier-annual-f5">Advanced AI Recommendations</li>
+              <li>Everything in Plus</li>
+              <li>Maximum Annual Savings</li>
+              <li>Priority Processing</li>
+              <li>Expanded Health Tracking</li>
+              <li>Advanced AI Recommendations</li>
             </ul>
-            <button class="tier-btn-h primary" data-i18n="tier-annual-btn">Get Annual Plan</button>
+            <button class="tier-btn-h primary">Get Annual Plan</button>
           </div>
 
           <!-- Family — coming soon -->
           <div class="pricing-card-h family-tier">
-            <div class="coming-soon-badge" data-i18n="tier-family-soon">Coming Soon</div>
-            <div class="tier-label-h" data-i18n="tier-family-label">Family</div>
+            <div class="coming-soon-badge">Coming Soon</div>
+            <div class="tier-label-h">Family</div>
             <div class="tier-price-h"><span class="currency">৳</span>4,999</div>
-            <div class="tier-duration-h" data-i18n="tier-family-duration">/ year</div>
-            <div class="tier-credits-h" data-i18n="tier-family-credits">✦ Shared Credits</div>
+            <div class="tier-duration-h">/ year</div>
+            <div class="tier-credits-h">✦ Shared Credits</div>
             <div class="tier-divider"></div>
             <ul class="tier-features-h">
-              <li data-i18n="tier-family-f1">Multiple family members</li>
-              <li data-i18n="tier-family-f2">Shared health dashboard</li>
-              <li data-i18n="tier-family-f3">Family health insights</li>
-              <li data-i18n="tier-family-f4">All Premium features</li>
+              <li>Multiple family members</li>
+              <li>Shared health dashboard</li>
+              <li>Family health insights</li>
+              <li>All Premium features</li>
             </ul>
-            <button class="tier-btn-h secondary" disabled data-i18n="tier-family-btn">Notify Me</button>
+            <button class="tier-btn-h secondary" disabled>Notify Me</button>
           </div>
 
         </div>
@@ -3120,17 +3107,17 @@
     <div class="footer-container">
       <div class="footer-top">
         <div>
-          <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
-          <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
-          <p class="footer-description" data-i18n="footer-p">
+          <div class="footer-eyebrow">Built for everyday health clarity</div>
+          <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
+          <p class="footer-description">
             Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey
             organized in one calm, intelligent app.
           </p>
         </div>
 
         <div class="footer-cta-area">
-          <a class="footer-btn primary" href="#" data-i18n="footer-btn-primary">Get Started</a>
-          <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
+          <a class="footer-btn primary" href="#">Get Started</a>
+          <a class="footer-btn secondary" href="index.html#bento">View Features</a>
         </div>
       </div>
 
@@ -3140,79 +3127,79 @@
             <div class="footer-logo-mark">↗</div>
             <span>Arrow Health</span>
           </div>
-          <p data-i18n="footer-brand-p">
+          <p>
             A unified health companion designed to help you track, understand, and improve your daily wellness with
             AI-powered tools.
           </p>
 
           <div class="footer-trust-list">
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-1-text">Privacy-focused health experience</span>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Privacy-focused health experience
             </div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-2-text">Clear insights, not confusing numbers</span>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Clear insights, not confusing numbers
             </div>
-            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-3-text">Designed for everyday users</span></div>
+            <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Designed for everyday users</div>
           </div>
         </div>
 
         <div class="footer-links-grid">
           <div class="footer-col">
-            <h4 data-i18n="footer-col-product">Product</h4>
-            <a href="#" data-i18n="footer-link-glucose">Glucose Tracking</a>
-            <a href="#" data-i18n="footer-link-food">Food Analysis</a>
-            <a href="#" data-i18n="footer-link-medicine">Medicine Scan</a>
-            <a href="#" data-i18n="footer-link-chat">AI Health Chat</a>
+            <h4>Product</h4>
+            <a href="#">Glucose Tracking</a>
+            <a href="#">Food Analysis</a>
+            <a href="#">Medicine Scan</a>
+            <a href="#">AI Health Chat</a>
           </div>
 
           <div class="footer-col">
-            <h4 data-i18n="footer-col-ai">AI Tools</h4>
-            <a href="#" data-i18n="footer-link-camera">Smart Camera</a>
-            <a href="#" data-i18n="footer-link-meal">Meal Insights</a>
-            <a href="#" data-i18n="footer-link-summary">Health Summary</a>
-            <a href="#" data-i18n="footer-link-wellness">Wellness Guidance</a>
+            <h4>AI Tools</h4>
+            <a href="#">Smart Camera</a>
+            <a href="#">Meal Insights</a>
+            <a href="#">Health Summary</a>
+            <a href="#">Wellness Guidance</a>
           </div>
 
           <div class="footer-col">
-            <h4 data-i18n="footer-col-company">Company</h4>
-            <a href="#" data-i18n="footer-link-about">About</a>
-            <a href="#" data-i18n="footer-link-why">Why Arrow Health</a>
-            <a href="#" data-i18n="footer-link-contact">Contact</a>
-            <a href="#" data-i18n="footer-link-support">Support</a>
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Why Arrow Health</a>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
           </div>
 
           <div class="footer-col">
-            <h4 data-i18n="footer-col-trust">Trust</h4>
-            <a href="#" data-i18n="footer-link-privacy">Privacy</a>
-            <a href="#" data-i18n="footer-link-security">Security</a>
-            <a href="#" data-i18n="footer-link-terms">Terms</a>
-            <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
+            <h4>Trust</h4>
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Terms</a>
+            <span>Not a substitute for professional medical advice.</span>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom-bar">
-        <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
+        <div>© 2026 Arrow Health. All rights reserved.</div>
         <div class="footer-bottom-links">
-          <a href="#" data-i18n="footer-bottom-privacy">Privacy Policy</a>
-          <a href="#" data-i18n="footer-bottom-terms">Terms of Use</a>
-          <a href="#" data-i18n="footer-bottom-access">Accessibility</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Accessibility</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button class="floating-why-btn" data-i18n="floating-why-btn">Why Arrow Health?</button>
+  <button class="floating-why-btn">Why Arrow Health?</button>
 
   <!-- Why Arrow Health Modal -->
   <div class="why-modal" id="whyModal">
     <div class="why-modal-header">
-      <h2 data-i18n="why-modal-title">Why Arrow Health</h2>
+      <h2>Why Arrow Health</h2>
       <button class="close-modal-btn" id="closeModalBtn">×</button>
     </div>
     <div class="why-modal-content">
       <div class="why-hero-bg">
         <div class="why-hero">
-          <h1 data-i18n-html="why-hero-h1">A unified, <span>AI-powered</span> view of your everyday wellness.</h1>
-          <p data-i18n="why-hero-p">Arrow Health is the first mobile dashboard designed to paint a truly holistic picture of your health —
+          <h1>A unified, <span>AI-powered</span> view of your everyday wellness.</h1>
+          <p>Arrow Health is the first mobile dashboard designed to paint a truly holistic picture of your health —
             right from your pocket, even completely offline.</p>
         </div>
 
@@ -3226,17 +3213,17 @@
             <span class="pulse-ring"></span>
           </div>
           <div class="privacy-content">
-            <strong data-i18n="why-privacy-h">Local-First Security</strong>
-            <p data-i18n="why-privacy-p">Your health data is processed entirely on-device. Safe, secure, and fully accessible offline.</p>
+            <strong>Local-First Security</strong>
+            <p>Your health data is processed entirely on-device. Safe, secure, and fully accessible offline.</p>
           </div>
         </div>
       </div>
 
       <div class="why-section">
         <div class="why-text">
-          <div class="why-eyebrow" data-i18n="why-glucose-eyebrow">Glucose tracking made simple</div>
-          <h3 data-i18n-html="why-glucose-h3">Log glucose readings with <span>clarity.</span></h3>
-          <p data-i18n="why-glucose-p">A clean product-style section for Arrow Health. The app screen is recreated inside a light premium mockup,
+          <div class="why-eyebrow">Glucose tracking made simple</div>
+          <h3>Log glucose readings with <span>clarity.</span></h3>
+          <p>A clean product-style section for Arrow Health. The app screen is recreated inside a light premium mockup,
             without the heavy black phone frame.</p>
         </div>
         <div class="app-mockup-wrapper">
@@ -3321,9 +3308,9 @@
           <!-- New Floating Chat Card -->
           <div class="floating-card chat-card">
             <div class="chat-icon">✨</div>
-            <small data-i18n="why-chat-label">AI Insights</small>
-            <strong data-i18n="why-chat-h">Chat about your Glucose</strong>
-            <p data-i18n="why-chat-p">We securely save your readings so you can instantly chat with our AI to understand trends and get
+            <small>AI Insights</small>
+            <strong>Chat about your Glucose</strong>
+            <p>We securely save your readings so you can instantly chat with our AI to understand trends and get
               personalized nutrition advice.</p>
           </div>
         </div>
@@ -3331,8 +3318,8 @@
 
       <div class="why-section reverse">
         <div class="why-text">
-          <h3 data-i18n-html="why-device-h3"><span>Intelligence,</span> right on your device.</h3>
-          <p data-i18n="why-device-p">Your health data is deeply personal. That's why Arrow Health runs entirely on your device. Advanced AI
+          <h3><span>Intelligence,</span> right on your device.</h3>
+          <p>Your health data is deeply personal. That's why Arrow Health runs entirely on your device. Advanced AI
             object detection and offline capabilities mean your data stays yours, securely accessible anywhere.</p>
         </div>
         <div class="app-mockup-wrapper">
@@ -3520,14 +3507,14 @@
         <div class="meal-hero-bg-overlay"></div>
         <div class="why-section">
           <div class="why-text">
-            <div class="why-eyebrow" data-i18n="why-meal-eyebrow">AI meal analysis</div>
-            <h3 data-i18n-html="why-meal-h3">See how food affects your <span>glucose.</span></h3>
+            <div class="why-eyebrow">AI meal analysis</div>
+            <h3>See how food affects your <span>glucose.</span></h3>
 
 
             <div class="feature-points">
-              <div class="point"><span class="point-icon">01</span><span data-i18n="why-point-1">Upload or capture a meal photo</span></div>
-              <div class="point"><span class="point-icon">02</span><span data-i18n="why-point-2">AI detects food items and nutrition</span></div>
-              <div class="point"><span class="point-icon">03</span><span data-i18n="why-point-3">Arrow Health estimates glucose impact</span></div>
+              <div class="point"><span class="point-icon">01</span>Upload or capture a meal photo</div>
+              <div class="point"><span class="point-icon">02</span>AI detects food items and nutrition</div>
+              <div class="point"><span class="point-icon">03</span>Arrow Health estimates glucose impact</div>
             </div>
           </div>
 
@@ -3537,9 +3524,9 @@
 
             <!-- Floating nutrition card -->
             <div class="floating-card nutrition-float">
-              <small data-i18n="why-nutrition-label">Detected nutrition</small>
+              <small>Detected nutrition</small>
               <strong>488g carbs</strong>
-              <p data-i18n="why-nutrition-p">Meal photo analysis turns food into useful health data.</p>
+              <p>Meal photo analysis turns food into useful health data.</p>
             </div>
 
             <!-- Animated Meal Phone Mockup -->
@@ -3710,9 +3697,9 @@
 
             <!-- Floating prediction card -->
             <div class="floating-card prediction-float">
-              <small data-i18n="why-prediction-label">Predicted glucose impact</small>
+              <small>Predicted glucose impact</small>
               <strong>+246 mg/dL</strong>
-              <p data-i18n="why-prediction-p">Arrow Health connects meals with glucose response.</p>
+              <p>Arrow Health connects meals with glucose response.</p>
             </div>
           </div>
         </div>
@@ -3726,17 +3713,17 @@
         <div class="footer-container">
           <div class="footer-top">
             <div>
-              <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
-              <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
-              <p class="footer-description" data-i18n="footer-p">
+              <div class="footer-eyebrow">Built for everyday health clarity</div>
+              <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
+              <p class="footer-description">
                 Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey
                 organized in one calm, intelligent app.
               </p>
             </div>
 
             <div class="footer-cta-area">
-              <a class="footer-btn primary" href="#" data-i18n="footer-btn-primary">Get Started</a>
-              <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
+              <a class="footer-btn primary" href="#">Get Started</a>
+              <a class="footer-btn secondary" href="index.html#bento">View Features</a>
             </div>
           </div>
 
@@ -3746,61 +3733,61 @@
                 <div class="footer-logo-mark">↗</div>
                 <span>Arrow Health</span>
               </div>
-              <p data-i18n="footer-brand-p">
+              <p>
                 A unified health companion designed to help you track, understand, and improve your daily wellness with
                 AI-powered tools.
               </p>
 
               <div class="footer-trust-list">
-                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-1-text">Privacy-focused health experience</span>
+                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Privacy-focused health experience
                 </div>
-                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-2-text">Clear insights, not confusing
-                  numbers</span></div>
-                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span><span data-i18n="footer-trust-3-text">Designed for everyday users</span></div>
+                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Clear insights, not confusing
+                  numbers</div>
+                <div class="footer-trust-item"><span class="footer-trust-dot">✓</span>Designed for everyday users</div>
               </div>
             </div>
 
             <div class="footer-links-grid">
               <div class="footer-col">
-                <h4 data-i18n="footer-col-product">Product</h4>
-                <a href="#" data-i18n="footer-link-glucose">Glucose Tracking</a>
-                <a href="#" data-i18n="footer-link-food">Food Analysis</a>
-                <a href="#" data-i18n="footer-link-medicine">Medicine Scan</a>
-                <a href="#" data-i18n="footer-link-chat">AI Health Chat</a>
+                <h4>Product</h4>
+                <a href="#">Glucose Tracking</a>
+                <a href="#">Food Analysis</a>
+                <a href="#">Medicine Scan</a>
+                <a href="#">AI Health Chat</a>
               </div>
 
               <div class="footer-col">
-                <h4 data-i18n="footer-col-ai">AI Tools</h4>
-                <a href="#" data-i18n="footer-link-camera">Smart Camera</a>
-                <a href="#" data-i18n="footer-link-meal">Meal Insights</a>
-                <a href="#" data-i18n="footer-link-summary">Health Summary</a>
-                <a href="#" data-i18n="footer-link-wellness">Wellness Guidance</a>
+                <h4>AI Tools</h4>
+                <a href="#">Smart Camera</a>
+                <a href="#">Meal Insights</a>
+                <a href="#">Health Summary</a>
+                <a href="#">Wellness Guidance</a>
               </div>
 
               <div class="footer-col">
-                <h4 data-i18n="footer-col-company">Company</h4>
-                <a href="#" data-i18n="footer-link-about">About</a>
-                <a href="#" data-i18n="footer-link-why">Why Arrow Health</a>
-                <a href="#" data-i18n="footer-link-contact">Contact</a>
-                <a href="#" data-i18n="footer-link-support">Support</a>
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Why Arrow Health</a>
+                <a href="#">Contact</a>
+                <a href="#">Support</a>
               </div>
 
               <div class="footer-col">
-                <h4 data-i18n="footer-col-trust">Trust</h4>
-                <a href="#" data-i18n="footer-link-privacy">Privacy</a>
-                <a href="#" data-i18n="footer-link-security">Security</a>
-                <a href="#" data-i18n="footer-link-terms">Terms</a>
-                <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
+                <h4>Trust</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Security</a>
+                <a href="#">Terms</a>
+                <span>Not a substitute for professional medical advice.</span>
               </div>
             </div>
           </div>
 
           <div class="footer-bottom-bar">
-            <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
+            <div>© 2026 Arrow Health. All rights reserved.</div>
             <div class="footer-bottom-links">
-              <a href="#" data-i18n="footer-bottom-privacy">Privacy Policy</a>
-              <a href="#" data-i18n="footer-bottom-terms">Terms of Use</a>
-              <a href="#" data-i18n="footer-bottom-access">Accessibility</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
             </div>
           </div>
         </div>
@@ -3812,14 +3799,14 @@
   <!-- Meet Experts Modal -->
   <div class="experts-modal" id="expertsModal">
     <div class="experts-modal-header">
-      <h2 data-i18n="experts-modal-title">Arrow Health Experts</h2>
+      <h2>Arrow Health Experts</h2>
       <button class="close-experts-btn" id="closeExpertsBtn">×</button>
     </div>
     <div class="experts-modal-content">
       <div class="experts-hero-bg">
         <div class="experts-hero">
-          <h1 data-i18n-html="experts-hero-h1">Experienced minds guiding your <span>wellness.</span></h1>
-          <p data-i18n="experts-hero-p">Book consultations directly from the Arrow Health app to review your glucose readings, habits, and get
+          <h1>Experienced minds guiding your <span>wellness.</span></h1>
+          <p>Book consultations directly from the Arrow Health app to review your glucose readings, habits, and get
             expert guidance whenever you need support.</p>
         </div>
       </div>
@@ -3829,579 +3816,81 @@
 
           <!-- Dr. Indrajit Prosad -->
           <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
+            <div class="expert-status available">✓ Available Today</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./appimages/prof.-dr.-indrajit prasad-1.png');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Professor Dr. Indrajit Prasad</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
 
           <!-- Dr. Farid Uddin -->
           <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
+            <div class="expert-status available">✓ Available Today</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./appimages/Dr. Farid Uddin.jpeg');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Professor Mohammad Farid Uddin</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
 
           <!-- Prof. Dr. A K M Aminul Islam -->
           <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
+            <div class="expert-status secondary">Next slot: Tomorrow</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./appimages/Prof. Dr. A K M Aminul Islam.jpeg');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Prof. Dr. A K M Aminul Islam</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
 
           <!-- Faria Afsana -->
           <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
+            <div class="expert-status available">✓ Available Today</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Faria Afsana/Faria-Afsana.webp');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Dr. Faria Afsana</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
 
           <!-- Shahajada Selim -->
           <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
+            <div class="expert-status secondary">Next slot: Tomorrow</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Shahjada Selim/Shahjada-Selim.webp');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Dr. Shahjada Selim</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
 
           <!-- Prof Faruque Pathan -->
           <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
+            <div class="expert-status available">✓ Available Today</div>
             <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Md. Faruque Pathan/Faruq_pathan-removebg-preview_1711966760.png');"></div></div>
             <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
+              <span class="expert-tag specialty-diabetes">Endocrinology</span>
               <h3>Professor Md. Faruque Pathan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
+              <span class="expert-credentials">Endocrinologist</span>
+              <p>Specialist in endocrinology, diabetes care, and metabolic health management.</p>
+              <div class="expert-action-row"><div class="expert-meta"><small>Duration</small><strong>30 Min</strong></div><button class="expert-book-btn">Book Consultation</button></div>
             </div>
           </div>
-
-
-
-          <!-- Dr. Nahid Hasan -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/nahid.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-diabetes">Diabetes Care</span>
-              <h3>Dr. Nahid Hasan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-md">MD, Board Certified Endocrinologist</span>
-              <p data-i18n="expert-bio-nahid">Specialist in metabolic health, glucose trend analysis, and custom care plans to balance blood sugars.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Assoc. Prof. Dr. D. A. Rashid -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Assoc. Prof. Dr. D. A. Rashid/assoc-prof-dr-d-a-rashid.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-physician" data-i18n="expert-tag-hormone">Hormone Therapy</span>
-              <h3>Assoc. Prof. Dr. D. A. Rashid</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-assoc">Associate Professor, Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Abul Bashar Mohammad Kamrul Hasan -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Abul Bashar Mohammad Kamrul Hasan/01711103905.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Abul Bashar M. Kamrul Hasan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Afsar Ahammed -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Afsar Ahammed/20250614175556-378503012-476573066.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Afsar Ahammed</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Ahmed Salam Mir -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Ahmed Salam Mir/Ahmed-Mir-2.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Ahmed Salam Mir</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Farhana Akter -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Farhana Akter/1602923797.Teacher-Dr.FarhanaAkter.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Farhana Akter</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. M K Azad -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. M K Azad (Dr. Mahmudul Hossain)/Dr.-M-K-Azad-endocrinologist-in-dhaka.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. M K Azad</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. M Saifuddin -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. M Saifuddin/1584339096.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. M Saifuddin</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Marufa Mustari -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Marufa Mustari/1611554412.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Marufa Mustari</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Mashfiqul Hasan -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Mashfiqul Hasan/1772672342199310.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Mashfiqul Hasan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Md Lutful Kabir -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Md Lutful Kabir/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Md Lutful Kabir</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Md. Kazi Ashraful Alam -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Md. Kazi Ashraful Alam/dr-md-kazi-ashraful-alam.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Md. Kazi Ashraful Alam</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Md. Mahmud Hasan -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Md. Mahmud Hasan/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Md. Mahmud Hasan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Mirza Sharifuzzaman -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Mirza Sharifuzzaman/20250614163418-774548653-1762279000.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Mirza Sharifuzzaman</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Mohammad Abdul Hannan -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Mohammad Abdul Hannan (Tareq)/dr-mohammad-abdul-hannan_1733733227.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Mohammad Abdul Hannan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Mohammad Motiur Rahman -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Mohammad Motiur Rahman/Mohammad-Motiur-Rahman.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Mohammad Motiur Rahman</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Mohammed Ripon -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Mohammed Ripon/dr-mohammad-ripon_single.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Mohammed Ripon</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Nazma Akter -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Nazma Akter/Nazma-Akter.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Nazma Akter</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Nazmul Kabir Qureshi -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Nazmul Kabir Qureshi/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Nazmul Kabir Qureshi</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Nur A Musabber -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Nur A Musabber/images (1).jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Nur A Musabber</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Ramen Chandra Basak -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Ramen Chandra Basak/639ebd6bc8ee9.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Ramen Chandra Basak</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. S M Mohiuddin -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. S M Mohiuddin/dr-s-m-mohiuddin.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. S M Mohiuddin</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Sharmin Chowdhury -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Sharmin Chowdhury/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Sharmin Chowdhury</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Syed Azmal Mahmood -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Syed Azmal Mahmood/Dr.-Syed-Azmal-Mahmood-MD-Endocrinology-Metabolism.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Syed Azmal Mahmood</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-mdmetab">MD, Endocrinology & Metabolism</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Dr. Tahniyah Haq -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Dr. Tahniyah Haq/63c792f649b5b.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-diabetes" data-i18n="expert-tag-endo">Endocrinology</span>
-              <h3>Dr. Tahniyah Haq</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-endo">Endocrinologist</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Prof. A.H.M. Aktaruzzaman -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Prof. A.H.M. Aktaruzzaman/endocrinologist-prof-a-h-m-aktaruzzaman-dhaka-photo.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. A.H.M. Aktaruzzaman</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Prof. Dr. Md Azizul Hoque -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Prof. Dr. Md Azizul Hoque/20250609124001-533737594-2072637962.png');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Md Azizul Hoque</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Prof. Dr. Samir Kumar Talukder -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Prof. Dr. Samir Kumar Talukder/Samir-Kumar-Talukdar-Diabetes-Congress-2024-Inovine-Conferences.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Samir Kumar Talukder</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Prof. Tanjina Hossain -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Prof. Tanjina Hossain/Prof.-Dr.-Tanjina-Hossain.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Tanjina Hossain</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Abdus Saleque Mollah -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Abdus Saleque Mollah/endocrinologist-prof-abdus-saleque-mollah-chattogram-photo.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Professor Abdus Saleque Mollah</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. Ajit Kumar Paul -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. Ajit Kumar Paul/prof-dr-ajit-kumar-paul.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Ajit Kumar Paul</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. Feroz Amin -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. Feroz Amin/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Feroz Amin</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. M A Hasanat -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. M A Hasanat/10064.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. M A Hasanat</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-hasanat">Specializes in advanced metabolic disorders, comprehensive hormonal therapies, and clinical research.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-50">50 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. Md. Shah Emran -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. Md. Shah Emran/images.jpeg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Md. Shah Emran</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. Nazrul Islam Siddiqui -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. Nazrul Islam Siddiqui/prof.avif');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Nazrul Islam Siddiqui</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Dr. Nizamul Karim Khan -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Dr. Nizamul Karim Khan/dr.avif');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Dr. Nizamul Karim Khan</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor Muhammad Hafizur Rahman -->
-          <div class="expert-card">
-            <div class="expert-status secondary" data-i18n="expert-status-tomorrow">Next slot: Tomorrow</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor Muhammad Hafizur Rahman/prof-dr-muhammad-hafizur-rahman.webp');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. Muhammad Hafizur Rahman</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-30">30 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-          <!-- Professor S M Ashrafuzzaman -->
-          <div class="expert-card">
-            <div class="expert-status available" data-i18n="expert-status-available">✓ Available Today</div>
-            <div class="expert-avatar-wrap"><div class="expert-avatar" style="background-image: url('./assets/Directory of Endrocrinologists in Bangladesh/Professor S M Ashrafuzzaman/Prof.-Dr.-SM-Ashrafuzzaman.jpg');"></div></div>
-            <div class="expert-info-block">
-              <span class="expert-tag specialty-nutrition" data-i18n="expert-tag-metabolic">Metabolic Health</span>
-              <h3>Prof. S M Ashrafuzzaman</h3>
-              <span class="expert-credentials" data-i18n="expert-cred-prof">Professor of Endocrinology</span>
-              <p data-i18n="expert-bio-default">Specialist in endocrinology, diabetes care, and metabolic health management.</p>
-              <div class="expert-action-row"><div class="expert-meta"><small data-i18n="expert-duration-label">Duration</small><strong data-i18n="expert-duration-45">45 Min</strong></div><button class="expert-book-btn" data-i18n="expert-book-btn">Book Consultation</button></div>
-            </div>
-          </div>
-
-        
 
         </div>
       </div>
@@ -4411,16 +3900,16 @@
         <div class="footer-container">
           <div class="footer-top">
             <div>
-              <div class="footer-eyebrow" data-i18n="footer-eyebrow">Built for everyday health clarity</div>
-              <h2 class="footer-title" data-i18n-html="footer-h2">Start understanding your health with <span>Arrow Health.</span></h2>
-              <p class="footer-description" data-i18n="footer-p">
+              <div class="footer-eyebrow">Built for everyday health clarity</div>
+              <h2 class="footer-title">Start understanding your health with <span>Arrow Health.</span></h2>
+              <p class="footer-description">
                 Track glucose, analyze meals, understand medicines, ask health questions, and keep your wellness journey
                 organized in one calm, intelligent app.
               </p>
             </div>
             <div class="footer-cta-area">
-              <a class="footer-btn primary" href="#" data-i18n="footer-btn-primary">Get Started</a>
-              <a class="footer-btn secondary" href="index.html#bento" data-i18n="footer-btn-secondary">View Features</a>
+              <a class="footer-btn primary" href="#">Get Started</a>
+              <a class="footer-btn secondary" href="index.html#bento">View Features</a>
             </div>
           </div>
 
@@ -4430,7 +3919,7 @@
                 <div class="footer-logo-mark">↗</div>
                 <span>Arrow Health</span>
               </div>
-              <p data-i18n="footer-brand-p">
+              <p>
                 A unified health companion designed to help you track, understand, and improve your daily wellness with
                 AI-powered tools.
               </p>
@@ -4438,42 +3927,42 @@
 
             <div class="footer-links-grid">
               <div class="footer-col">
-                <h4 data-i18n="footer-col-product">Product</h4>
-                <a href="#" data-i18n="footer-link-glucose">Glucose Tracking</a>
-                <a href="#" data-i18n="footer-link-food">Food Analysis</a>
-                <a href="#" data-i18n="footer-link-medicine">Medicine Scan</a>
-                <a href="#" data-i18n="footer-link-chat">AI Health Chat</a>
+                <h4>Product</h4>
+                <a href="#">Glucose Tracking</a>
+                <a href="#">Food Analysis</a>
+                <a href="#">Medicine Scan</a>
+                <a href="#">AI Health Chat</a>
               </div>
               <div class="footer-col">
-                <h4 data-i18n="footer-col-ai">AI Tools</h4>
-                <a href="#" data-i18n="footer-link-camera">Smart Camera</a>
-                <a href="#" data-i18n="footer-link-meal">Meal Insights</a>
-                <a href="#" data-i18n="footer-link-summary">Health Summary</a>
-                <a href="#" data-i18n="footer-link-wellness">Wellness Guidance</a>
+                <h4>AI Tools</h4>
+                <a href="#">Smart Camera</a>
+                <a href="#">Meal Insights</a>
+                <a href="#">Health Summary</a>
+                <a href="#">Wellness Guidance</a>
               </div>
               <div class="footer-col">
-                <h4 data-i18n="footer-col-company">Company</h4>
-                <a href="#" data-i18n="footer-link-about">About</a>
-                <a href="#" data-i18n="footer-link-why">Why Arrow Health</a>
-                <a href="#" data-i18n="footer-link-contact">Contact</a>
-                <a href="#" data-i18n="footer-link-support">Support</a>
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Why Arrow Health</a>
+                <a href="#">Contact</a>
+                <a href="#">Support</a>
               </div>
               <div class="footer-col">
-                <h4 data-i18n="footer-col-trust">Trust</h4>
-                <a href="#" data-i18n="footer-link-privacy">Privacy</a>
-                <a href="#" data-i18n="footer-link-security">Security</a>
-                <a href="#" data-i18n="footer-link-terms">Terms</a>
-                <span data-i18n="footer-disclaimer">Not a substitute for professional medical advice.</span>
+                <h4>Trust</h4>
+                <a href="#">Privacy</a>
+                <a href="#">Security</a>
+                <a href="#">Terms</a>
+                <span>Not a substitute for professional medical advice.</span>
               </div>
             </div>
           </div>
 
           <div class="footer-bottom-bar">
-            <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
+            <div>© 2026 Arrow Health. All rights reserved.</div>
             <div class="footer-bottom-links">
-              <a href="#" data-i18n="footer-bottom-privacy">Privacy Policy</a>
-              <a href="#" data-i18n="footer-bottom-terms">Terms of Use</a>
-              <a href="#" data-i18n="footer-bottom-access">Accessibility</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
             </div>
           </div>
         </div>
@@ -4484,7 +3973,7 @@
   <!-- About Modal -->
   <div class="company-modal" id="aboutModal">
     <div class="company-modal-header">
-      <h2 data-i18n="about-modal-title">About Arrow Health</h2>
+      <h2>About Arrow Health</h2>
       <button class="close-company-btn" id="closeAboutBtn">×</button>
     </div>
     <div class="company-modal-content">
@@ -4492,14 +3981,14 @@
       <!-- Hero -->
       <div class="company-hero-bg about-hero-bg">
         <div class="company-hero">
-          <div class="about-eyebrow">⬡ <span data-i18n="about-eyebrow">Our Story</span></div>
-          <h1 data-i18n-html="about-hero-h1">Clarity and intelligence for <span>metabolic health.</span></h1>
-          <p data-i18n="about-hero-p">Arrow Health is a modern health companion designed to replace complicated logs with beautiful, actionable insights — built at the intersection of clinical expertise and world-class engineering.</p>
+          <div class="about-eyebrow">⬡ Our Story</div>
+          <h1>Clarity and intelligence for <span>metabolic health.</span></h1>
+          <p>Arrow Health is a modern health companion designed to replace complicated logs with beautiful, actionable insights — built at the intersection of clinical expertise and world-class engineering.</p>
           <div class="about-stat-row">
-            <div class="about-stat"><span>WHO</span><small data-i18n="about-stat-1">Compliant Protocols</small></div>
-            <div class="about-stat"><span>ADA</span><small data-i18n="about-stat-2">Evidence-Based</small></div>
-            <div class="about-stat"><span>IDF</span><small data-i18n="about-stat-3">Standard Aligned</small></div>
-            <div class="about-stat"><span>2026</span><small data-i18n="about-stat-4">Founded</small></div>
+            <div class="about-stat"><span>WHO</span><small>Compliant Protocols</small></div>
+            <div class="about-stat"><span>ADA</span><small>Evidence-Based</small></div>
+            <div class="about-stat"><span>IDF</span><small>Standard Aligned</small></div>
+            <div class="about-stat"><span>2026</span><small>Founded</small></div>
           </div>
         </div>
       </div>
@@ -4508,9 +3997,9 @@
       <div class="about-leadership-section">
         <div class="about-leadership-inner">
           <div class="about-section-header">
-            <div class="kicker"><span class="kicker-dot"></span> <span data-i18n="about-team-kicker">The Team Behind Arrow Health</span></div>
-            <h2 data-i18n-html="about-team-h2">Leadership & <span class="accent">Engineering</span></h2>
-            <p data-i18n="about-team-p">Two experts. One shared vision. Building the future of metabolic health intelligence.</p>
+            <div class="kicker"><span class="kicker-dot"></span> The Team Behind Arrow Health</div>
+            <h2>Leadership & <span class="accent">Engineering</span></h2>
+            <p>Two experts. One shared vision. Building the future of metabolic health intelligence.</p>
           </div>
 
           <div class="leadership-grid">
@@ -4532,28 +4021,28 @@
                   </div>
                 </div>
                 <div class="leader-header-info">
-                  <div class="leader-role-pill clinical" data-i18n="about-role-clinical">Clinical</div>
+                  <div class="leader-role-pill clinical">Clinical</div>
                   <h3>Dr. Kazi Md Nahid Ul Haque</h3>
-                  <p class="leader-title" data-i18n="about-nahid-title">Clinical Director & Systems Architect</p>
+                  <p class="leader-title">Clinical Director & Systems Architect</p>
                   <div class="leader-affiliation-row">
-                    <span class="affil-tag">🏥 <span data-i18n="about-nahid-affil-1">Endocrinology</span></span>
-                    <span class="affil-tag">📋 <span data-i18n="about-nahid-affil-2">WHO Protocols</span></span>
+                    <span class="affil-tag">🏥 Endocrinology</span>
+                    <span class="affil-tag">📋 WHO Protocols</span>
                     <span class="affil-tag">🔬 ADA / IDF</span>
                   </div>
                 </div>
               </div>
               <div class="leader-bio">
-                <p data-i18n="about-nahid-bio">Board-certified medical professional and researcher bridging the gap between clinical endocrinology and digital health infrastructure. Dr. Nahid directs the core glycemic algorithms, medical intelligence logic, and strategic vision of Arrow Health, ensuring all platform interventions strictly adhere to international evidence-based protocols (WHO, ADA, IDF) and patient safety standards.</p>
+                <p>Board-certified medical professional and researcher bridging the gap between clinical endocrinology and digital health infrastructure. Dr. Nahid directs the core glycemic algorithms, medical intelligence logic, and strategic vision of Arrow Health, ensuring all platform interventions strictly adhere to international evidence-based protocols (WHO, ADA, IDF) and patient safety standards.</p>
               </div>
               <div class="leader-expertise-row">
-                <div class="expertise-item"><span class="exp-dot clinical-dot"></span><span data-i18n="about-nahid-exp-1">Glycemic Algorithm Design</span></div>
-                <div class="expertise-item"><span class="exp-dot clinical-dot"></span><span data-i18n="about-nahid-exp-2">Clinical Protocol Architecture</span></div>
-                <div class="expertise-item"><span class="exp-dot clinical-dot"></span><span data-i18n="about-nahid-exp-3">Patient Safety Standards</span></div>
-                <div class="expertise-item"><span class="exp-dot clinical-dot"></span><span data-i18n="about-nahid-exp-4">Medical Intelligence Systems</span></div>
+                <div class="expertise-item"><span class="exp-dot clinical-dot"></span>Glycemic Algorithm Design</div>
+                <div class="expertise-item"><span class="exp-dot clinical-dot"></span>Clinical Protocol Architecture</div>
+                <div class="expertise-item"><span class="exp-dot clinical-dot"></span>Patient Safety Standards</div>
+                <div class="expertise-item"><span class="exp-dot clinical-dot"></span>Medical Intelligence Systems</div>
               </div>
               <div class="leader-card-footer">
                 <div class="leader-footer-line"></div>
-                <span class="leader-footer-label" data-i18n="about-nahid-footer">Clinical Director · Arrow Health</span>
+                <span class="leader-footer-label">Clinical Director · Arrow Health</span>
               </div>
             </div>
 
@@ -4574,28 +4063,28 @@
                   </div>
                 </div>
                 <div class="leader-header-info">
-                  <div class="leader-role-pill engineering" data-i18n="about-role-engineering">Engineering</div>
+                  <div class="leader-role-pill engineering">Engineering</div>
                   <h3>Amlan Sarkar</h3>
-                  <p class="leader-title" data-i18n="about-amlan-title">Lead Software Engineer</p>
+                  <p class="leader-title">Lead Software Engineer</p>
                   <div class="leader-affiliation-row">
-                    <span class="affil-tag">⚙️ <span data-i18n="about-amlan-affil-1">Cloud Architecture</span></span>
-                    <span class="affil-tag">🤖 <span data-i18n="about-amlan-affil-2">AI Integration</span></span>
+                    <span class="affil-tag">⚙️ Cloud Architecture</span>
+                    <span class="affil-tag">🤖 AI Integration</span>
                     <span class="affil-tag">🚀 DevOps</span>
                   </div>
                 </div>
               </div>
               <div class="leader-bio">
-                <p data-i18n="about-amlan-bio">Full-stack engineering lead responsible for designing, developing, deploying, and maintaining Arrow Health's complete digital infrastructure. Amlan builds and manages the platform's frontend, backend services, cloud architecture, and production workflows, ensuring reliability, scalability, and seamless user experiences. He leads the implementation of cloud-native solutions including serverless APIs, database systems, AI-powered integrations, and automated deployment pipelines.</p>
+                <p>Full-stack engineering lead responsible for designing, developing, deploying, and maintaining Arrow Health's complete digital infrastructure. Amlan builds and manages the platform's frontend, backend services, cloud architecture, and production workflows, ensuring reliability, scalability, and seamless user experiences. He leads the implementation of cloud-native solutions including serverless APIs, database systems, AI-powered integrations, and automated deployment pipelines.</p>
               </div>
               <div class="leader-expertise-row">
-                <div class="expertise-item"><span class="exp-dot eng-dot"></span><span data-i18n="about-amlan-exp-1">Full-Stack Architecture</span></div>
-                <div class="expertise-item"><span class="exp-dot eng-dot"></span><span data-i18n="about-amlan-exp-2">Serverless Cloud APIs</span></div>
-                <div class="expertise-item"><span class="exp-dot eng-dot"></span><span data-i18n="about-amlan-exp-3">AI-Powered Integrations</span></div>
-                <div class="expertise-item"><span class="exp-dot eng-dot"></span><span data-i18n="about-amlan-exp-4">Automated CI/CD Pipelines</span></div>
+                <div class="expertise-item"><span class="exp-dot eng-dot"></span>Full-Stack Architecture</div>
+                <div class="expertise-item"><span class="exp-dot eng-dot"></span>Serverless Cloud APIs</div>
+                <div class="expertise-item"><span class="exp-dot eng-dot"></span>AI-Powered Integrations</div>
+                <div class="expertise-item"><span class="exp-dot eng-dot"></span>Automated CI/CD Pipelines</div>
               </div>
               <div class="leader-card-footer">
                 <div class="leader-footer-line engineering-line"></div>
-                <span class="leader-footer-label" data-i18n="about-amlan-footer">Lead Engineer · Arrow Health</span>
+                <span class="leader-footer-label">Lead Engineer · Arrow Health</span>
               </div>
             </div>
 
@@ -4607,25 +4096,25 @@
       <div class="about-mission-strip">
         <div class="about-mission-inner">
           <div class="about-mission-text">
-            <div class="kicker"><span class="kicker-dot"></span> <span data-i18n="about-mission-kicker">Our Mission</span></div>
-            <h2 data-i18n-html="about-mission-h2">Where clinical precision meets <span class="accent">digital intelligence.</span></h2>
-            <p data-i18n="about-mission-p">We believe every person deserves access to hospital-grade metabolic intelligence in the palm of their hand. Arrow Health bridges the gap between endocrinology expertise and consumer technology, making evidence-based health guidance effortless, beautiful, and deeply personal.</p>
+            <div class="kicker"><span class="kicker-dot"></span> Our Mission</div>
+            <h2>Where clinical precision meets <span class="accent">digital intelligence.</span></h2>
+            <p>We believe every person deserves access to hospital-grade metabolic intelligence in the palm of their hand. Arrow Health bridges the gap between endocrinology expertise and consumer technology, making evidence-based health guidance effortless, beautiful, and deeply personal.</p>
           </div>
           <div class="about-mission-values">
             <div class="about-value-card">
               <div class="about-value-icon">🔬</div>
-              <h4 data-i18n="about-value-1-h">Clinical Rigor</h4>
-              <p data-i18n="about-value-1-p">Every algorithm follows WHO, ADA, and IDF international protocols — no guesswork.</p>
+              <h4>Clinical Rigor</h4>
+              <p>Every algorithm follows WHO, ADA, and IDF international protocols — no guesswork.</p>
             </div>
             <div class="about-value-card">
               <div class="about-value-icon">⚡</div>
-              <h4 data-i18n="about-value-2-h">Engineering Excellence</h4>
-              <p data-i18n="about-value-2-p">Cloud-native, scalable, and built for real-world performance at every layer.</p>
+              <h4>Engineering Excellence</h4>
+              <p>Cloud-native, scalable, and built for real-world performance at every layer.</p>
             </div>
             <div class="about-value-card">
               <div class="about-value-icon">🔒</div>
-              <h4 data-i18n="about-value-3-h">Privacy First</h4>
-              <p data-i18n="about-value-3-p">Your health data is yours. We build with privacy and security as a foundation, not an afterthought.</p>
+              <h4>Privacy First</h4>
+              <p>Your health data is yours. We build with privacy and security as a foundation, not an afterthought.</p>
             </div>
           </div>
         </div>
@@ -4635,8 +4124,8 @@
       <!-- Tech Foundation -->
       <div class="about-grid-section" style="margin-top: 80px;">
         <div class="about-tech-stack" style="background: #ffffff; border: 1px solid rgba(22, 78, 69, 0.1); box-shadow: 0 12px 40px rgba(0,0,0,0.04);">
-          <h2 data-i18n="about-tech-h2">Clinical Foundation meets Modern Engineering</h2>
-          <p data-i18n="about-tech-p">Arrow Health runs on a robust cross-platform Flutter framework utilizing Provider-based state management, Hive for offline-first local security, a Django backend, Google APIs for machine learning, and AlloyDB on Google Cloud Run to deliver near-instant responses.</p>
+          <h2>Clinical Foundation meets Modern Engineering</h2>
+          <p>Arrow Health runs on a robust cross-platform Flutter framework utilizing Provider-based state management, Hive for offline-first local security, a Django backend, Google APIs for machine learning, and AlloyDB on Google Cloud Run to deliver near-instant responses.</p>
           <div class="tech-logos-row">
             <span class="tech-logo-pill">Flutter</span>
             <span class="tech-logo-pill">Provider State</span>
@@ -4653,11 +4142,11 @@
       <footer class="arrow-footer modal-footer">
         <div class="footer-container">
           <div class="footer-bottom-bar">
-            <div data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</div>
+            <div>© 2026 Arrow Health. All rights reserved.</div>
             <div class="footer-bottom-links">
-              <a href="#" data-i18n="footer-bottom-privacy">Privacy Policy</a>
-              <a href="#" data-i18n="footer-bottom-terms">Terms of Use</a>
-              <a href="#" data-i18n="footer-bottom-access">Accessibility</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Use</a>
+              <a href="#">Accessibility</a>
             </div>
           </div>
         </div>
@@ -4910,7 +4399,7 @@
   <!-- Privacy Modal (Oura Inspired) -->
   <div class="company-modal privacy-hub-modal" id="privacyModal">
     <div class="company-modal-header privacy-header">
-      <h2 class="privacy-hub-logo" data-i18n-html="privacy-hub-title">Arrow <span>Privacy</span></h2>
+      <h2 class="privacy-hub-logo">Arrow <span>Privacy</span></h2>
       <button class="close-company-btn privacy-close-btn" id="closePrivacyBtn">×</button>
     </div>
     <div class="privacy-hub-content">
@@ -4923,66 +4412,55 @@
             <div class="glowing-ring inner"></div>
           </div>
           <nav class="privacy-nav">
-            <a href="#privacy-intro" class="active" data-i18n="privacy-nav-intro">Introduction</a>
-            <a href="#privacy-storage" data-i18n="privacy-nav-storage">Local Storage</a>
-            <a href="#privacy-ai" data-i18n="privacy-nav-ai">AI Processing</a>
-            <a href="#privacy-sync" data-i18n="privacy-nav-sync">Data Syncing</a>
-            <a href="#privacy-terms" data-i18n="privacy-nav-terms">Terms of Use</a>
-            <a href="#privacy-contact" data-i18n="privacy-nav-contact">Contact Us</a>
+            <a href="#privacy-intro" class="active">Introduction</a>
+            <a href="#privacy-storage">Local Storage</a>
+            <a href="#privacy-ai">AI Processing</a>
+            <a href="#privacy-sync">Data Syncing</a>
+            <a href="#privacy-contact">Contact Us</a>
           </nav>
         </aside>
 
         <!-- Right Scrolling Content -->
         <main class="privacy-scroll-area">
           <section id="privacy-intro" class="privacy-section scroll-reveal" data-color="#4D5B8C">
-            <h1 data-i18n-html="privacy-intro-h1">Your data,<br><span>your control.</span></h1>
-            <p class="lead-text" data-i18n="privacy-intro-p">Arrow Health is built with privacy-first architecture. We believe your health data belongs to you and should be protected with the highest standards.</p>
+            <h1>Your data,<br><span>your control.</span></h1>
+            <p class="lead-text">Arrow Health is built with privacy-first architecture. We believe your health data belongs to you and should be protected with the highest standards.</p>
           </section>
 
           <section id="privacy-storage" class="privacy-section scroll-reveal" data-color="#B75D69">
             <div class="privacy-card">
               <div class="card-icon" style="background: linear-gradient(135deg, rgba(183, 93, 105, 0.15), rgba(183, 93, 105, 0.05)); border: 1px solid rgba(183, 93, 105, 0.2); box-shadow: 0 4px 15px rgba(183, 93, 105, 0.1);">🔒</div>
-              <h3 data-i18n="privacy-storage-h3">Local-First Storage</h3>
-              <p data-i18n="privacy-storage-p">By default, all your readings, medicine logs, and growth statistics are stored exclusively on your device using encrypted Hive Database boxes. This means no one—not even Arrow Health—can access your personal data without your permission.</p>
+              <h3>Local-First Storage</h3>
+              <p>By default, all your readings, medicine logs, and growth statistics are stored exclusively on your device using encrypted Hive Database boxes. This means no one—not even Arrow Health—can access your personal data without your permission.</p>
             </div>
           </section>
 
           <section id="privacy-ai" class="privacy-section scroll-reveal" data-color="#5B9A86">
             <div class="privacy-card">
               <div class="card-icon" style="background: linear-gradient(135deg, rgba(91, 154, 134, 0.15), rgba(91, 154, 134, 0.05)); border: 1px solid rgba(91, 154, 134, 0.2); box-shadow: 0 4px 15px rgba(91, 154, 134, 0.1);">🧠</div>
-              <h3 data-i18n="privacy-ai-h3">AI Processing</h3>
-              <p data-i18n="privacy-ai-p">Features like the Food Scanner and Medicine OCR require processing on our secure Google Cloud Run servers. When an image is uploaded for analysis, it is processed in memory and immediately discarded. We do not store or train our models on your personal photos.</p>
+              <h3>AI Processing</h3>
+              <p>Features like the Food Scanner and Medicine OCR require processing on our secure Google Cloud Run servers. When an image is uploaded for analysis, it is processed in memory and immediately discarded. We do not store or train our models on your personal photos.</p>
             </div>
           </section>
 
           <section id="privacy-sync" class="privacy-section scroll-reveal" data-color="#6697A7">
             <div class="privacy-card">
               <div class="card-icon" style="background: linear-gradient(135deg, rgba(102, 151, 167, 0.15), rgba(102, 151, 167, 0.05)); border: 1px solid rgba(102, 151, 167, 0.2); box-shadow: 0 4px 15px rgba(102, 151, 167, 0.1);">☁️</div>
-              <h3 data-i18n="privacy-sync-h3">Data Syncing</h3>
-              <p data-i18n="privacy-sync-p">If you choose to enable cross-device syncing, your data is transmitted over SSL-encrypted channels and stored securely. You have the right to request full deletion of your account and all associated cloud data at any time through the app settings.</p>
-            </div>
-          </section>
-
-          <section id="privacy-terms" class="privacy-section scroll-reveal" data-color="#8C6D4D">
-            <div class="privacy-card">
-              <div class="card-icon" style="background: linear-gradient(135deg, rgba(140, 109, 77, 0.15), rgba(140, 109, 77, 0.05)); border: 1px solid rgba(140, 109, 77, 0.2); box-shadow: 0 4px 15px rgba(140, 109, 77, 0.1);">📜</div>
-              <h3 data-i18n="terms-title">Terms of Use</h3>
-              <p data-i18n="terms-p1">By using Arrow Health, you agree to use the app only for personal, non-commercial health tracking purposes. All guidance, estimates, and insights provided are informational and are not a substitute for professional medical advice, diagnosis, or treatment.</p>
-              <p data-i18n="terms-p2">You are responsible for the accuracy of the data you enter. Arrow Health is not liable for decisions made solely on the basis of app-generated insights. Always consult a licensed healthcare provider for medical decisions.</p>
-              <p data-i18n="terms-p3">We may update these terms from time to time as the app evolves. Continued use of Arrow Health after changes constitutes acceptance of the revised terms.</p>
+              <h3>Data Syncing</h3>
+              <p>If you choose to enable cross-device syncing, your data is transmitted over SSL-encrypted channels and stored securely. You have the right to request full deletion of your account and all associated cloud data at any time through the app settings.</p>
             </div>
           </section>
 
           <section id="privacy-contact" class="privacy-section scroll-reveal" data-color="#9A7BA8">
             <div class="privacy-card outline-card">
-              <h3 data-i18n="privacy-contact-h3">Have questions?</h3>
-              <p data-i18n="privacy-contact-p">Our dedicated privacy team is available to help you understand your data rights and our secure architecture.</p>
-              <a href="#" class="privacy-btn" data-i18n="privacy-contact-btn" onclick="openContactModalFromPrivacy(event)">Contact Privacy Team</a>
+              <h3>Have questions?</h3>
+              <p>Our dedicated privacy team is available to help you understand your data rights and our secure architecture.</p>
+              <a href="#" class="privacy-btn" onclick="openContactModalFromPrivacy(event)">Contact Privacy Team</a>
             </div>
           </section>
-
+          
           <div class="privacy-hub-footer">
-            <p data-i18n="footer-copy">© 2026 Arrow Health. All rights reserved.</p>
+            <p>© 2026 Arrow Health. All rights reserved.</p>
           </div>
         </main>
       </div>
@@ -4991,7 +4469,6 @@
 
 
   <script src="script.js"></script>
-  <script src="translations.js"></script>
 
   <!-- ─────────────────────────────────────────────────────
        MOBILE AUTO-SCROLL CAROUSELS

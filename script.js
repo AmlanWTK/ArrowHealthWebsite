@@ -438,10 +438,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 const whyModal = document.getElementById('whyModal');
                 openModal(whyModal);
             });
-        } else if (text === 'privacy' || text === 'privacy policy') {
+        } else if (text === 'privacy' || text === 'privacy policy' || text === 'গোপনীয়তা নীতি' || text === 'গোপনীয়তা') {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 openModal(privacyModal);
+            });
+        } else if (text === 'terms' || text === 'terms of use' || text === 'শর্তাবলী' || text === 'ব্যবহারের শর্তাবলী') {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(privacyModal);
+                const termsSection = document.getElementById('privacy-terms');
+                const scrollArea = document.getElementById('privacyModal');
+                if (termsSection && scrollArea) {
+                    setTimeout(() => {
+                        const containerTop = scrollArea.getBoundingClientRect().top;
+                        const targetTop = termsSection.getBoundingClientRect().top;
+                        const scrollPos = scrollArea.scrollTop + (targetTop - containerTop) - 80;
+                        scrollArea.scrollTo({ top: scrollPos, behavior: 'smooth' });
+                    }, 350);
+                }
             });
         }
     });
